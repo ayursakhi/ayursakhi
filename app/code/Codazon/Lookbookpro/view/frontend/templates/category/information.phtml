@@ -1,0 +1,92 @@
+<?php
+/**
+* Copyright © 2018 Codazon. All rights reserved.
+* See COPYING.txt for license details.
+*/
+?>
+
+<?php
+$category = $this->getCurrentCategory();
+$helper = $this->helper('Codazon\Lookbookpro\Helper\Data');
+$description = $category->getDescription();
+$title = $category->getName();
+$coverWidth = $helper->getConfig('codazon_lookbook/images/category/cover_width')?:1400;
+$thumbnailWidth = $helper->getConfig('codazon_lookbook/images/category/thumbnail_width')?:1400;
+$class = [];
+if (!$category->getData('cover')) {
+    $class[] = 'no-cover';
+}
+if (!$category->getData('thumbnail')) {
+    $class[] = 'no-thumbnail';
+}
+if (!$category->getData('description')) {
+    $class[] = 'no-description';
+}
+?>
+<div class="lookbook-top">
+    <div class="block-content">
+        <div class="cover-section <?= implode(' ', $class) ?>">
+            <?php if ($category->getData('cover')) : ?>
+            <div class="cover-wrap">
+                <img class="lookbook-cover" src="<?= $helper->getCategoryCoverUrl($category, $coverWidth, null); ?>">
+            </div>
+            <div class="after-cover">
+                <?php if ($category->getData('thumbnail')) : ?>
+				<div class="row">
+					<div class="col-xs-5 col-sm-4 thumb-section">
+						<div class="lookbook-img-wrap">
+							<img class="lookbook-image" itemprop="image" src="<?= $helper->getCategoryThumbnailUrl($category, $thumbnailWidth, null); ?>">
+						</div>                    
+					</div>
+					<div class="social-section col-xs-19 col-sm-20">
+						<strong class="title hidden-xs"><?= $title ?></strong>
+						<?= $this->getChildHtml('category.social'); ?>
+					</div>
+                </div>
+                <?php else : ?>
+				<div class="row">
+					<div class="social-section col-xs-24">
+						<strong class="title hidden-xs"><?= $title ?></strong>
+						<?= $this->getChildHtml('category.social'); ?>
+					</div>
+                </div>
+                <?php endif ?>
+            </div>
+            <div class="row desc-section">
+                <div class="col-sm-24">
+                    <div class="lookbook-desc" itemprop="description">
+                        <?= $description ?>
+                    </div>
+                </div>
+            </div>
+            <?php else : ?>
+                <div class="social-section">
+                    <strong class="title hidden-xs"><?= $title ?></strong>
+                    <?= $this->getChildHtml('category.social'); ?>
+                </div>
+                <?php if ($category->getData('thumbnail')) : ?>
+                <div class="row desc-section">
+                    <div class="col-xs-5 col-sm-4 thumb-section">
+                        <div class="lookbook-img-wrap">
+                            <img class="lookbook-image" itemprop="image" src="<?= $helper->getCategoryThumbnailUrl($category, $thumbnailWidth, null); ?>">
+                        </div>                    
+                    </div>
+                    <div class="col-xs-19 col-sm-20">
+                        <div class="lookbook-desc" itemprop="description">
+                            <?= $description ?>
+                        </div>
+                    </div>
+                </div>
+                <?php elseif($description) : ?>
+                <div class="row desc-section">
+                    <div class="col-sm-24">
+                        <div class="lookbook-desc" itemprop="description">
+                            <?= $description ?>
+                        </div>
+                    </div>
+                </div>
+                <?php endif ?>
+            <?php endif ?>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+	<referenceContainer name="header.wrapper.content">
+		<container name="header.wrapper.content.container" htmlClass="header content" htmlTag="div">
+			<container name="header.wrapper.row" htmlClass="row" htmlTag="div">
+				<container htmlClass="col-sm-10 col-md-9" htmlTag="div">
+					<container name="header.wrapper.left" htmlClass="header-wrapper-left" htmlTag="div" >
+						<container name="logo.left" htmlClass="logo-left" htmlTag="div" />
+						</container>
+				</container>
+				<container htmlClass="col-sm-8 col-md-8" htmlTag="div">
+					<container name="header.wrapper.center" htmlClass="header-wrapper-center" htmlTag="div" />
+				</container>
+				<container htmlClass="col-sm-6 col-md-7" htmlTag="div">
+					<container name="header.wrapper.right" htmlClass="header-wrapper-right" htmlTag="div" />
+				</container>
+			</container>
+		</container>
+	</referenceContainer>
+	<referenceContainer name="header.wrapper.bottom" htmlTag="div" htmlClass="header-wrapper-bottom">
+		<container name="header.bottom.content" htmlTag="div" htmlClass="header content" before="-" label="Header Bottom Content" >
+			<container htmlClass="row" htmlTag="div">
+				<container name="header.bottom.main" htmlClass="col-sm-24 col-md-14 col-lg-16" htmlTag="div">
+					<container name="header.bottom.center" htmlClass="header-bottom-left" htmlTag="div" >
+						<container name="main.menu" htmlTag="div" htmlClass="header-main-menu" after="-" />
+						<container name="menu.container" htmlTag="div" htmlClass="menu-container" label="Header Main Menu" />
+					</container>
+				</container>
+				<container htmlClass="col-sm-24 col-md-10 col-lg-8" htmlTag="div">
+					<container name="header.bottom.right" htmlClass="header-bottom-right pull-right" label="Header Bottom Right" htmlTag="div" />
+				</container>
+			</container>				
+		</container>
+	</referenceContainer>
+	
+	
+	<referenceContainer name="header.container" htmlClass="page-header">
+		<container label="Header Before Slideshow" name="header.before.slidershow" htmlTag="div" htmlClass="before-slideshow-area" before="-">
+			<container name="header.box" htmlClass="box-header" htmlTag="div" before="-">
+				<container name="panel.wrapper.top" htmlClass="panel wrapper" htmlTag="div" before="-">
+				</container>					
+			</container>
+		</container>			
+	</referenceContainer>
+	
+	<move element="logo" destination="logo.left" />
+	<move element="minicart" destination="header.wrapper.right" />
+    
+    
+	<block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization-link-dropdown" template="account/link/authorization_dropdown.phtml" after="-" />
+    <move element="store_switcher" destination="header.bottom.right" />
+	<move element="store_language" destination="header.bottom.right" />
+    <move element="authorization-link-dropdown" destination="header.bottom.right" />    
+	<move element="currency" destination="header.bottom.right" />
+    <container name="dropdown-account-links" htmlTag='ul' htmlClass='account-links'>
+        <block class="Magento\Customer\Block\Account\RegisterLink" name="account-register-link">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">Create an Account</argument>
+            </arguments>
+        </block>
+        <block class="Magento\Customer\Block\Account\Link" name="account-link">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">My Dashboard</argument>
+            </arguments>
+        </block>
+        <block class="Magento\Wishlist\Block\Link" name="account-wish-list-link" />
+        <block class="Magento\Framework\View\Element\Template" name="account-compare-link" template="Magento_Catalog::product/compare/link.phtml">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="compareProducts" xsi:type="array">
+                            <item name="component" xsi:type="string">Magento_Catalog/js/view/compare-products</item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </block>
+    </container>
+    <move element="customer_form_login_mini" destination="authorization-link-dropdown" before="-" />
+    <move element="dropdown-account-links" destination="authorization-link-dropdown" after="-" />  
+	<referenceBlock name="logo">
+		<arguments>
+			<argument name="logo_img_width" xsi:type="number">316</argument>
+			<argument name="logo_img_height" xsi:type="number">67</argument>
+		</arguments>
+	</referenceBlock>
+	</body>
+</page>

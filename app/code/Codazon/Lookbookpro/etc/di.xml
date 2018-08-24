@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright © 2018 Codazon. All rights reserved.
+* See COPYING.txt for license details.
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Grid for Lookbook -->
+    <virtualType name="LookbookproLookbookGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LookbookproLookbookGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Codazon\Lookbookpro\Model\ResourceModel\Lookbook\Grid\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">LookbookproLookbookGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <type name="Codazon\Lookbookpro\Model\ResourceModel\Lookbook\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">cdzlookbook_entity</argument>
+            <argument name="resourceModel" xsi:type="string">Codazon\Lookbookpro\Model\ResourceModel\Lookbook</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="lookbookpro_cdzlookbook_data_source" xsi:type="string">Codazon\Lookbookpro\Model\ResourceModel\Lookbook\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- End Grid for Lookbook -->
+
+    <!-- Grid for Lookbook Category -->
+    <virtualType name="LookbookproLookbookCategoryGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LookbookproLookbookCategoryGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Codazon\Lookbookpro\Model\ResourceModel\LookbookCategory\Grid\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">LookbookproLookbookCategoryGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <type name="Codazon\Lookbookpro\Model\ResourceModel\LookbookCategory\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">cdzlookbook_category_entity</argument>
+            <argument name="resourceModel" xsi:type="string">Codazon\Lookbookpro\Model\ResourceModel\LookbookCategory</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="lookbookpro_cdzlookbook_category_data_source" xsi:type="string">Codazon\Lookbookpro\Model\ResourceModel\LookbookCategory\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- End Grid for Lookbook Category -->
+
+   <!-- Grid for Lookbook Item -->
+    <virtualType name="LookbookproLookbookItemGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LookbookproLookbookItemGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Codazon\Lookbookpro\Model\ResourceModel\LookbookItem\Grid\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">LookbookproLookbookItemGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <type name="Codazon\Lookbookpro\Model\ResourceModel\LookbookItem\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">cdzlookbook_item_entity</argument>
+            <argument name="resourceModel" xsi:type="string">Codazon\Lookbookpro\Model\ResourceModel\LookbookItem</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="lookbookpro_cdzlookbook_item_data_source" xsi:type="string">Codazon\Lookbookpro\Model\ResourceModel\LookbookItem\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- End Grid for Lookbook Item -->
+    
+    <!-- Lookbook Image -->
+    <type name="Codazon\Lookbookpro\Controller\Adminhtml\Lookbook\ImageUpload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Codazon\Lookbookpro\ItemImageUpload</argument>
+        </arguments>
+    </type>
+    <virtualType name="Codazon\Lookbookpro\ItemImageUpload" type="Codazon\Lookbookpro\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">codazon/lookbook/tmp/item</argument>
+            <argument name="basePath" xsi:type="string">codazon/lookbook/item</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <!-- End Lookbook Image -->
+    
+    <!-- Lookbook Category Image -->
+    <type name="Codazon\Lookbookpro\Controller\Adminhtml\LookbookCategory\ImageUpload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Codazon\Lookbookpro\CategoryImageUpload</argument>
+        </arguments>
+    </type>
+    <virtualType name="Codazon\Lookbookpro\CategoryImageUpload" type="Codazon\Lookbookpro\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">codazon/lookbook/tmp/category</argument>
+            <argument name="basePath" xsi:type="string">codazon/lookbook/category</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <!-- End Lookbook Category Image -->
+</config>

@@ -1,0 +1,26 @@
+<?php
+    $cat = $this->getCurrentCategory();
+    $data = $this->getAttributes();
+?>
+<script type="text/javascript">
+var url = "<?php echo $this->getUrl('ajaxlayerednav/load/data') ?>";
+var jsonFilter = <?php echo json_encode($data) ?>;
+var catparam = 'catid=<?php echo $cat->getId() ?>';
+var uriRequest = '';
+var uriShow = '';
+var baseUrl = '<?php echo $this->getBaseUrl() ?>';
+
+require([
+    'jquery',
+    'Codazon_AjaxLayeredNav/js/ajaxlayer',
+    'domReady!'
+], function ($, ajaxlayer) {
+    ajaxlayer({
+        "url": url,
+        "jsonFilter": jsonFilter,
+        "catparam": catparam,
+        "baseUrl": baseUrl
+    });
+    $('body').off('contentUpdated.ajaxlayer');
+});
+</script>

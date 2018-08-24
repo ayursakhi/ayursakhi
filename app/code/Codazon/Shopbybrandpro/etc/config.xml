@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 Codazon. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <codazon_shopbybrand>
+			<general>
+				<attribute_code>manufacturer</attribute_code>
+			</general>
+            <featured_brands>
+                <title>Featured Brands</title>
+                <sort_by>brand_label</sort_by>
+                <sort_order>asc</sort_order>
+                <brand_is_featured_by_default>0</brand_is_featured_by_default>
+                <display_on_lsb_brand_page>1</display_on_lsb_brand_page>
+                <display_on_lsb_cat_page>1</display_on_lsb_cat_page>
+                <display_on_lsb_search_page>1</display_on_lsb_search_page>
+                <display_on_top_cat_page>0</display_on_top_cat_page>
+            </featured_brands>
+            <brand_search_box>
+                <display_on_lsb_brand_page>1</display_on_lsb_brand_page>
+                <display_on_lsb_cat_page>1</display_on_lsb_cat_page>
+                <display_on_lsb_search_page>1</display_on_lsb_search_page>
+            </brand_search_box>
+            <all_brand_page>
+                <title>Our Brands</title>
+                <description><![CDATA[<p>Initially founded in 1991, until now, we cooperate with more than 50 big famous brands of fashion field. Specialty Fashion Group (SFG) is the largest specialty retailer of women’s fashion in Australasia, represented by its brands: Millers, Crossroads, Katies, Autograph, City Chic and the newest addition, Rivers, which brings new categories to the Group including menswear and (a heritage in) shoes. Our six diverse brands offer style and value to our customers. At SFG, we sell a garment every second in Australia, New Zealand, South Africa and the United States through our portfolio of over 1,000 stores and our 7 online businesses. SFG has one of the largest women’s customer communities in Australasia with over 7 million members and can reach over 3 million members through email. Our members’ loyalty is high, representing over 80% of sales. With a large range of activities, we always provide best products and solutions to customers.</p>]]></description>
+                <alphabet_table>a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z</alphabet_table>
+                <meta_title>Our Brands</meta_title>
+                <meta_keywords>brands,all brands</meta_keywords>
+                <meta_description>Initially founded in 1991, until now, we cooperate with more than 50 big famous brands of fashion field. With a large range of activities, we always provide best products and solutions to customers.</meta_description>
+                <display_featured_brands>1</display_featured_brands>
+                <display_brand_search>1</display_brand_search>
+            </all_brand_page>
+			<brand_page>
+				<display_cover>1</display_cover>
+				<display_thumbnail>1</display_thumbnail>
+				<display_description>1</display_description>
+			</brand_page>
+			<product_view_page>
+				<display_brand_logo>0</display_brand_logo>
+			</product_view_page>
+		</codazon_shopbybrand>
+	</default>
+</config>

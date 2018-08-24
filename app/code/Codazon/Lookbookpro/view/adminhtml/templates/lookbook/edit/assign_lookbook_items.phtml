@@ -1,0 +1,26 @@
+<?php
+/**
+* Copyright © 2018 Codazon. All rights reserved.
+* See COPYING.txt for license details.
+*/
+
+$blockGrid = $block->getBlockGrid();
+$gridJsObjectName = $blockGrid->getJsObjectName();
+?>
+
+<?= $block->getGridHtml() ?>
+<input type="hidden" name="lookbook_items" id="in_category_products" data-form-part="lookbookpro_cdzlookbook_form" value="" />
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Codazon_Lookbookpro/js/assign-lookbook-item": {
+                "selectedProducts": <?= /* @escapeNotVerified */ $block->getLookbookItemJson() ?>,
+                "gridJsObjectName": <?= /* @escapeNotVerified */ '"' . $gridJsObjectName . '"' ?: '{}' ?>
+            }
+        }
+    }
+</script>
+<!-- @todo remove when "UI components" will support such initialization -->
+<script>
+    require('mage/apply/main').apply();
+</script>

@@ -1,0 +1,126 @@
+title,identifier,content
+"Fastest - WeStyle Fashion - Main Menu",fastest-westylefashion-main-menu,"<div class=""cdz-main-menu"">{{widget type=""Codazon\MegaMenu\Block\Widget\Megamenu"" menu=""fastest-fashion-main-menu""}}</div>"
+"Fastest - WeStyle Fashion - Home Slideshow",fastest-westylefashion-home-slideshow,"<div class=""slideshow-container"">{{widget type=""Codazon\Slideshow\Block\Widget\Slideshow"" slideshow_id=""fastest-westyle-fashion-home-slideshow""}}</div>"
+"Fastest - WeStyle Fashion - Main Area - New Product",fastest-westylefashion-main-area-new-product,"<div class=""cdz-new-trend-wrap"">
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>Show new in women</span></p>
+<div class=""title-desc"">All styles in this summer</div>
+<div class=""title-button""><a class=""view-all"" href=""#"">see more</a></div>
+</div>
+</div>
+</div>
+<div class=""row"">
+<div class=""col-sm-24 cdz-new-trend product-style09"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""8"" order_by=""name ASC"" show=""thumb,name,sku,review,price,addtocart,addto"" thumb_width=""280"" thumb_height=""392"" filter_template=""custom"" custom_template=""grid_slider.phtml"" show_slider=""1"" slider_item=""4"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`75`^]^]""}}</div>
+</div>
+</div>"
+"Fastest - WeStyle Fashion - Main Area - Advertisement",fastest-westylefashion-main-area-advertisement,"<div class=""main-advertisement"">
+<div class=""row"">
+<div class=""col-sm-8""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/westylefashion/home/img01.gif'}}"" alt=""Banner 01"" /></a></div>
+<div class=""col-sm-16"">
+<div class=""adver-content"">
+<p class=""h1 adver-title text-uppercase"">Complete Perfect Set for your house</p>
+<div class=""adver-desc"">
+<p>The Beetle Sofa invites conversation. Taking its inspiration from the Beetle Lounge Chair, the elongated Beetle Sofa plays with the contrast between the enveloping outer shell and a soft and inviting interior.</p>
+<p>A bling pair of sandals is the corner stone of any girls outfit this season. Though high, the chunky platform and adjustable strap ensure a steady stride. Complement yours with darker tones.</p>
+</div>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - WeStyle Fashion - Main Area - Best Seller",fastest-westylefashion-main-area-best-seller,"<div class=""cdz-best-seller-wrap product-style10 product-show-3 cdz-product-tabs tabs-list-sty04"">
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""cdz-block-title no-space"">
+<p class=""b-title h1""><span>Best Seller</span></p>
+</div>
+</div>
+</div>
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""tabs-list bestseller-product product data items cdz-tabs""><input id=""cdz-tab1"" class=""tab-radio"" checked=""checked"" name=""tabs"" type=""radio"" /><label class=""data item title text-uppercase"" for=""cdz-tab1""><span>Dresses</span></label>
+<div id=""content1"" class=""animated fadeIn data item content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""6"" order_by=""name ASC"" show=""thumb,name,price,addtocart,addto"" thumb_width=""380"" thumb_height=""531"" filter_template=""custom"" custom_template=""infinitescroll_grid.phtml"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`74`^]^]""}}</div>
+<input id=""cdz-tab2"" class=""tab-radio"" name=""tabs"" type=""radio"" /><label class=""data item title text-uppercase"" for=""cdz-tab2""><span>Clothes</span></label>
+<div id=""content2"" class=""animated fadeIn data item content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""6"" order_by=""price DESC"" show=""thumb,name,price,addtocart,addto"" thumb_width=""380"" thumb_height=""531"" filter_template=""custom"" custom_template=""infinitescroll_grid.phtml"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`75`^]^]""}}</div>
+<input id=""cdz-tab3"" class=""tab-radio"" name=""tabs"" type=""radio"" /><label class=""data item title text-uppercase"" for=""cdz-tab3""><span>Set Collection</span></label>
+<div id=""content3"" class=""animated fadeIn data item content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""6"" order_by=""name ASC"" show=""thumb,name,price,addtocart,addto"" thumb_width=""380"" thumb_height=""531"" filter_template=""custom"" custom_template=""infinitescroll_grid.phtml"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`48`^]^]""}}</div>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - WeStyle Fashion - Main Area - New Blog",fastest-westylefashion-main-area-new-blog,"<div class=""main-blog cdz_wapper-blog05"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>COMPLETE YOUR LOOK</span></p>
+<div class=""title-desc"">Finish off with our hats, watches, bags and accessories</div>
+</div>
+<div class=""main-blog-content"">{{widget type=""Magefan\Blog\Block\Widget\PostList"" categories=""13"" order_by=""publish_time"" order=""desc"" post_count=""5"" show_in_front=""thumb,name,description,published_date,author"" desc_length=""150"" show_slider=""1"" thumb_width=""280"" thumb_height=""187"" post_template=""custom"" custom_template=""latest_blog_slider.phtml""}}</div>
+</div>"
+"Fastest - WeStyle Fashion - Main Area - Instagram",fastest-westylefashion-main-area-instagram,"<div class=""main-instagram text-center"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>#MYSTYLEshop on Instagram</span></p>
+<div class=""title-desc"">Follow us on instagram</div>
+</div>
+<div class=""main-instagram-content"">{{widget type=""Codazon\ThemeOptions\Block\Instagramphotos"" access_token=""3893338542.38fb276.e8dbfaac57214bf69c0439027ee39d85""}}</div>
+</div>"
+"Fastest - WeStyle Fashion - Footer Top - Newsletter",fastest-westylefashion-footer-top-newsletter,"<div class=""footer-top-ads text-center cls-style02"">
+<p class=""ftop-ads-title"">Newsletter</p>
+<p class=""ftop-ads-desc"">Be the first to know about the latest deals, style updates & more!</p>
+<div class=""ftop-newsletter"">{{block class=""Magento\Newsletter\Block\Subscribe"" name=""cdz.newsletter.style05"" template=""subscribe.phtml""}}</div>
+</div>"
+"Fastest - WeStyle Fashion - Footer Links",fastest-westylefashion-footer-links,"<div class=""row"">
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5 hidden-xs"">About us</p>
+<div>
+<p class=""hidden-xs"">Fastest Magento 2 store has seen some remarkable accomplishments over the past 30 years. With a goal to become an $8 billion company by 2017</p>
+<div class=""footer-social"">
+<p class=""h5 visible-xs"">Follow us</p>
+<p class=""social""><a href=""#""><span class=""fa fa-facebook"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-twitter"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-pinterest-p"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-google-plus"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-tumblr"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-vimeo"">&nbsp;</span></a></p>
+</div>
+</div>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-2"">You Link</p>
+<ul id=""footer-content-2"" class=""footer-link showhide"">
+<li><a href=""#"">Side Navigation</a></li>
+<li><a href=""{{store url=""""}}about-us"">About Us</a></li>
+<li><a href=""{{store url=""""}}contact"">Contact Us</a></li>
+<li><a href=""#"">Forum Support</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode"">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-3"">Infomation</p>
+<ul id=""footer-content-3"" class=""footer-link showhide"">
+<li><a href=""#"">Side Navigation</a></li>
+<li><a href=""{{store url=""""}}about-us"">About Us</a></li>
+<li><a href=""{{store url=""""}}contact"">Contact Us</a></li>
+<li><a href=""#"">Forum Support</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode"">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-4"">Item Tags</p>
+<ul id=""footer-content-4"" class=""item_tag showhide"">
+<li><a href=""#"">awesome</a></li>
+<li><a href=""#"">beautiful</a></li>
+<li><a href=""#"">flat design</a></li>
+<li><a href=""#"">ios</a></li>
+<li><a href=""#"">mass</a></li>
+<li><a href=""#"">awesome</a></li>
+<li><a href=""#"">beautiful</a></li>
+<li><a href=""#"">flat design</a></li>
+</ul>
+</div>
+</div>
+</div>"
+"Fastest - WeStyle Fashion - Footer Bottom Payment",fastest-westylefashion-footer-bottom-payment,"<div class=""pull-right footer-payment-logo"">
+<div class=""cdz-footer-bottom-payment""><img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/westylefashion/home/cdz-footer-payment.png""}}"" alt=""Accept Payment"" /></div>
+</div>"

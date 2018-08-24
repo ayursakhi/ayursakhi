@@ -1,0 +1,103 @@
+<?php
+$item = $this->getData('current_item');
+$content = $item->content;
+$hasChildren = isset($item->children);
+$itemType = $item->item_type;
+$depth = (int)$item->depth;
+$style = (isset($content->style)&&($content->style!=''))?'style="'.$content->style.'"':'';
+$this->setItemId(0);
+?>
+<li class="<?php echo $this->getItemCSSClass($item) ?>" <?php echo $style ?>>
+<?php if($itemType == 'link'): ?>
+	<a class="menu-link" href="<?php echo $content->url ?>"><?php echo $this->getIcon($content) ?> <span><?php echo $content->label ?></span></a>
+    <?php if($hasChildren): ?>
+    <ul class="groupmenu-drop">
+    	<?php echo $this->getMenuHtml($item->children); ?>
+    </ul>
+    <?php endif ?>
+<?php elseif($itemType == 'text'): ?>
+	<?php
+        $text = $content->content;
+		$layout = explode(',',$content->layout);
+		$totalPart = array_sum($layout);
+	?>
+    <?php if($content->background): ?>
+	<img class="groupdrop-banner-pos" src="<?php echo $content->background ?>" style="<?php echo $this->getBackgroundStyle($content) ?>" />
+	<?php endif ?>
+    <div class="<?php echo $content->class ?> groupmenu-drop-content <?php echo ($content->width_class)?'groupmenu-width-'.$content->width_class:'' ?>" style=" <?php echo $content->style ?>">
+        	<?php if($totalPart > 1): ?>
+        	<div class="row">
+            <?php foreach($layout as $key => $column): ?>
+            	<div class="col-sm-<?php echo (int)$column*(24/(int)$totalPart); ?>"><?php echo $text[$key] ?></div>
+            <?php endforeach ?>
+            </div>
+            <?php else: ?>
+            	<?php echo $text ?>
+            <?php endif ?>
+    </div>
+<?php elseif($itemType == 'tab_container'): ?>
+	<?php if(isset($content->background) && $content->background): ?>
+		<img class="groupdrop-banner-pos" src="<?php echo $content->background ?>" style="<?php echo $this->getBackgroundStyle($content) ?>" />
+		<?php endif ?>
+		<div class="no-dropdown menu-tabs <?php echo ($content->tab_type == 0)?'cdz-horizontal-tabs':'cdz-vertical-tabs' ?> <?php echo ($content->width_class)?'groupmenu-width-'.$content->width_class:'' ?>" style=" <?php echo $content->style ?>">
+       		<?php if($hasChildren): ?>
+            <ul class="groupmenu-nondrop">
+                <?php echo $this->getMenuHtml($item->children); ?>
+            </ul>
+            <?php endif ?> 
+        </div>
+<?php elseif($itemType == 'tab_item'): ?>
+	<div class="cdz-link-wrap"><a class="cdz-tab-link" href="<?php echo $content->url ?>"><?php echo $this->getIcon($content) ?> <?php echo $content->label ?></a></div>
+        <div class="cdz-tab-pane">
+            <?php
+                $text = $content->content;
+                $layout = explode(',',$content->layout);
+                $totalPart = array_sum($layout);
+            ?>
+            <?php if($content->background): ?>
+            <img class="groupdrop-banner-pos" src="<?php echo $content->background ?>" style="<?php echo $this->getBackgroundStyle($content) ?>" />
+            <?php endif ?>
+            <div class="<?php echo $content->class ?> groupmenu-drop-content">
+                <?php if($totalPart > 1): ?>
+                <div class="row">
+                <?php foreach($layout as $key => $column): ?>
+                    <div class="col-sm-<?php echo (int)$column*(24/(int)$totalPart); ?>"><?php echo $text[$key] ?></div>
+                <?php endforeach ?>
+                </div>
+                <?php else: ?>
+                    <?php echo $text ?>
+                <?php endif ?>
+            </div>
+			<?php if($hasChildren): ?>
+            <ul class="groupmenu-nondrop">
+                <?php echo $this->getMenuHtml($item->children); ?>
+            </ul>
+            <?php endif ?>
+        </div>
+<?php elseif($itemType == 'category'): ?>
+	<?php if($content->label): ?>
+	<a class="<?php echo ($depth == 0)?'menu-link':'groupdrop-title' ?>" href="<?php echo $content->url ?>"><?php echo $this->getIcon($content) ?> <span><?php echo $content->label ?></span></a>
+	<?php endif ?>
+	<ul class="cat-tree groupmenu-drop">
+	 <?php
+        	echo $this->getCategoryTree()->setData('parent_id',$content->category)
+				->setData('level',$depth)
+				->getHtml('', 'submenu', 0) ?>
+	</ul>
+<?php elseif($itemType == 'row'): ?>
+	<?php if($content->background): ?>
+	<img class="groupdrop-banner-pos" src="<?php echo $content->background ?>" style="<?php echo $this->getBackgroundStyle($content) ?>" />
+	<?php endif ?>
+	<?php if($hasChildren): ?>
+	<ul class="groupmenu-nondrop">
+		<?php echo $this->getMenuHtml($item->children); ?>
+	</ul>
+	<?php endif ?>
+<?php elseif($itemType == 'col'): ?>
+	<?php if($hasChildren): ?>
+	<ul class="groupmenu-nondrop">
+		<?php echo $this->getMenuHtml($item->children); ?>
+	</ul>
+	<?php endif ?>
+<?php endif ?>
+</li>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+	<referenceContainer name="header.wrapper.content">
+		<container htmlClass="header content" htmlTag="div">
+			<container htmlClass="row" htmlTag="div">
+				<container htmlClass="col-sm-8 col-md-6" htmlTag="div">
+					<container name="header.wrapper.left" htmlClass="header-wrapper-left" htmlTag="div" />
+				</container>
+				<container htmlClass="col-sm-8 col-md-12" htmlTag="div">
+					<container name="header.wrapper.center" htmlClass="header-wrapper-center text-center" htmlTag="div">
+						<container name="logo.center" htmlClass="logo-center" htmlTag="div" />
+					</container>
+				</container>
+				<container htmlClass="col-sm-8 col-md-6" htmlTag="div">
+					<container name="header.wrapper.right" htmlClass="header-wrapper-right" htmlTag="div" />
+				</container>
+			</container>
+		</container>
+	</referenceContainer>
+	<referenceBlock name="logo">
+		<arguments>
+			<argument name="logo_img_width" xsi:type="number">253</argument>
+			<argument name="logo_img_height" xsi:type="number">48</argument>
+		</arguments>
+	</referenceBlock>
+	<!--<move element="header.panel" destination="panel.wrapper.top" />
+	<move element="header.links" destination="header.panel.right" />
+	<move element="store_switcher" destination="header.panel.left" before="-" />
+	<move element="store_language" destination="header.panel.left" after="store_switcher" />
+	<move element="currency" destination="header.panel.left" after="-" />-->
+	<move element="logo" destination="logo.center" />
+	<move element="minicart" destination="header.wrapper.right" />
+	</body>
+</page>

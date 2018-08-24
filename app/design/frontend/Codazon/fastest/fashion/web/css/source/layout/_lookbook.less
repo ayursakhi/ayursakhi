@@ -1,0 +1,119 @@
+/*--- Lookbook Page Top ---*/
+.loobook-container{
+    .lookbook-img-wrap {
+        border-color: @main_border;
+        background: #ffffff;
+        .lookbook-image{
+           border: 1px solid @main_border;
+        }
+    }
+    .cover-section{
+        .after-cover{
+            background-color: @main_block_background;
+            border: 1px solid @main_border;
+            border-top: none;
+            .title{
+                color: @main_title_text;
+            }
+        }
+    }
+    .social-section {
+        .cdz-social-listing{
+            .item{                
+                .share-btn{
+                   .abs-cssall(@btn_primary_text, @btn_primary_border, @btn_primary_background);
+                    &:hover{
+                       .abs-cssall(@btn_default_text, @btn_default_border, @btn_default_background);
+                    }
+                }
+            }
+        }
+    }
+}
+/*--- End Lookbook Page Top ---*/
+
+
+/*Lookbook Detail*/
+.lb-modal-container{
+    .item-products .product-item{
+        &.product-active{
+            .product-top .product-number{
+				.abs-cssall(@btn_primary_text, @btn_primary_border, @btn_primary_background);
+            }
+        }
+    }
+	.item-modal-inner{
+		.media-section{
+			.item-point{
+				&.point-active{
+					.abs-cssall(@btn_primary_text, @btn_primary_border, @btn_primary_background);
+					&:before{
+						background:lighten(@btn_primary_background,7%);
+					}
+				}
+			}
+		}
+		.product-section{
+			.item-title{
+				.lib-css(font, @f_h2);
+				color: @main_title_text;
+			}
+			.product-item{				
+				&.product-active{
+					.product-top .product-number{
+						.abs-cssall(@btn_primary_text, @btn_primary_border, @btn_primary_background);
+					}
+				}
+				.button-buy{					
+					.abs-cssall(@btn_primary_text, @btn_primary_border, @btn_primary_background);
+                    &:hover{
+                       .abs-cssall(@btn_default_text, @btn_default_border, @btn_default_background);
+                    }
+				}
+				.product-name{
+					.abs-link(@main_title_text, @main_hover_text);
+					font: @f_h5;
+				}
+			}
+		}
+	}
+}
+/*End Lookbook Detail*/
+
+/*-- Lookbook Category --*/
+.toggle-menu {
+    .item{
+		ul{
+			> .item{
+				&:hover{
+					&:before{
+						background-color:@main_hover_text;
+					}
+				}
+			}
+		}
+        .menu-link{
+			.lib-css(font, @f_h5);
+        }
+        &.open{
+			> .menu-link{
+				color:@main_hover_text;
+			}
+        }
+    }
+}
+
+.lookbook.wrapper{
+	.lookbook-inner{
+		.lookbook-top{
+			.lookbook-date{
+				.lib-css(font, @f_h6);
+			}
+		}
+		.lookbook-bottom .lookbook-name{
+			.abs-link(@main_title_text, @main_hover_text);
+			font: @f_h5;
+		}
+	}
+}
+/*-- End Category menu --*/

@@ -1,0 +1,72 @@
+///SmartSearch
+.c-smartsearch .col-8-8{
+	width:100% !important;
+}
+.c-smartsearch .c-smartsearch__price{
+	clear:both;
+}
+.c-smartsearch__wrapper{
+	left:0 !important;
+	top:41px !important;
+	width:100% !important;
+	.c-smartsearch__title.h4{
+		text-transform:capitalize;
+		.lib-css(font, @f_h5);
+		.abs-link(@main_productname_text, @main_hover_text)
+	}
+	.c-smartsearch__price{
+		> span > span{font-weight:600}
+	}
+}
+.sticky-menu.active #search_autocomplete{
+	width:280px !important;
+	right:0 !important;
+	left:auto !important;
+	.rtl-layout &{
+		right:0 !important;
+		left:auto !important;
+	}
+}
+/*Mageworx search*/
+
+.searchsuite-autocomplete{
+	right:0;
+	top:41px;
+	width:100%;
+	min-width: 280px;
+	left: auto;
+	text-align: left;
+	.rtl-layout & {
+		text-align: right;
+	}
+}
+.sticky-menu.active .searchsuite-autocomplete{
+	width:280px;
+	right:0;
+	left:auto;
+	.rtl-layout &{
+		right:0;
+		left:auto;
+	}
+}
+.searchsuite-autocomplete ul li a{
+	.lib-css(font, @f_h5);
+	.abs-link(@main_productname_text, @main_hover_text)
+}
+.searchsuite-autocomplete ul li .qs-option-info .qs-option-title{
+	margin-bottom: 5px;
+}
+.searchsuite-autocomplete ul li .qs-option-info .qs-option-reviews .product-reviews-summary{
+	float: left;
+}
+.searchsuite-autocomplete .product-reviews-summary .reviews-actions a{
+	font-size: 12px;
+}
+.searchsuite-autocomplete ul li .qs-option-info .qs-option-shortdescription, 
+.searchsuite-autocomplete ul li .qs-option-info .qs-option-description{
+	font-size: 11px;
+	color: @main_note_text;
+}
+.searchsuite-autocomplete ul li .qs-option-info .qs-option-price{
+	margin-top: 5px;
+}

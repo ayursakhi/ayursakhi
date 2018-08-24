@@ -1,0 +1,66 @@
+<?php
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$alphabetTable = $block->getAlphabetTable();
+$brands = $block->getBrandObject('brand_label', 'asc', false, true);
+$width = $block->getData('thumb_width');
+$height = $block->getData('thumb_height');
+$paddingBottom = 100*$height/$width;
+
+$widget = [
+    'Codazon_Shopbybrandpro/js/brands' => [
+        'codazon.alphabetList' => []
+    ]
+];
+?>
+
+<div class="brand-alphabet-list no-loaded" data-mage-init='<?= json_encode($widget) ?>'>
+    <div class="brand-loader double-bounce-spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+    <div class="brand-inner hidden">
+        <div class="char-list" data-role="char-list">
+            <a class="char-item all active" data-char="all" class="active" href="javascirpt:;"><?php echo __('All') ?></a>
+            <a class="char-item number" data-char="num" class="active" href="javascirpt:;"><?php echo __('0 - 9') ?></a>
+            <?php foreach ($alphabetTable as $char) : ?>
+            <a class="char-item alphabet" data-char="<?= strtoupper($char) ?>" href="javascirpt:;"><?= strtoupper($char) ?></a>
+            <?php endforeach ?>
+        </div>
+        <div class="brand-list" data-role="brand-list">
+            <?php foreach ($brands as $brand) : ?>
+            <?php
+            $label = strip_tags($brand->getBrandLabel());
+            $url = $brand->getUrl();
+            $optId = $brand->getData('option_id');
+            $productCount = $brand->getData('product_count');
+            ?>
+            <div class="brand-item col-lg-3 col-md-3 col-sm-6 col-xs-8" data-label='<?= $label ?>'>
+                <div class="brand-item-inner">
+                    <div class="item-top">
+                        <a class="brand-link abs-img" style="padding-bottom: calc(<?= $paddingBottom ?>% - 2px)" href="<?= $url ?>" title="<?= $label; ?>">
+                            <img class="brand-img zoom-eff" alt="<?= $label ?>" data-src="<?= $block->getThumbnailImage($brand, ['width' => $width, 'height' => $height]) ?>" />
+                        </a>
+                    </div>
+                    <div class="item-bottom">
+                        <a class="brand-name" href="<?= $url ?>" title="<?= $label; ?>">
+                            <?= $label; ?>
+                        </a>
+                        <?php if ($brand->getData('product_count') > 1) : ?>
+                        <div class="count"><?= __('%1 products', $productCount) ?></div>
+                        <?php else : ?>
+                        <div class="count"><?= __('%1 product', $productCount) ?></div>
+                        <?php endif ?>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach ?>
+        </div>
+        <div class="no-item hidden"><?= __('There is no brand macthing your select') ?></div>
+    </div>
+</div>

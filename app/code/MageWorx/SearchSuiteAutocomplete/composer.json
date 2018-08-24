@@ -1,0 +1,23 @@
+{
+   "name": "mageworx/module-searchsuiteautocomplete",
+   "description": "Search Suite Autocomplete by MageWorx",
+   "require": {
+       "magento/framework"      : ">=100.0.0 <101",
+       "magento/module-catalog" : ">=100.0.0 <102",
+       "magento/module-search"  : ">=100.0.0 <101"
+   },
+   "type": "magento2-module",
+   "version": "2.1.1",
+   "license": [
+       "OSL-3.0",
+       "AFL-3.0"
+   ],
+   "autoload": {
+       "files": [
+           "registration.php"
+       ],
+       "psr-4": {
+           "MageWorx\\SearchSuiteAutocomplete\\": ""
+       }
+   }
+}

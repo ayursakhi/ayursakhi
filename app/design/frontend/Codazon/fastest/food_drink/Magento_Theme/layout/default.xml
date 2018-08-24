@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">			 
+	<body>
+		<referenceContainer name="columns.top">
+			 <block class="Magento\Framework\View\Element\Template" name="page.top.custom" template="Magento_Theme::html/page_top.phtml" before="columns" />
+		</referenceContainer>
+		<move element="breadcrumbs" destination="page.top.custom" after="-"/>
+		<referenceContainer name="header.container" htmlClass="page-header sticky-menu">
+			<container label="Header Before Slideshow" name="header.before.slidershow" htmlTag="div" htmlClass="before-slideshow-area" before="-">
+				<container name="header.box" htmlClass="box-header" htmlTag="div" before="-">
+					<container name="panel.wrapper.top" htmlClass="panel wrapper" htmlTag="div" before="-" />					
+				</container>
+			</container>			
+		</referenceContainer>
+		<move element="header.panel" destination="panel.wrapper.top" />
+		<move element="header-wrapper" destination="header.box" />
+		<move element="header.bottom.content" destination="header-wrapper" after="top.search"/>
+		<move element="top.search" destination="header-wrapper" after="minicart" />
+		<move element="minicart" destination="header.panel" before="header.links" />
+        <move element="header.bottom.middle" destination="header.before.slidershow" after='header.box' />
+    </body>	
+</page>

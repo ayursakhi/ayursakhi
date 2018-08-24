@@ -1,0 +1,45 @@
+<?php
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$orderBy = $block->getData('order_by');
+$orderWay = $block->getData('order_way');
+$onlyFeaturedBrands = ($block->getData('collection') == 'featured_brands');
+$limit = $block->getData('limit');
+$brands = $block->getBrandObject($orderBy, $orderWay, $onlyFeaturedBrands, false, $limit);
+$itemPerCol = $block->getData('items_per_column');
+$itemCount = count($brands);
+$width = $block->getData('thumb_width');
+$height = $block->getData('thumb_height');
+$paddingBottom = 100*$height/$width;
+$adapts = array('1900', '1600', '1420', '1280','980','768','480','320','0');
+foreach ($adapts as $adapt) {
+    $itemPerRow[$adapt] = (float)$this->getData('items_' . $adapt);
+}
+$widget = ['Codazon_Shopbybrandpro/js/brands' => [
+    'codazon.autowidth' => ['itemsPerRow' => $itemPerRow]
+]];
+?>
+
+<?php if ($itemCount > 0): ?>
+<?php $i = 0; ?>
+<div class="static-list-wrapper no-loaded" data-role="static-list-wrapper">
+    <div class="brand-loader double-bounce-spinner" data-role="static-list-loader">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+    <div class="shop-by-brand-list style-default flex-grid" data-mage-init='<?= json_encode($widget) ?>'>
+        <?php foreach ($brands as $brand) : ?>
+        <div class="brand-item" data-role="item">
+            <a class="brand-link abs-img" style="padding-bottom: <?= $paddingBottom ?>%" href="<?= $brand->getUrl() ?>" title="<?= $brand->getBrandLabel(); ?>">
+                <img class="brand-img zoom-eff" alt="<?= strip_tags($brand->getBrandLabel()) ?>" src="<?= $block->getThumbnailImage($brand, ['width' => $width, 'height' => $height]) ?>" />
+            </a>
+        </div>
+        <?php $i++; endforeach ?>
+    </div>
+</div>
+<?php endif ?>

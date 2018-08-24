@@ -1,0 +1,9 @@
+<?php
+$_objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
+$_config = $_objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface');
+?>
+<?php if($_config->getValue('codazon_megamenu/general/active_rtl')): ?>
+<script type="text/javascript">
+document.body.classList.add('cdz-rtl-layout');
+</script>
+<?php endif ?>

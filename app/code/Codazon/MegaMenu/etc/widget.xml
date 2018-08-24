@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2016 Codazon. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+	<widget id="codazon_megamenu" class="Codazon\MegaMenu\Block\Widget\Megamenu" is_email_compatible="true" placeholder_image="Codazon_MegaMenu::images/megamenu_widget.png" ttl="86400">
+		<label translate="true">Codazon Megamenu</label>
+		<description translate="true">Show selected megamenu in frontend</description>
+		<parameters>
+			<parameter name="menu" source_model="Codazon\MegaMenu\Model\Choosemenu" xsi:type="select" required="true" visible="true">
+			 	<label translate="true">Menu</label>
+			</parameter>
+		</parameters>
+	</widget>
+	<widget id="codazon_category_tree" class="Codazon\MegaMenu\Block\Widget\Categorieslist" is_email_compatible="true"  placeholder_image="Codazon_MegaMenu::images/categoriestree_widget.png" ttl="86400">
+		<label translate="true">Codazon Category Tree</label>
+		<description translate="true"></description>
+		<parameters>
+			<parameter name="parent_id" xsi:type="block" visible="true" required="true" sort_order="10">
+                <label translate="true">Category</label>
+                <block class="Magento\Catalog\Block\Adminhtml\Category\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Category...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+			<parameter name="item_count" xsi:type="text" visible="true" sort_order="20">
+                <label translate="true">Category children limit of first sublevel</label>
+				<description translate="true">Leave empty to show all</description>
+			</parameter>
+		</parameters>
+	</widget>
+	<widget id="codazon_googlemap" class="Codazon\MegaMenu\Block\Widget\Googlemap" is_email_compatible="true" placeholder_image="Codazon_MegaMenu::images/googlemap_widget.png" ttl="86400">
+		<label translate="true">Codazon Google Map</label>
+		<description translate="true">Show Google Map in Frontend</description>
+		<parameters>
+			<parameter name="address" xsi:type="text" visible="true" required="false" sort_order="10">
+				<label translate="true">Address</label>
+			</parameter>
+			<parameter name="latitude" xsi:type="text" visible="true" required="false" sort_order="20">
+				<label translate="true">Lattitue</label>
+			</parameter>
+			<parameter name="longtitude" xsi:type="text" visible="true" required="false" sort_order="30">
+				<label translate="true">Longtitude</label>
+			</parameter>
+			<parameter name="zoom" xsi:type="text" visible="true" required="false" sort_order="40">
+				<label translate="true">Zoom</label>
+			</parameter>
+			<parameter name="map_width" xsi:type="text" visible="true" required="false" sort_order="50">
+				<label translate="true">Map Width</label>
+				<description translate="true">Eg. '100%', '400px'</description>
+			</parameter>
+			<parameter name="map_height" xsi:type="text" visible="true" required="false" sort_order="50">
+				<label translate="true">Map Height</label>
+				<description translate="true">Eg.'400px'</description>
+			</parameter>
+			<parameter name="marker_title" xsi:type="text" visible="true" required="false" sort_order="60">
+				<label translate="true">Marker Title</label>
+			</parameter>
+		</parameters>
+	</widget>
+	<widget id="codazon_contactform" class="Codazon\MegaMenu\Block\Widget\ContactForm" is_email_compatible="true" placeholder_image="Codazon_MegaMenu::images/contactform_widget.png" ttl="86400">
+		<label translate="true">Codazon Contact Form</label>
+		<description translate="true">Show Contact Form Block in Frontend</description>
+		<parameters>
+			<parameter name="form_title" xsi:type="text" visible="true" required="false" sort_order="10">
+				<label translate="true">Form Title</label>
+			</parameter>
+			<parameter name="form_desc" xsi:type="text" visible="true" required="false" sort_order="20">
+				<label translate="true">Form Description</label>
+			</parameter>
+			<parameter name="display_telephone_field" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno" required="false" sort_order="30">
+				<label translate="true">Display Telephone Field</label>
+			</parameter>
+		</parameters>
+	</widget>
+</widgets>

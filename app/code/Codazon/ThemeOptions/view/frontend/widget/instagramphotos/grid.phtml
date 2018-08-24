@@ -1,0 +1,20 @@
+<?php $recentPhotos = $block->getInstagramRecentPhotos() ?>
+
+<?php if( count($recentPhotos) == 0 ): ?>
+
+<?php else: ?>
+<div class="instagram-wrapper">
+	<div class="instagram-slider">
+		<?php foreach($recentPhotos as $photo): ?>
+        <?php
+			$img = $photo->images->low_resolution;
+		?>
+        <div class="photo-item">
+        	<a href="<?php echo $photo->link ?>">
+        		<img src="<?php echo $img->url ?>" />
+            </a>
+        </div>
+        <?php endforeach ?>
+    </div>
+</div>
+<?php endif ?>

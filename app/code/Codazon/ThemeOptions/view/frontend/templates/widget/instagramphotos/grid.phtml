@@ -1,0 +1,45 @@
+<?php
+$recentPhotos = $block->getInstagramRecentPhotos();
+$uniqId = uniqid('instagram_');
+?>
+
+<?php if( count($recentPhotos) == 0 ): ?>
+
+<?php else: ?>
+<div class="instagram-wrapper">
+	<div class="instagram-slider owl-carousel" id="<?php echo $uniqId ?>">
+		<?php foreach($recentPhotos as $photo): ?>
+        <?php
+			$img = $photo->images->low_resolution;
+		?>
+        <div class="photo-item">
+        	<a class="photo-item-link" href="<?php echo $photo->link ?>" target="_blank">
+        		<img class="img-responsive" src="<?php echo $img->url ?>" />
+            </a>
+        </div>
+        <?php endforeach ?>
+    </div>
+</div>
+<?php endif ?>
+<script type="text/javascript">
+require(['jquery','js/owlcarousel/owl.carousel.min'],function($){
+	var $slider = $('#<?php echo $uniqId ?>');
+	$slider.owlCarousel({
+		loop: false,
+		margin: 20,
+		responsiveClass: true,
+		nav: true,
+		dots: false,
+		rtl: ThemeOptions.rtl_layout == 1 ? true : false,
+		responsive:{
+			0:		{items: 1},
+			320:	{items:	1},
+			360:	{items:	1},
+			480:	{items:	2},
+			768:	{items:	3},
+			980:	{items:	5},
+			1200:	{items: 5}
+		}	
+	});
+});
+</script>

@@ -1,0 +1,290 @@
+title,identifier,content
+"Fastest - Hightech - Header Store Links",fastest-hightech-header-store-links,"<div class=""store-links"">
+<ul class=""items"">
+<li class=""item active""><a title=""Grocery Store"" href=""#"">Hightech store</a></li>
+<li class=""item""><a title=""Gourmet Store"" href=""#"">Smartphone store</a></li>
+</ul>
+</div>"
+"Fastest - Hightech - Header - Delivery Information",fastest-hightech-header-delivery-information,"<div class=""row hidden-xs"">
+<div class=""col-sm-15"">
+<div class=""header-phone pull-left""><span class=""fa fa-truck""> </span><span>118-0093-333 - Delivery Information</span></div>
+</div>
+<div class=""col-sm-9"">
+<div class=""header-help pull-right""><span><a title=""Help"" href=""#"">Help</a></span> - <span><a title=""Office Delivery"" href=""#"">Office Delivery ?</a></span></div>
+</div>
+</div>"
+"Fastest - Hightech - Main Menu",fastest-hightech-main-menu,"<div class=""cdz-main-menu"">{{widget type=""Codazon\MegaMenu\Block\Widget\Megamenu"" menu=""fastest-bigmarket-main-menu""}}</div>"
+"Fastest - Hightech - Left Navigation",fastest-hightech-left-navigation,"<div class=""cdz-main-menu left-navigation""><nav id=""left-nav"" class=""navigation page-footer"">
+<div class=""menu-title"" data-cdz-toggle=""#lefmenu-mobile"">All Categories</div>
+<div id=""lefmenu-mobile"" class=""showhide"">{{widget type=""Codazon\MegaMenu\Block\Widget\Megamenu"" menu=""fastest-bigmarket-left-navigation""}}</div>
+</nav></div>"
+"Fastest - Hightech - Main Content Top - Slideshow",fastest-hightech-main-content-top-slideshow,"<div class=""space-base slideshow-wrapper"">
+<div class=""row"">
+<div class=""col-sm-6"">
+<div class=""cdz-main-menu left-navigation hidden-xs""><nav id=""left-nav"" class=""navigation"">{{widget type=""Codazon\MegaMenu\Block\Widget\Megamenu"" menu=""fastest-bigmarket-left-navigation""}}</nav></div>
+</div>
+<div class=""col-sm-18"">
+<div class=""slideshow-container"">{{widget type=""Codazon\Slideshow\Block\Widget\Slideshow"" slideshow_id=""fastest-hightech-home-slideshow""}}</div>
+</div>
+</div>
+</div>"
+"Fastest - Hightech - Homepage - Top Main Grid Left",fastest-hightech-homepage-top-main-grid-left,"<div class=""block hot-deals product-style13"">
+<div class=""block-title"">Hot deals</div>
+<div class=""product-list-style-01"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""8"" order_by=""name ASC"" show=""thumb,name,sku,review,price,addtocart,addto"" thumb_width=""280"" thumb_height=""280"" filter_template=""custom"" custom_template=""grid_slider_hotdeal.phtml"" show_slider=""1"" slider_item=""1"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`134`^]^]""}}</div>
+</div>
+<div class=""block product-list-style02"">
+<div class=""block-title"">Special products</div>
+{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""5"" order_by=""price ASC"" show=""thumb,name,sku,review,price,addtocart,addto"" thumb_width=""70"" thumb_height=""70"" filter_template=""custom"" custom_template=""custom_list.phtml"" show_slider=""0"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`132, 130, 128`^]^]""}}</div>
+<div class=""block"">
+<div class=""block-banner-content"">
+<div class=""cdz-shadow shine-effect cdz-banner""><a title=""Your title"" href=""#""><img src=""{{media url=""wysiwyg/codazon/hightech/sidebar-banner.jpg""}}"" alt=""codazon-banner"" /></a></div>
+</div>
+</div>
+<div class=""block"">
+<div class=""block-title"">Brands</div>
+<div class=""block-content"">{{widget type=""Codazon\Shopbybrandpro\Block\Widget\BrandSlider"" list_style=""widget/brand_slider.phtml"" limit=""10"" collection=""all_brands"" alphabet_table=""a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"" items_per_column=""2"" order_by=""brand_label"" order_way=""asc"" thumb_width=""100"" thumb_height=""100"" slider_dots=""0"" slider_nav=""1"" slider_loop=""0"" slider_margin=""20"" items_1900=""2"" items_1600=""2"" items_1420=""2"" items_1280=""2"" items_980=""2"" items_768=""2"" items_480=""2"" items_320=""2"" items_0=""1""}}</div>
+</div>"
+"Fastest - Hightech - Main Area - New Product",fastest-hightech-main-area-new-product,"<div class=""cdz-best-seller-wrap cdz-products box-product product-style05"">
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""block-title"">
+<p class=""b-title h3""><span>New Product</span></p>
+</div>
+</div>
+</div>
+<div class=""row"">
+<div class=""col-sm-24 text-center "">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""14"" order_by=""name DESC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""220"" thumb_height=""220"" filter_template=""custom"" custom_template=""grid_slider_1.phtml"" show_slider=""1"" slider_item=""4"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`133, 131, 132`^]^]""}}</div>
+</div>
+</div>"
+"Fastest - Hightech - Main Area - Four Block Products",fastest-hightech-main-area-four-block-product,"<div class=""row block-list"">
+<div class=""cdz-products col-sm-6 product-list-style02 space-md"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>Best Seller</span></p>
+</div>
+<div class=""cdz-products-list"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""4"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""70"" thumb_height=""70"" filter_template=""custom"" custom_template=""custom_list.phtml"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`127`^]^]""}}</div>
+</div>
+<div class=""cdz-products col-sm-6 product-list-style02 space-md"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>Trends</span></p>
+</div>
+<div class=""cdz-products-list"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""4"" order_by=""name DESC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""70"" thumb_height=""70"" filter_template=""custom"" custom_template=""custom_list.phtml"" show_slider=""0"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`127`^]^]""}}</div>
+</div>
+<div class=""cdz-products col-sm-6 product-list-style02 space-md"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>Most Popular</span></p>
+</div>
+<div class=""cdz-products-list"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""4"" order_by=""price ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""70"" thumb_height=""70"" filter_template=""custom"" custom_template=""custom_list.phtml"" show_slider=""0"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`127`^]^]""}}</div>
+</div>
+<div class=""cdz-products col-sm-6 product-list-style02 space-md last"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>Hot Products</span></p>
+</div>
+<div class=""cdz-products-list"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""4"" order_by=""price DESC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""70"" thumb_height=""70"" filter_template=""custom"" custom_template=""custom_list.phtml"" show_slider=""0"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`127`^]^]""}}</div>
+</div>
+</div>"
+"Fastest - Hightech - Main Area - Our Blog",fastest-hightech-main-area-our-blog,"<div class=""cdz_wapper-blog01 text-center space-lg"">{{widget type=""Magefan\Blog\Block\Widget\PostList"" title=""Our Blog"" categories=""18"" order_by=""publish_time"" order=""desc"" post_count=""6"" show_in_front=""thumb,name,description,published_date,author"" desc_length=""150"" thumb_width=""380"" thumb_height=""280"" show_slider=""1"" post_template=""custom"" custom_template=""latest_blog_slider.phtml""}}</div>"
+"Fastest - Hightech - Main Area - Social",fastest-hightech-main-area-social,"<div class=""row main-social wrapper-ads08 space-lg"">
+<div class=""col-sm-6 space-xs"">
+<div class=""box fb-box"">
+<div class=""social-title""><span>Facebook</span></div>
+<div class=""social-cap""><span>Follow us on facebook</span></div>
+<div class=""social-desc""><span>You would have to be half mad to dream me up.</span></div>
+<div class=""button""><a class=""action primary"" href=""#""><span>Like Us</span></a></div>
+</div>
+</div>
+<div class=""col-sm-6 space-xs"">
+<div class=""box tw-box"">
+<div class=""social-title""><span>Twitter</span></div>
+<div class=""social-cap""><span>Follow us on Twitter</span></div>
+<div class=""social-desc""><span>You would have to be half mad to dream me up.</span></div>
+<div class=""button""><a class=""action primary"" href=""#""><span>Twitter Now</span></a></div>
+</div>
+</div>
+<div class=""col-sm-6 space-xs"">
+<div class=""box go-box"">
+<div class=""social-title""><span>Google +</span></div>
+<div class=""social-cap""><span>Follow us on google +</span></div>
+<div class=""social-desc""><span>You would have to be half mad to dream me up.</span></div>
+<div class=""button""><a class=""action primary"" href=""#""><span>Follow us</span></a></div>
+</div>
+</div>
+<div class=""col-sm-6 space-xs"">
+<div class=""box in-box"">
+<div class=""social-title""><span>Instagram</span></div>
+<div class=""social-cap""><span>Follow us on instagram</span></div>
+<div class=""social-desc""><span>You would have to be half mad to dream me up.</span></div>
+<div class=""button""><a class=""action primary"" href=""#""><span>Follow us</span></a></div>
+</div>
+</div>
+</div>"
+"Fastest - Hightech - Footer Container Top - Newsletter",fastest-hightech-footer-container-top-newsletter,"<div class=""row"">
+<div class="" col-sm-12"">
+<div class=""newsletter-wrapper"">
+<div class=""newsletter-container"">{{block class=""Magento\Newsletter\Block\Subscribe"" name=""form.subscribe"" as=""subscribe"" before=""-"" template=""subscribe.phtml""}}</div>
+</div>
+</div>
+<div class=""col-sm-12"">
+<div class=""footer-social""><span class=""pull-right""> 
+<a href=""#""><span class=""fa fa-facebook"">facebook</span ></a>
+<a href=""#""><span  class=""fa fa-twitter"">twitter</span > </a> 
+<a href=""#""><span  class=""fa fa-pinterest-p"">pinterest</span > </a> 
+<a href=""#""><span  class=""fa fa-google-plus"">google</span > </a> 
+<a href=""#""><span  class=""fa fa-tumblr"">tumblr</span > </a> 
+<a href=""#""><span  class=""fa fa-vimeo"">vimeo</span > </a> 
+</span></div>
+</div>
+</div>"
+"Fastest - Hightech - Footer Content - Links",fastest-hightech-footer-content-links,"<div class=""row"">
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-1"">CORPORATE</p>
+<ul id=""footer-content-1"" class=""footer-link showhide"">
+<li><a href=""{{store url=""""}}about-magento-demo-store/"">About Us</a></li>
+<li><a href=""#"">Orders and Returns</a></li>
+<li><a href=""{{store url=""""}}contacts/"">Afiliates</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode/"">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-2"">Your Links</p>
+<ul id=""footer-content-2"" class=""footer-link showhide"">
+<li><a href=""#"">Shipping guide</a></li>
+<li><a href=""{{store url=""""}}about-magento-demo-store/"">Store location</a></li>
+<li><a href=""#"">Afiliates</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode/"">Customer point policy</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-3"">Support</p>
+<ul id=""footer-content-3"" class=""footer-link showhide"">
+<li><a href=""#"">FAQ</a></li>
+<li><a href=""{{store url=""""}}about-magento-demo-store/"">Our services</a></li>
+<li><a href=""{{store url=""""}}contacts/"">Contact Us</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode/"">Forum Support</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-4"">SHOP LOCATION</p>
+<ul id=""footer-content-4"" class=""footer-link showhide"">
+<li><span class=""fa fa-map-marker""> </span>200 Lincoln Ave, Salinas, CA 93901</li>
+<li><span class=""fa fa-phone""> </span>Phone: 023 32423 223</li>
+<li><span class=""fa fa-envelope""> </span>Email: owner@example.com</li>
+<li class=""last""><span class=""fa fa-clock-o""> </span>Support 24/7</li>
+</ul>
+</div>
+</div>
+</div>"
+"Fastest - Hightech - Footer Payment",fastest-hightech-footer-payment,"<div class=""pull-right footer-payment-logo"">
+<div class=""cdz-footer-bottom-payment""><img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/fastest_fashion/home/cdz-footer-payment.png""}}"" alt=""Accept Payment"" /></div>
+</div>"
+"Fastest - Hightech - Main Area - Two banners",fastest-hightech-main-area-two-banners,"<div class=""row"">
+<div class=""col-sm-12""><div class=""cdz-shadow shine-effect cdz-banner""><a title=""Your title"" href=""#""><img class=""shine-effect cdz-banner"" src=""{{media url=""wysiwyg/codazon/hightech/hightech-banner-01.jpg""}}"" alt=""hightech-banner"" /></a></div></div>
+<div class=""col-sm-12""><div class=""cdz-shadow shine-effect cdz-banner""><a title=""Your title"" href=""#""><img class=""shine-effect cdz-banner"" src=""{{media url=""wysiwyg/codazon/hightech/hightech-banner-02.jpg""}}"" alt=""hightech-banner"" /></a></div></div>
+</div>"
+"Fastest - Hightech - Main Area - Computer And Phones",fastest-hightech-main-area-computer-phone,"<div class=""cdz-product-tab01 box-product product-style05 "">
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""tabs-list bestseller-product"" data-mage-init=""{&quot;tabs&quot;:{&quot;openedState&quot;:&quot;active&quot;}}"">
+<ul class=""nav nav-tabs hidden-xs abs-dropdown"" data-mage-init=""{&quot;Codazon_ProductFilter/js/productfilter&quot;:{&quot;codazon.mobiledropdown&quot;:{}}}"">
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-1"" data-toggle=""switch"">Computer</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-2"" data-toggle=""switch"">Phone</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-3"" data-toggle=""switch"">Tablet</a></li>
+</ul>
+<div class=""tab-content product data items"">
+<div id=""best-seller-tab-1"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""14"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""220"" thumb_height=""220"" filter_template=""custom"" custom_template=""grid_slider_1.phtml"" show_slider=""1"" slider_item=""4"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`129`^]^]""}}</div>
+<div id=""best-seller-tab-2"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""14"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""220"" thumb_height=""220"" filter_template=""custom"" custom_template=""grid_slider_1.phtml"" show_slider=""1"" slider_item=""4"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`128`^]^]""}}</div>
+<div id=""best-seller-tab-3"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""14"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""220"" thumb_height=""220"" filter_template=""custom"" custom_template=""grid_slider_1.phtml"" show_slider=""1"" slider_item=""4"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`130`^]^]""}}</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class=""row"" style=""margin-top: 20px;"">
+<div class=""col-sm-24"">
+<div class=""cdz-shadow shine-effect cdz-banner""><a title=""Your title"" href=""#""><img src=""{{media url=""wysiwyg/codazon/hightech/hightech-banner-03.jpg""}}"" alt=""hightech-banner"" /></a></div>
+</div>
+</div>"
+"Fastest - Hightech - Main Area - Sound And Vision",fastest-hightech-main-area-sound-vision,"<div class=""cdz-product-tab01 box-product product-style05 space-base "">
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""tabs-list bestseller-product"" data-mage-init=""{&quot;tabs&quot;:{&quot;openedState&quot;:&quot;active&quot;}}"">
+<ul class=""nav nav-tabs hidden-xs abs-dropdown"" data-mage-init=""{&quot;Codazon_ProductFilter/js/productfilter&quot;:{&quot;codazon.mobiledropdown&quot;:{}}}"">
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-1"" data-toggle=""switch"">Television</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-2"" data-toggle=""switch"">Camera</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-3"" data-toggle=""switch"">Headphone</a></li>
+</ul>
+<div class=""tab-content product data items"">
+<div id=""best-seller-tab-1"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""14"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""220"" thumb_height=""220"" filter_template=""custom"" custom_template=""grid_slider_1.phtml"" show_slider=""1"" slider_item=""4"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`133`^]^]""}}</div>
+<div id=""best-seller-tab-2"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""14"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""220"" thumb_height=""220"" filter_template=""custom"" custom_template=""grid_slider_1.phtml"" show_slider=""1"" slider_item=""4"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`132`^]^]""}}</div>
+<div id=""best-seller-tab-3"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""14"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""220"" thumb_height=""220"" filter_template=""custom"" custom_template=""grid_slider_1.phtml"" show_slider=""1"" slider_item=""4"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`131`^]^]""}}</div>
+</div>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Hightech - Main Area - Ads",fastest-hightech-main-area-ads,"<div class=""wrapper-ads07 hidden-xs space-lg"">
+<div class=""row"">
+<div class=""col-sm-6 space-xs"">
+<div class=""text-area""><span class=""icon-font pe-7s-ticket""> </span>
+<h4>+15.000 products</h4>
+<p class=""text"">Sports , Movies etc</p>
+</div>
+</div>
+<div class=""col-sm-6 space-xs"">
+<div class=""text-area""><span class=""icon-font pe-7s-star""> </span>
+<h4>More then 20 Categories</h4>
+<p class=""text"">Fashion , Electronics, Book</p>
+</div>
+</div>
+<div class=""col-sm-6 space-xs"">
+<div class=""text-area""><span class=""icon-font pe-7s-car""> </span>
+<h4>Free Shipping</h4>
+<p class=""text"">Free shipping on the world</p>
+</div>
+</div>
+<div class=""col-sm-6 space-xs"">
+<div class=""text-area""><span class=""icon-font pe-7s-piggy""> </span>
+<h4>Refund in 2 days</h4>
+<p class=""text"">100% guarantee</p>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Hightech - Scroll Bar",fastest-hightech-scroll-bar,"<div class=""float-bar hidden-xs hidden-sm hidden-md"">
+<div class=""float-bar-content"">
+<ul class=""items"">
+<li class=""item""><a href=""{{store url=""""}}contact""><span class=""fa fa-envelope-o""> </span><span>Contact</span></a></li>
+<li class=""item""><a href=""{{store url=""""}}about-us""><span class=""fa fa-comments-o""> </span><span>Live Chat</span></a></li>
+<li class=""item""><a href=""{{store url=""""}}about-us""><span class=""fa fa-clock-o""> </span><span>Store Open time</span></a></li>
+<li class=""item""><a href=""{{store url=""""}}about-us""><span class=""fa fa-credit-card""> </span><span>Accept payments</span></a></li>
+<li class=""item""><a href=""{{store url=""""}}about-us""><span class=""fa fa-phone-square""> </span><span>Call Us</span></a></li>
+<li class=""item last""><a href=""{{store url=""""}}about-us""><span class=""fa fa-map-marker""> </span><span>Our store locations</span></a></li>
+</ul>
+</div>
+</div>"
+"Fastest - Hightech - Block Popup Content",fastest-hightech-block-popup-content,"<div class=""cdz-popup-newsletter"">
+<div class=""cdz-popup-newsletter-left"">
+<div class=""popup-banner"">
+<div class=""banner""><a href=""#""><img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/hightech/banner-newsletter.jpg""}}"" alt=""banner-newsletter"" /></a></div>
+</div>
+</div>
+<div class=""cdz-popup-newsletter-right"">
+<div class=""popup-title"">
+<h3 class=""text-uppercase""><span>Sign up Newsletter</span></h3>
+</div>
+<div class=""popup-content"">
+<div class=""popup-content-ads"">
+<p class=""popup-content-title h3"">Join YourStore's squad for 20% off</p>
+<p class=""popup-content-desc"">and get all the latest news, trends and offs and offers straight to your inbox. Or get 15% off using code SQUAD15</p>
+<div class=""popup-content-newsletter"">{{block class=""Magento\Newsletter\Block\Subscribe"" name=""cdz.newsletter.style05"" template=""popup_subscribe.phtml""}}</div>
+<p class=""popup-content-small"">1 UK only; 2. Offar expiras 23:59(GMT) 10/02/16; 3.</p>
+</div>
+</div>
+</div>
+</div>"

@@ -1,0 +1,55 @@
+<?php
+/**
+* Copyright © 2018 Codazon. All rights reserved.
+* See COPYING.txt for license details.
+*/
+?>
+
+<?php
+$category = $this->getCurrentCategory();
+$lookbookCollection = $block->getLookbookLoadedCollection();
+$helper = $this->helper('Codazon\Lookbookpro\Helper\Data');
+$width = $helper->getConfig('codazon_lookbook/images/lookbook/thumbnail_width') ? : 300;
+$height = $helper->getConfig('codazon_lookbook/images/lookbook/thumbnail_height') ? : 300;
+$paddingBottom = 100 * $height/$width;
+$displayDate = (bool)$helper->getConfig('codazon_lookbook/lookbook_category_list/display_created_date');
+$dateFormat = $helper->getConfig('codazon_lookbook/lookbook_category_list/date_format') ? : 'Y M d';
+?>
+
+<?php if ($lookbookCollection->count()) : ?>
+<?= $block->getToolbarHtml() ?>
+<div class="products lookbook wrapper">
+    <div class="lookbook-list row">
+    <?php foreach($lookbookCollection as $lookbook) : ?>
+    <?php
+        $name = $this->stripTags($lookbook->getName());
+        $description = $this->stripTags($lookbook->getDescription());
+        $url = $helper->getLookbookUrl($lookbook, $category);
+        $img = $helper->getLookbookThumbnailUrl($lookbook, $width, $height);
+    ?>
+    <div class="item col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <div class="lookbook-inner">
+            <div class="lookbook-top">
+                <?php if ($displayDate) : ?>
+                <div class="lookbook-date">
+                    <?= date($dateFormat, strtotime($lookbook->getData('created_at'))); ?>
+                </div>
+                <?php endif ?>
+                <div class="auto-pos-wrap" style="padding-bottom: <?= $paddingBottom ?>%">
+                    <a title="<?= $name; ?>" href="<?= $url; ?>" class="lookbook-img a-img">
+                        <img class="img-center" alt="<?= $name; ?>" src="<?= $img; ?>" />
+                    </a>
+                </div>
+            </div>
+            <div class="lookbook-bottom">
+                <a class="lookbook-name" href="<?= $url; ?>" title="<?= $name; ?>"><?= $name; ?></a>
+            </div>
+        </div>
+    </div>
+    <?php endforeach ?>
+    </div>
+</div>
+<?= $block->getToolbarHtml() ?>
+<?php else : ?>
+<div class="message info empty"><div><?= __('There is no loookbook belong to this category.') ?></div></div>
+<?php endif ?>

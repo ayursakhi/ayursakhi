@@ -1,0 +1,31 @@
+<?php
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$widget = [
+    'Codazon_Shopbybrandpro/js/brands' => [
+        'codazon.searchBrands' => [
+            'brandUrl'  => $block->getUrl('brands/index/searchBrands'),
+            'noResults' => __('No brand matches your input'),
+            'resultsS'   => __('There is %1 result.'),
+            'resultsP'   => __('There are %1 results.')
+        ]
+    ]
+];
+?>
+<div class="block block-brands-search" data-mage-init='<?= json_encode($widget) ?>'>
+	<div class="block-title"><strong><?php echo __('Search Brands') ?></strong> <a href="<?= $block->getUrl('brands'); ?>" class="sub-link all-brank-link">All Brands</a></div>
+    <div class="block-content">
+        <div class="brand-search-wrap" >
+            <div class="brand-form" data-role="brand-form">
+                <label class="search-label"></label>
+                <input data-role="brand_name" placeholder="<?= __('Type brand here') ?>" type="text" class="input-text search-input" />
+                <div data-role="list-wrap" class="list-wrap"></div>
+            </div>
+        </div>
+    </div>
+</div>

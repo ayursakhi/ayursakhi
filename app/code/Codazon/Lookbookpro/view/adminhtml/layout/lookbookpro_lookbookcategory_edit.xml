@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* Copyright © 2018 Codazon. All rights reserved.
+* See COPYING.txt for license details.
+*/
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<update handle="styles" />
+	<body>
+        <referenceBlock name="page.title">
+            <action method="setTitleClass">
+                <argument name="class" xsi:type="string">complex</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="page.main.actions">
+            <block class="Magento\Backend\Block\Store\Switcher" name="store_switcher">
+                <action method="setUseConfirm">
+                    <argument name="params" xsi:type="string">1</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="Codazon\Lookbookpro\Block\Adminhtml\LookbookCategory\Tree" name="category.tree" template="Codazon_Lookbookpro::lookbook_category/tree.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <uiComponent name="lookbookpro_cdzlookbook_category_form" />
+            <block class="Codazon\Lookbookpro\Block\Adminhtml\LookbookCategory\Edit" name="category.edit" template="Codazon_Lookbookpro::lookbook_category/edit.phtml" />
+        </referenceContainer>
+	</body>
+</page>

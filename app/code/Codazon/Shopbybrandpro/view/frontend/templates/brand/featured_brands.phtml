@@ -1,0 +1,74 @@
+<?php
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$orderBy = $block->getConfigValue('codazon_shopbybrand/featured_brands/sort_by');
+$sortOrder = $block->getConfigValue('codazon_shopbybrand/featured_brands/sort_order');
+$brands = $block->getBrandObject($orderBy, $sortOrder, true);
+$pageLayout = $block->getLayout()->getUpdate()->getPageLayout();
+
+if (($pageLayout == '2columns-left') || ($pageLayout == '2columns-right')) {
+    $block->addData([
+        'slider_margin'     => 10,
+        'items_1900'        => 9,
+        'items_1600'        => 8,
+        'items_1420'        => 8,
+        'items_1280'        => 8,
+        'items_980'         => 7,
+        'items_768'         => 6,
+        'items_480'         => 5,
+        'items_320'         => 3,
+        'items_0'           => 1.5,
+    ]);
+} else {
+    $block->addData([
+        'slider_margin'     => 20,
+        'items_1900'        => 10,
+        'items_1600'        => 9,
+        'items_1420'        => 9,
+        'items_1280'        => 9,
+        'items_980'         => 7,
+        'items_768'         => 6,
+        'items_480'         => 5,
+        'items_320'         => 3,
+        'items_0'           => 1.5,
+    ]);
+}
+$itemPerCol = $block->getData('items_per_column');
+$itemCount = count($brands);
+$width = 120;
+$height = 120;
+$paddingBottom = 100*$height/$width;
+$widget = ['Codazon_Shopbybrandpro/js/brands' => [
+    'codazon.brandslider' => ['sliderConfig' => $block->getSliderData()]
+]];
+?>
+
+<?php if ($itemCount > 0): ?>
+<?php $i = 0; ?>
+<div class="brand-slider-wrapper no-loaded" data-role="slider-wrapper">
+    <div class="brand-loader double-bounce-spinner" data-role="slider-loader">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+    <div class="shop-by-brand-slider style-default featured-brands owl-carousel<?= $block->getData('slider_dots')?' has-dots':'' ?>" data-mage-init='<?= json_encode($widget) ?>'>
+        <?php foreach ($brands as $brand) : ?>
+        <?php if ($i%$itemPerCol == 0) : ?>
+        <div class="item-group">
+        <?php endif ?>
+        <div class="brand-item">
+            <a class="brand-link abs-img" style="padding-bottom: calc(<?= $paddingBottom ?>% - 2px)" href="<?= $brand->getUrl() ?>" title="<?= $brand->getBrandLabel(); ?>">
+                <img class="brand-img owl-lazy zoom-eff" alt="<?= strip_tags($brand->getBrandLabel()) ?>" data-src="<?= $block->getThumbnailImage($brand, ['width' => $width, 'height' => $height]) ?>" />
+            </a>
+        </div>
+        <?php if (($i%$itemPerCol == ($itemPerCol - 1)) || ($i == $itemCount - 1)) : ?>
+        </div>
+        <?php endif ?>
+        <?php $i++; endforeach ?>
+    </div>
+</div>
+<?php endif ?>

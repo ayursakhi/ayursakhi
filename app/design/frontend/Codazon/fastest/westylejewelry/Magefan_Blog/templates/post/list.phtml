@@ -1,0 +1,72 @@
+<?php
+/**
+ * Copyright © 2015 Ihor Vansach (ihor@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+
+use Magento\Framework\App\Action\Action;
+
+?>
+<?php
+/**
+ * Blog post list template
+ *
+ * @var $block \Magefan\Blog\Block\Post\PostList
+ */
+?>
+<?php
+$_postCollection = $block->getPostCollection();
+$_optionHelper = $this->helper('Codazon\ThemeOptions\Helper\Data');
+?>
+<?php if (!$_postCollection->count()): ?>
+    <div class="message info empty"><div><?php echo __('We can\'t find posts matching the selection.') ?></div></div>
+<?php else: ?>
+    <?php echo $block->getAdditionalHtml() ?>
+    <div class="post-list-wrapper row">
+        <?php $i = 0; ?>
+        <div class="post-list" id="cdz-post-list">
+            <?php foreach ($_postCollection as $_post): ?>
+                <?php echo $block->getPostHtml($_post) ?>
+            <?php  $i++;endforeach; ?>
+        </div>
+    </div>	
+    <?php echo $block->getToolbarHtml() ?>
+<?php if($_optionHelper->getConfig('general_section/blog/category_view/grid_type') == 'isotope'): ?>
+<script type="text/javascript">
+require(['Magefan_Blog/js/isotope.pkgd.min'],function(Isotope){
+	var timeout = false;
+	var iso = new Isotope( '#cdz-post-list', {
+		itemSelector: '.post-item'
+	});
+	function appearingEffect(postItem,delay){
+		setTimeout(function(){
+			postItem.classList.remove('cdz-transparent');
+			postItem.classList.add('cdz-translator');
+		},delay);
+		setTimeout(function(){
+			postItem.classList.remove('cdz-translator');
+		},delay + 1500);
+	}
+	var postList = document.getElementById('cdz-post-list');
+	var postItems = postList.children;
+	var itemLength = postItems.length, delay, postItem;
+	for(var i = 0; i < itemLength ; i++){
+		postItem = postItems[i];
+		appearingEffect(postItems[i],(i + 1)*300);
+	}	
+	window.onload = function(){
+		iso.arrange();
+		window.loaded = true;
+	};
+	window.onresize = function(event) {	
+		if(timeout) clearTimeout(timeout);
+		timeout = setTimeout(function(){
+			iso.arrange();
+		},1000);	
+	};
+});
+</script>
+<?php endif ?>
+<?php endif; ?>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright © 2018 Codazon. All rights reserved.
+* See COPYING.txt for license details.
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codazon_Lookbookpro::lookbookpro" parent="Codazon_Options::Codazon_Options" title="Lookbook Pro" translate="title" module="Codazon_Lookbookpro" sortOrder="100" resource="Codazon_Lookbookpro::lookbookpro" />
+        <add id="Codazon_Lookbookpro::cdzlookbook_category" parent="Codazon_Lookbookpro::lookbookpro" title="Lookbook Category" translate="title" module="Codazon_Lookbookpro" sortOrder="10" resource="Codazon_Lookbookpro::cdzlookbook_category" action="lookbookpro/lookbookcategory/edit" />
+        <add id="Codazon_Lookbookpro::cdzlookbook" parent="Codazon_Lookbookpro::lookbookpro" title="Lookbook" translate="title" module="Codazon_Lookbookpro" sortOrder="20" resource="Codazon_Lookbookpro::cdzlookbook" action="lookbookpro/lookbook/index" />
+        <add id="Codazon_Lookbookpro::cdzlookbook_item" parent="Codazon_Lookbookpro::lookbookpro" title="Lookbook Item" translate="title" module="Codazon_Lookbookpro" sortOrder="30" resource="Codazon_Lookbookpro::cdzlookbook_category" action="lookbookpro/lookbookitem/index" />
+        <add id="Codazon_Lookbookpro::cdzlookbook_settings" parent="Codazon_Lookbookpro::lookbookpro" title="Settings" translate="title" module="Codazon_Lookbookpro" sortOrder="30" resource="Codazon_Lookbookpro::settings" action="adminhtml/system_config/edit/section/codazon_lookbook" />
+    </menu>
+</config>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceBlock name="wishlist_sidebar" display="false" />
+		<referenceBlock name="catalog.compare.sidebar" display="false" />
+		<referenceContainer name="page.top.custom">
+			<container label="Top Slideshow Container" name="page.top.slideshow" as="topslideshow" htmlTag="div" htmlClass="slideshow-wrapper" after="-" />
+		</referenceContainer>
+		<referenceContainer name="content">
+			<container label="Top Main Grid" name="top.main.grid" as="topMainGrid" htmlTag="div" htmlClass="row">
+				<container label="Top Main Grid Left" name="top.main.grid.left" as="topMainGridLeft" htmlTag="div" htmlClass="col-sm-6 sidebar"/>
+				<container label="Top Main Grid Right" name="top.main.grid.right" as="topMainGridRight" htmlTag="div" htmlClass="col-sm-18"/>
+			</container>
+		</referenceContainer>
+      </body>
+</page>

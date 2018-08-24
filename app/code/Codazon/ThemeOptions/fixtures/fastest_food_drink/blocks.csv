@@ -1,0 +1,167 @@
+title,identifier,content
+"Fastest - Food Drink - Top Menu",fastest-food-drink-top-menu,"<div class=""cdz-main-menu top-menu-link"">{{widget type=""Codazon\MegaMenu\Block\Widget\Megamenu"" menu=""fastest-food-top-menu""}}</div>"
+"Fastest - Food Drink - Main Menu",fastest-food-drink-main-menu,"<div class=""cdz-main-menu menu-main-icon""><div class=""cdz-main-menu-inner"">{{widget type=""Codazon\MegaMenu\Block\Widget\Megamenu"" menu=""fastest-food-main-menu""}}</div></div>"
+"Fastest - Food Drink - New Products",fastest-food-drink-new-products,"<div class=""new-products-block product-style03 cdz-block-title02"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" title=""New Products"" display_type=""all_products"" products_count=""14"" order_by=""name ASC"" show=""thumb,name,description,review,price,addtocart,addto"" thumb_width=""200"" thumb_height=""200"" filter_template=""custom"" custom_template=""custom_grid_slider.phtml"" show_slider=""1"" slider_item=""6"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`65`^]^]""}}</div>"
+"Fastest - Food Drink - Categories Deals",fastest-food-drink-categories-deals,"<div class=""categories-deals cdz-block-title02 coltitle02"">
+<div class=""row"">
+<div class=""col-sm-24 "">
+<div class=""block-title""><strong>Categories Deals</strong><a class=""view-all"" href=""#""><span>view all categories</span></a></div>
+</div>
+</div>
+<div class=""row  text-center"">
+<div class=""col-sm-6 space-xs"">
+<div class=""banner-wrapper color01"">
+<div class=""top-deal-info"">
+<div class=""category-name""><a href=""#"">Grocery Aisles</a></div>
+<div class=""image-shell-wrapper""><a href=""#""> <img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/food_drink/home/img01.jpg'}}"" alt=""health"" data-retina-src=""#"" /> </a></div>
+</div>
+<div class=""bottom-deal-info"">
+<div class=""info-block"">
+<div class=""custom-info-block"">
+<p>Sale Off 25%</p>
+<p>Get Over 20$ in saving</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class=""col-sm-6 space-xs"">
+<div class=""banner-wrapper color02"">
+<div class=""top-deal-info"">
+<div class=""category-name""><a href=""#"">Nutritional Foods & Cheese Products</a></div>
+<div class=""image-shell-wrapper""><a href=""#""> <img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/food_drink/home/img02.jpg'}}"" alt=""food"" data-retina-src=""#"" /> </a></div>
+</div>
+<div class=""bottom-deal-info"">
+<div class=""info-block"">
+<div class=""custom-info-block"">
+<p>In Store Now</p>
+<p>Plus Gift Set With Deal</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class=""col-sm-6 space-xs"">
+<div class=""banner-wrapper color03"">
+<div class=""top-deal-info"">
+<div class=""category-name""><a href=""#"">Beauty & Health Care</a></div>
+<div class=""image-shell-wrapper""><a href=""#""> <img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/food_drink/home/img03.jpg'}}"" alt=""care"" data-retina-src=""#"" /> </a></div>
+</div>
+<div class=""bottom-deal-info"">
+<div class=""info-block"">
+<div class=""custom-info-block"">
+<p>Better than 1/2 price</p>
+<p>Save up to 10% per day</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class=""col-sm-6 space-xs"">
+<div class=""banner-wrapper color04"">
+<div class=""top-deal-info"">
+<div class=""category-name""><a href=""#"">Frozen products</a></div>
+<div class=""image-shell-wrapper""><a href=""#""> <img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/food_drink/home/img04.jpg'}}"" alt=""care"" data-retina-src=""#"" /> </a></div>
+</div>
+<div class=""bottom-deal-info"">
+<div class=""info-block"">
+<div class=""custom-info-block"">
+<p>Best Price ever</p>
+<p>Place Order Now to get it</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Food Drink - Banners",fastest-food-drink-banners,"<div class=""banners-wrapper row"">
+<div class=""col-sm-12 space-xs""><a class=""effect"" href=""#""> <img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/food_drink/home/img05.jpg'}}"" alt=""banner 1"" /></a></div>
+<div class=""col-sm-12 space-xs""><a class=""effect"" href=""#""> <img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/food_drink/home/img06.jpg'}}"" alt=""banner 2"" /></a></div>
+</div>"
+" Fastest - Food Drink - Bestselling",fastest-food-drink-bestselling,"<div class=""product-style04 cdz-block-title02 coltitle02"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" title=""Best Selling"" display_type=""bestseller_products"" products_count=""7"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""400"" thumb_height=""400"" filter_template=""custom"" custom_template=""custom_grid.phtml"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`65, 66, 67`^]^]""}}</div>"
+"Fastest - Food Drink - Main Content Bottom - Brands Slider",fastest-food-drink-main-content-bottom-home-brands-slider,"<div class=""cdz-brand-slider-wrap  space-lg"">
+<div class=""cdz-brand-slider"">{{widget type=""Codazon\Shopbybrandpro\Block\Widget\BrandSlider"" list_style=""widget/brand_slider.phtml"" alphabet_table=""a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"" items_per_column=""1"" order_by=""brand_label"" order_way=""asc"" thumb_width=""180"" thumb_height=""180"" slider_dots=""0"" slider_nav=""1"" slider_loop=""0"" slider_margin=""20"" items_1900=""8"" items_1600=""7"" items_1420=""7"" items_1280=""7"" items_980=""6"" items_768=""5"" items_480=""4"" items_320=""3"" items_0=""2""}}</div>
+</div>"
+"Fastest - Food Drink - Footer Container Top - Newsletter",fastest-food-drink-footer-container-top-newsletter,"<div class=""row"">
+<div class="" col-sm-12"">
+<div class=""newsletter-wrapper"">
+<div class=""newsletter-container"">{{block class=""Magento\Newsletter\Block\Subscribe"" name=""form.subscribe"" as=""subscribe"" before=""-"" template=""subscribe.phtml""}}</div>
+</div>
+</div>
+<div class=""col-sm-12"">
+<div class=""footer-social"">
+<p class=""social pull-right""><a href=""#""><span class=""fa fa-facebook"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-twitter"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-pinterest-p"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-google-plus"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-tumblr"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-vimeo"">&nbsp;</span></a></p>
+</div>
+</div>
+</div>"
+"Fastest - Food Drink - Footer Content - Links",fastest-food-drink-footer-content-links,"<div class=""row"">
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-1"">CORPORATE</p>
+<ul id=""footer-content-1"" class=""footer-link showhide"">
+<li><a href=""{{store url=""""}}about-magento-demo-store/"">About Us</a></li>
+<li><a href=""#"">Orders and Returns</a></li>
+<li><a href=""{{store url=""""}}contacts/"">Afiliates</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode/"">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-2"">Your Links</p>
+<ul id=""footer-content-2"" class=""footer-link showhide"">
+<li><a href=""#"">Shipping guide</a></li>
+<li><a href=""{{store url=""""}}about-magento-demo-store/"">Store location</a></li>
+<li><a href=""#"">Afiliates</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode/"">Customer point policy</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-3"">Support</p>
+<ul id=""footer-content-3"" class=""footer-link showhide"">
+<li><a href=""#"">FAQ</a></li>
+<li><a href=""{{store url=""""}}about-magento-demo-store/"">Our services</a></li>
+<li><a href=""{{store url=""""}}contacts/"">Contact Us</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode/"">Forum Support</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-4"">SHOP LOCATION</p>
+<ul id=""footer-content-4"" class=""footer-link showhide"">
+<li><span class=""fa fa-map-marker"">&nbsp;</span>200 Lincoln Ave, Salinas, CA 93901</li>
+<li><span class=""fa fa-phone"">&nbsp;</span>Phone: 023 32423 223</li>
+<li><span class=""fa fa-envelope"">&nbsp;</span>Email: owner@example.com</li>
+<li class=""last""><span class=""fa fa-clock-o"">&nbsp;</span>Support 24/7</li>
+</ul>
+</div>
+</div>
+</div>"
+"Fastest - Food Drink - Footer - Payment",fastest-food-drink-footer-payment,"<div class=""pull-right footer-payment-logo"">
+<div class=""cdz-footer-bottom-payment""><img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/fastest_fashion/home/cdz-footer-payment.png""}}"" alt=""Accept Payment"" /></div>
+</div>"
+"Fastest - Food Drink - Main Content Top - Slideshow",fastest-food-drink-main-content-top-slideshow,"<div class=""slideshow-container"">{{widget type=""Codazon\Slideshow\Block\Widget\Slideshow"" slideshow_id=""fastest-food-drink-home-slideshow""}}</div>"
+"Fastest - Food Drink - Block Popup Content",fastest-food-drink-block-popup-content,"<div class=""cdz-popup-newsletter"">
+<div class=""cdz-popup-newsletter-left"">
+<div class=""popup-banner"">
+<div class=""banner""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/food_drink/home/banner-newsletter.jpg'}}"" alt=""Banner 01"" /></a></div>
+</div>
+</div>
+<div class=""cdz-popup-newsletter-right"">
+<div class=""popup-title"">
+<h3 class=""text-uppercase""><span>Sign up Newsletter</span></h3>
+</div>
+<div class=""popup-content"">
+<div class=""popup-content-ads"">
+<p class=""popup-content-title h3"">Join YourStore's squad for 20% off</p>
+<p class=""popup-content-desc"">and get all the latest news, trends and offs and offers straight to your inbox. Or get 15% off using code SQUAD15</p>
+<div class=""popup-content-newsletter"">{{block class=""Magento\Newsletter\Block\Subscribe"" name=""cdz.newsletter.style05"" template=""popup_subscribe.phtml""}}</div>
+<p class=""popup-content-small"">1 UK only; 2. Offar expiras 23:59(GMT) 10/02/16; 3.</p>
+</div>
+</div>
+</div>
+</div>"

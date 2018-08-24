@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 Codazon. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!--css src="Codazon_ThemeOptions::css/custom.css" media="all" /-->
+    </head>
+    <body>
+        <referenceContainer name="top.search">
+            <block class="Magento\Framework\View\Element\Template" name="category.search" template="Codazon_ThemeOptions::category-search.phtml">
+                <block class="Codazon\ThemeOptions\Block\SearchInCategory" name="category.search.list" />
+            </block>
+        </referenceContainer>
+    </body>
+</page>

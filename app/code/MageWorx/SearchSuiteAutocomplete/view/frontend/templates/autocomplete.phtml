@@ -1,0 +1,39 @@
+<?php
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+?>
+
+<div data-bind="scope: 'searchsuiteautocomplete_form'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "searchsuiteautocomplete_form": {
+                    "component": "MageWorx_SearchSuiteAutocomplete/js/autocomplete"
+                },
+                "searchsuiteautocompleteBindEvents": {
+                    "component": "MageWorx_SearchSuiteAutocomplete/js/bindEvents",
+                    "config": {
+                        "searchFormSelector": "#search_mini_form",
+                        "searchButtonSelector": "button.search",
+                        "inputSelector": "#search, #mobile_search, .minisearch input[type=\"text\"]",
+                        "searchDelay": "<?php echo $block->getSearchDelay() ?>"
+                    }
+                },
+                "searchsuiteautocompleteDataProvider": {
+                    "component": "MageWorx_SearchSuiteAutocomplete/js/dataProvider",
+                    "config": {
+                        "url": "<?php echo $block->getSearchUrl() ?>"
+                    }
+                }
+            }
+        }
+    }
+}
+</script>

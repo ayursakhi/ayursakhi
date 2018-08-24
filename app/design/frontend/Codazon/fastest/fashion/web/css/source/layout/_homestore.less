@@ -1,0 +1,56 @@
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	.page-main .block,
+	.cdz-slideshow{
+		margin-bottom:@space-lg;
+	}
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+	.page-main .block,
+	.cdz-slideshow{
+		margin-bottom:@space-md;
+	}
+}
+
+/*Brand - HomePage*/
+.cdz-brand-slider-wrap{
+	.item-group{
+		border: 1px solid @main_border;
+	}
+	.shop-by-brand-slider.owl-carousel{
+		padding-top: 0;
+		.owl-nav{
+			position:static;
+		}
+		.owl-nav [class*='owl-']{
+			left:0;
+			top: calc(~'50% - 15px');
+			position:absolute;
+			.abs-scale(~'0, 0');
+			.abs-transition();
+			&.owl-next{
+				right:0;
+				left:auto;
+			}
+			.rtl-layout &{
+				left:auto;
+				right:0;
+				&.owl-next{
+					left:0;
+					right:auto;
+				}
+			}
+		}
+		&:hover{
+			.owl-nav [class*='owl-']{
+				.abs-scale(~'1, 1');
+			}
+		}
+		
+	}
+}
+.block-brands .block-content .owl-carousel .owl-nav {
+    top: -65px;
+}
+
+
+

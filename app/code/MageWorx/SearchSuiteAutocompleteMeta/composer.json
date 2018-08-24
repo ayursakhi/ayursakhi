@@ -1,0 +1,8 @@
+{
+    "name": "mageworx/module-searchsuiteautocompletemeta",
+    "version": "2.1.0",
+    "type": "metapackage",
+    "require": {
+        "mageworx/module-searchsuiteautocomplete": "2.1.0"
+    }
+}

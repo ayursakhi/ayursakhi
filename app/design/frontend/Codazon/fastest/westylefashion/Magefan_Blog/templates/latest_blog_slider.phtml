@@ -1,0 +1,91 @@
+<?php
+$postCount = $block->getData('post_count')?$block->getData('post_count'):5;
+$posts = $block->getPostCollection()->setPageSize($postCount,1);
+$showSlider = $block->getShowSlider();
+$initHeight = $block->getData('thumb_height');
+$initWidth = $block->getData('thumb_width');
+$uniqId = uniqid('blog_');
+$helper = $this->helper('Magefan\Blog\Helper\Image');
+?>
+
+<?php if( count($posts) > 0 ): ?>
+<div class="cdz_wapper-blog">
+	<?php $i = 0 ?>
+	<div class="post-items" id="<?php echo $uniqId ?>">
+	<?php $i=0; foreach($posts as $item): ?>
+	<?php
+		if( ($i%5) == 0){
+			$descLength = 400;
+			$class = 'width-1';	
+			$width = $initWidth*2;
+			$height = $initHeight*2;
+		}else{
+			$descLength = 75;
+			$class = 'width-2';	
+			$width = $initWidth;
+			$height = $initHeight;
+		}
+		$url = $item->getPostUrl();
+		$desc = $item->getMetaDescription();
+		if(strlen($desc)> $descLength ) { 
+			$strCutDesc = substr($desc, 0, $descLength);
+			$desc = substr($strCutDesc, 0, strrpos($strCutDesc, ' ')).'&hellip;';
+		}
+		$desc = $this->stripTags($desc,null,true);
+	?>
+		<div class="post-item <?php echo $class ?>">
+			<div class="cdz-blog-top">
+				<a href="<?php echo $url ?>">                
+					<img class="img-responsive" width="<?php echo $width ?>" height="<?php echo $height ?>" src="<?php echo $helper->init($item->getPostImage())->resize($width,$height); ?>" />
+				</a>
+				<div class="blog-date"><?php echo $block->getPostedOn($item,'F d, Y'); ?></span></div>
+				<div class="blog-text-link"><div class="text-link-center"><a class="btn-link" href="<?php echo $url ?>"><span><?php echo __('Read more') ?></span></a></div></div>
+			</div>
+			<div class="cdz-blog-bottom">
+				<h5 class="blog-title"><a href="<?php echo $url ?>"><?php echo $item->getTitle() ?></a></h5>
+				<div class="blog-desc"><?php echo $desc ?></div>
+				
+			</div>
+		</div>
+	<?php $i++; endforeach ?>
+	</div>
+</div>
+<?php endif ?>
+<script type="text/javascript">
+require(['jquery','matchMedia'],function($){
+	require(['owlslider'],function(){
+		var $blog = $('#<?php echo $uniqId ?>');
+		mediaCheck({
+			media: '(max-width: 767px)',
+			entry: function(){
+				$blog.addClass('owl-carousel');
+				$blog.owlCarousel({
+					loop: true,
+					margin: 20,
+					responsiveClass: true,
+					nav: true,
+					dots: false,
+					rtl: ThemeOptions.rtl_layout == 1 ? true : false,
+					responsive:{
+						0:		{items: 1},
+						320:	{items:	1},
+						360:	{items:	1},
+						480:	{items:	2},
+						768:	{items:	2},
+						980:	{items:	5},
+						1200:	{items: 5}
+					}	
+				});
+			},
+			exit: function(){
+				if($blog.hasClass('owl-carousel')){
+					$blog.data('owl.carousel').destroy();
+					$blog.removeClass('owl-carousel owl-loaded');
+					$blog.find('.owl-stage-outer').children().unwrap();
+					$blog.removeData();
+				}
+			}
+		});
+	});
+});
+</script>

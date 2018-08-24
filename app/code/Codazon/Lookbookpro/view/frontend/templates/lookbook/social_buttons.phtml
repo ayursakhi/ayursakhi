@@ -1,0 +1,32 @@
+<?php
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$object = $this->getCurrentObject();
+$url = urlencode($this->stripTags($object->getUrl()));
+$desc = urlencode($this->stripTags($object->getData('description')));
+$image = urlencode($this->stripTags($object->getThumbnailUrl()));
+$name = urlencode($this->stripTags($object->getData('name')));
+?>
+
+<ul class="cdz-social-listing">
+    <li class="cdz-facebook item">
+        <button onclick='window.open("https://www.facebook.com/sharer/sharer.php?u=<?= $url; ?>","","menubar=1,resizable=1,width=700,height=600")' href="javascript:void(0)" class="share-btn" title="<?= __('Share on Facebook') ?>"><i class="fa fa-facebook"></i></button>
+    </li>
+    <li class="cdz-twitter item">
+        <button onclick='window.open("https://twitter.com/intent/tweet?url=<?= $url; ?>&text=<?= $desc ?>","","menubar=1,resizable=1,width=700,height=600")' target="_blank" rel="nofollow" href="javascript:void(0)" class="share-btn" title="<?= __('Share on Twitter') ?>"><i class="fa fa-twitter"></i></button>
+    </li>
+    <li class="cdz-linkedin item">
+        <button onclick='window.open("https://www.linkedin.com/shareArticle?mini=true&url=<?= $url; ?>&title=<?= $name ?>&ro=false&summary=<?= $desc ?>&source=","","menubar=1,resizable=1,width=700,height=600")' title="<?= __('Share on LinkedIn') ?>" rel="nofollow" title="" href="javascript:void(0)" class="share-btn"><i class="fa fa-linkedin"></i></button>
+    </li>
+    <li class="cdz-google-plus item">
+        <button onclick='window.open("https://plus.google.com/share?url=<?= $url; ?>","","menubar=1,resizable=1,width=700,height=600")' rel="nofollow" title="<?= __('Share on Google+') ?>" href="javascript:void(0)" class="share-btn"><i class="fa fa-google-plus"></i></button>
+    </li>
+    <li class="cdz-pinterest item">
+        <button onclick='window.open("https://www.pinterest.com/pin/create/button/?url=<?= $url; ?>&media=<?= $image ?>&description=<?= $desc ?>","","menubar=1,resizable=1,width=700,height=600")' rel="nofollow" title="<?= __('Share on Pinterest') ?>" href="javascript:void(0)" class="share-btn"><i class="fa fa-pinterest"></i></button>
+    </li>
+</ul>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Codazon. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <codazon_megamenu>
+			<general>
+				<disable_default_menu>1</disable_default_menu>
+				<used_megamenu>main-navigation</used_megamenu>
+				<active_rtl>0</active_rtl>
+			</general>
+		</codazon_megamenu>
+	</default>
+</config>

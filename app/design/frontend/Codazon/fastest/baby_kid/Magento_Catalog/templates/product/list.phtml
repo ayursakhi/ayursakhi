@@ -1,0 +1,325 @@
+<?php
+    /**
+     * Copyright © 2015 Magento. All rights reserved.
+     * See COPYING.txt for license details.
+     */
+    use Magento\Framework\App\Action\Action;
+    
+    // @codingStandardsIgnoreFile
+    
+    ?>
+<?php
+    /**
+     * Product list template
+     *
+     * @var $block \Magento\Catalog\Block\Product\ListProduct
+     */
+    ?>
+<?php
+    $_productCollection = $block->getLoadedProductCollection();
+    $_enbaleActions = [
+        'catalog_category_view',
+        'ajaxlayerednav_load_data',
+        'ajaxlayerednav_load_layer',
+        'ajaxlayerednav_load_products'
+    ];
+    $action = $this->getRequest()->getFullActionName();
+    $showToggleBtn = in_array($action, $_enbaleActions);
+?>
+<?php if (!$_productCollection->count()): ?>
+<div class="message info empty">
+    <div><?php echo __('We can\'t find products matching the selection.') ?></div>
+</div>
+<?php else: ?>
+<?php
+    $_helper = $this->helper('Magento\Catalog\Helper\Output');
+    $_optionHelper = $this->helper('Codazon\ThemeOptions\Helper\Data');
+    $_mobileHelper = $this->helper('Codazon\ThemeOptions\Helper\Mobile');
+    $labelHelper = $this->helper('Codazon\ProductLabel\Helper\Data');
+    $qsHelper = $this->helper('Codazon\QuickShop\Helper\Data');
+    $filterHelper = $this->helper('Codazon\ProductFilter\Helper\Data');
+    $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare');
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $ajaxLayerNavEnabled = $objectManager->get('\Magento\Framework\Module\Manager')->isOutputEnabled('Codazon_AjaxLayeredNav');
+    $hideGallery = $_optionHelper->getConfig('general_section/category_view/category_layout/hide_gallery');
+    $hideSidebar = $_optionHelper->getConfig('general_section/category_view/category_layout/hide_sidebar') && $showToggleBtn;
+    
+    $showHover = $_optionHelper->getConfig('general_section/category_view/hover_product_effect');
+    $grid_class = [
+        '1' => [
+            1200 => 'desktop_'.$_optionHelper->getConfig('general_section/category_view/category_desktop_view/product_row_desk_1col'),
+            768  => 'tablet_'.$_optionHelper->getConfig('general_section/category_view/category_tablet_view/product_row_tablet_1col'),
+            0    => 'mobile_'.$_optionHelper->getConfig('general_section/category_view/category_mobile_view/product_row_mobile')
+        ],
+        '2' => [
+            1200 => 'desktop_'.$_optionHelper->getConfig('general_section/category_view/category_desktop_view/product_row_desk_2col'),
+            768  => 'tablet_'.$_optionHelper->getConfig('general_section/category_view/category_tablet_view/product_row_tablet_2col'),
+            0    => 'mobile_'.$_optionHelper->getConfig('general_section/category_view/category_mobile_view/product_row_mobile')
+        ]
+    ];
+        
+    $viewMode = 'grid';
+    $image = 'category_page_grid';
+    $image_hover = 'category_page_grid_hover';
+    $showDescription = $_optionHelper->getConfig('general_section/category_view/show_short_description');
+    $showCompareWishlist = $_optionHelper->getConfig('general_section/category_view/show_action');
+    $showReviewRating = $_optionHelper->getConfig('general_section/category_view/review_rating_star');
+    $pageColumn = $_optionHelper->getPageColumns();
+    if ($hideSidebar) {
+        $columnsDeskClass = 'desktop_'.$_optionHelper->getConfig('general_section/category_view/category_desktop_view/product_row_desk_1col');
+        $columnsTabClass = 'tablet_'.$_optionHelper->getConfig('general_section/category_view/category_tablet_view/product_row_tablet_1col');
+    }else{
+        switch ($pageColumn) {
+            case '3columns':                                
+                $columnsDeskClass = 'desktop_'.$_optionHelper->getConfig('general_section/category_view/category_desktop_view/product_row_desk_3col');
+                $columnsTabClass = 'tablet_'.$_optionHelper->getConfig('general_section/category_view/category_tablet_view/product_row_tablet_3col');
+                break;
+            case '1column':                 
+                $columnsDeskClass = 'desktop_'.$_optionHelper->getConfig('general_section/category_view/category_desktop_view/product_row_desk_1col');
+                $columnsTabClass = 'tablet_'.$_optionHelper->getConfig('general_section/category_view/category_tablet_view/product_row_tablet_1col');
+                break;
+            case '2columns':                    
+                $columnsDeskClass = 'desktop_'.$_optionHelper->getConfig('general_section/category_view/category_desktop_view/product_row_desk_2col');
+                $columnsTabClass = 'tablet_'.$_optionHelper->getConfig('general_section/category_view/category_tablet_view/product_row_tablet_2col');
+                break;
+            default:                    
+                $columnsDeskClass = 'desktop_'.$_optionHelper->getConfig('general_section/category_view/category_desktop_view/product_row_desk_2col');
+                $columnsTabClass = 'tablet_'.$_optionHelper->getConfig('general_section/category_view/category_tablet_view/product_row_tablet_2col');
+                break;  
+        }
+    }
+    $columnsMobileClass = 'mobile_'.$_optionHelper->getConfig('general_section/category_view/category_mobile_view/product_row_mobile');
+    $current_grid_class = [
+        1200 => $columnsDeskClass,
+        768  => $columnsTabClass,
+        0    => $columnsMobileClass
+    ];
+    $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+    $isList = ($block->getMode() == 'list');
+    
+    if ($isList) {
+        $viewMode = 'list';
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
+        $columnsClass = 'desk_1';
+    } else {
+        if(!$_mobileHelper->isMobile()){	
+            $columnsClass = $columnsDeskClass;
+        }else if($_mobileHelper->isTablet()){
+            $columnsClass = $columnsTabClass;
+        }else if($_mobileHelper->isMobile() && !$_mobileHelper->isTablet()){
+            $columnsClass = $columnsMobileClass;
+        }
+    }
+    $pos = $block->getPositioned();
+    $productImage = $block->getImage($_productCollection->getFirstItem(), $image);
+    $gallery = $block->getLayout()->createBlock('Magento\Framework\View\Element\Template')->setTemplate('Codazon_ProductFilter::product/gallery.phtml')
+        ->setImageWidth($productImage->getWidth())->setImageHeight($productImage->getHeight());
+?>
+<?php if ($hideSidebar) : ?>
+<script type='text/javascript'>
+if(typeof document.body.attributes['data-mage-init'] !== 'undefined') {
+    document.body.classList.add('sidebar-off');
+};
+</script>
+<?php endif ?>
+<div class="toolbar-wrap" id="toolbar-wrap" <?php echo $ajaxLayerNavEnabled?'style="display:none"':'' ?>>
+<?php echo $block->getToolbarHtml() ?>
+</div>
+<script type='text/javascript'>
+(function(){
+    var normalStyle = <?php echo $showToggleBtn?0:1; ?>;
+    var toolbar = document.getElementById('toolbar-wrap');
+    if (!normalStyle) {
+        if (window.innerWidth < 768) {
+            toolbar.style.display = '';
+        } else {
+            var columns = document.getElementsByClassName('columns')[0];
+            document.getElementById('maincontent').insertBefore(toolbar,columns);
+            toolbar.style.display = '';
+        }
+    } else {
+         toolbar.style.display = '';
+    }
+})(window);
+</script>
+<div class="products wrapper <?php echo $hideGallery?'hover-image-grid':'gallery-grid' ?> <?php echo $viewMode; ?> products-<?php echo $viewMode; ?>">
+    <?php $iterator = 1; ?>
+    <div class="<?php echo $columnsClass ?>" id="category-products-grid">
+        <ol class="products list items product-items same-height">
+            <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+            <?php foreach ($_productCollection as $_product): ?>
+            <?php echo($iterator++ == 1) ? '<li class="item product product-item">' : '</li><li class="item product product-item">' ?>
+            <div class="product-item-info" data-container="product-grid">
+                <div class="cdz-hover-section">
+                    <div class="cdz-product-top">
+                        <?php                       
+                            $productImage = $block->getImage($_product, $image);
+                            $productHoverImage = $block->getImage($_product, $image_hover);
+                            if ($pos != null) {
+                                $position = ' style="left:' . $productImage->getWidth() . 'px;'
+                                    . 'top:' . $productImage->getHeight() . 'px;"';
+                            }
+                            ?>
+                        <a href="<?php echo $_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
+                        <span class="main-image">
+                        <?php echo $productImage->toHtml(); ?>
+                        </span>
+                        <?php if ($hideGallery) :  ?>
+                        <span class="hover-image">
+                        <?php echo $productHoverImage->toHtml(); ?>
+                        </span>
+                        <?php endif ?>
+                        </a>
+                        <div class="addto-hover-container">
+                            <div class="addto-button">
+                                <?php echo (!$isList)?$qsHelper->getQuickShopButton($_product):'' ?>
+                            </div>
+                        </div>
+                    </div>
+                    <?php $labelHelper->showLabel($_product) ?>
+                    <?php if (!$hideGallery) :  ?>
+                    <?php echo $isList?$gallery->setProduct($_product)->toHtml():''; ?>
+                    <?php endif ?>
+                </div>
+                <div class="product details product-item-details">
+                    <?php if (!$hideGallery) :  ?>
+                    <?php echo (!$isList)?$gallery->setProduct($_product)->toHtml():''; ?>
+                    <?php endif ?>
+                    <div class="info-details">
+                        <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
+                        <strong class="product name product-item-name">
+                        <a class="product-item-link" href="<?php echo $_product->getProductUrl() ?>">
+                        <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                        </a>
+                        </strong>
+                        <?php echo $block->getProductPrice($_product) ?>
+                        <?php if($showReviewRating): ?>
+                        <?php echo $block->getReviewsSummaryHtml($_product, $templateType); ?> 
+                        <?php endif ?>
+                        <?php echo $block->getProductDetailsHtml($_product); ?>
+                        <?php if ($showDescription) : ?>
+                        <div class="product description product-item-description">
+                            <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>"
+                                class="action more"><?php echo __('Learn More') ?></a>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="product-item-inner cdz-buttons-container">
+                        <div class="product actions product-item-actions"<?php echo strpos($pos, $viewMode . '-actions') ? $position : ''; ?>>
+                            <div class="actions-primary" <?php echo strpos($pos, $viewMode . '-primary') ? $position : ''; ?>>
+                                <?php if ($_product->isSaleable()): ?>
+                                <?php $postParams = $block->getAddToCartPostParams($_product); ?>
+                                    <form data-role="tocart-form" action="<?php  echo $postParams['action']; ?>" method="post">
+                                        <input type="hidden" name="product" value="<?php  echo $postParams['data']['product']; ?>">
+                                        <input type="hidden" name="<?php  echo Action::PARAM_NAME_URL_ENCODED; ?>" value="<?php  echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
+                                        <?php echo $block->getBlockHtml('formkey')?>
+                                        <?php if ($filterHelper->shouldRenderQuantity($_product)): ?>
+                                        <div class="field qty box-tocart">                                         
+                                            <div class="control">
+                                                <div class="qty-minus"> <a class="btn-qty minus" href="javascript:void(0)">-</a></div>
+                                                <div class="qty-input">
+                                                    <input type="number"
+                                                        name="qty"
+                                                        id="<?php echo $_product->getId() ?>_qty"
+                                                        maxlength="12"
+                                                        value="<?php  echo $filterHelper->getProductDefaultQty($_product) * 1 ?>"
+                                                        title="<?php  echo __('Qty') ?>" class="input-text qty"
+                                                        data-validate="<?php echo $block->escapeHtml(json_encode($filterHelper->getQuantityValidators())) ?>"
+                                                    />
+                                                </div>
+                                                <div class="qty-plus"> <a class="btn-qty plus" href="javascript:void(0)">+</a></div>
+                                            </div>
+                                        </div>
+                                        <?php endif; ?>
+                                        <button type="submit" title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
+                                        class="action tocart primary show-tooltip"><span><?php  echo __('Add to Cart') ?></span></button>
+                                    </form>
+                                <?php else: ?>
+                                <?php if ($_product->getIsSalable()): ?>
+                                <div class="stock available"><span><?php echo __('In stock') ?></span></div>
+                                <?php else: ?>
+                                <div class="stock unavailable"><span><?php echo __('Out of stock') ?></span></div>
+                                <?php endif; ?>
+                                <?php endif; ?>
+                            </div>
+                            
+                            <div class="product-actions-right">
+                                <?php if($showCompareWishlist): ?>
+                                <div data-role="add-to-links" class="actions-secondary"<?php echo strpos($pos, $viewMode . '-secondary') ? $position : ''; ?>>
+                                    <?php echo ($isList)?$qsHelper->getQuickShopButton($_product):'' ?>
+                                    <?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow()): ?>
+                                    <a href="#"
+                                        class="action towishlist"
+                                        title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+                                        aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+                                        data-post='<?php echo $block->getAddToWishlistParams($_product); ?>'
+                                        data-action="add-to-wishlist"
+                                        role="button">
+                                    <span><?php echo __('Add to Wish List') ?></span>
+                                    </a>
+                                    <?php endif; ?>
+                                    <a href="#"
+                                        class="action tocompare show-tooltip"
+                                        title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+                                        aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+                                        data-post='<?php echo $compareHelper->getPostDataParams($_product); ?>'
+                                        role="button">
+                                    <span><?php echo __('Add to Compare') ?></span>
+                                    </a>
+                                </div>
+                                <?php endif ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php echo($iterator == count($_productCollection)+1) ? '</li>' : '' ?>
+            <?php endforeach; ?>
+        </ol>
+    </div>
+</div>
+<?php echo $block->getAdditionalHtml() ?>
+<?php echo $block->getToolbarHtml() ?>
+<?php if (!$block->isRedirectToCartEnabled()) : ?>
+<script type="text/x-magento-init">
+    {
+        "[data-role=tocart-form], .form.map.checkout": {
+            "catalogAddToCart": {}
+        }
+    }
+</script>
+<?php endif; ?>
+
+<script type="text/javascript">
+    ThemeOptions.allGridClass = <?php echo json_encode($grid_class) ?>;
+    ThemeOptions.layoutGridClass = <?php echo json_encode($current_grid_class); ?>;
+    require(['jquery'], function($){
+        var list = $('#category-products-grid');
+        var parent = list.parent('.products').first();
+        function setClass(){
+            if (parent.hasClass('products-grid')) {
+                var widthWindow = window.innerWidth;
+                if (widthWindow > 1200)
+                    list.removeClass().addClass(ThemeOptions.layoutGridClass[1200]);
+                else if (widthWindow > 768)
+                    list.removeClass().addClass(ThemeOptions.layoutGridClass[768]);
+                else
+                    list.removeClass().addClass(ThemeOptions.layoutGridClass[768]);
+            } else {
+                list.removeClass().addClass('desk_1');
+            }
+        }
+        $(window).on('resize',function(){
+            setClass();
+        });
+        setClass();
+    });
+</script>
+<?php endif; ?>
+<script type="text/javascript">
+    require(['jquery','Magento_Theme/js/fastest_fashion'],function($){
+        var $_productWrap = $("#category-products-grid");
+        $_productWrap.initFilter({oneTimeSameHeight: <?php echo $showToggleBtn?'true':'false'; ?>});
+    });
+</script>

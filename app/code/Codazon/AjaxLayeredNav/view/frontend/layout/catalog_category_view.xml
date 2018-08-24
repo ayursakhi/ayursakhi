@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Codazon. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+
+		<referenceBlock name="before.body.end">
+			<block class="Codazon\AjaxLayeredNav\Block\Block" name="ajaxcart_head_components2" template="Codazon_AjaxLayeredNav::js/components.phtml"/>
+		</referenceBlock>
+
+		<referenceContainer name="sidebar.main">
+		    <referenceBlock name="catalog.navigation.renderer">
+		    	<action method="setTemplate">
+			        <argument name="template" xsi:type="string">layer/filter.phtml</argument>
+			    </action>
+		    </referenceBlock>
+        </referenceContainer>
+	</body>
+</page>

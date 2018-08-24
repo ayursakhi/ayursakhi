@@ -1,0 +1,5 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\LayeredNavigation\Block\Navigation\State">
+        <plugin name="fix_duplicate_state" type="Codazon\AjaxLayeredNav\Plugin\NavigationStatePlugin" disabled="false"/>
+    </type>
+</config>

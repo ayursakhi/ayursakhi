@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+		<referenceContainer name="sidebar.main">
+            <block ifconfig="codazon_shopbybrand/brand_search_box/display_on_lsb_search_page" class="Codazon\Shopbybrandpro\Block\Widget\BrandSearch" name="sidebar.brand.search" after="catalog.leftnav" template="Codazon_Shopbybrandpro::brand/brand_search.phtml"/>
+			<block ifconfig="codazon_shopbybrand/featured_brands/display_on_lsb_search_page" class="Codazon\Shopbybrandpro\Block\Widget\BrandSlider" name="sidebar.brand.slider" after="-" template="Codazon_Shopbybrandpro::brand/brand_slider.phtml">
+                <action method="setData">
+                    <argument name="name" xsi:type="string">featured_brands</argument>
+                    <argument name="value" xsi:type="string">1</argument>
+                </action>
+            </block>
+		</referenceContainer>
+	</body>
+</page>

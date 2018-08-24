@@ -1,0 +1,173 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product media data template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Gallery
+ */
+?>
+<?php
+	$_optionHelper = $this->helper('Codazon\ThemeOptions\Helper\Data');			 
+	$width = $_optionHelper->getConfig('general_section/product_view/base_image_width') ?: $block->getImageAttribute('product_page_image_medium', 'width'); 	 
+	$height = $_optionHelper->getConfig('general_section/product_view/base_image_height') ?: $block->getImageAttribute('product_page_image_medium', 'height');	
+	$thumbWidth = 	$_optionHelper->getConfig('general_section/product_view/moreview_image_width') ?: $block->getImageAttribute('product_page_image_small', 'width');	
+	$thumbHeight = 	$_optionHelper->getConfig('general_section/product_view/moreview_image_height') ?: $block->getImageAttribute('product_page_image_small', 'height');
+	$fullViewType = $_optionHelper->getConfig('general_section/product_view/full_view_type');
+	$allowFullScreen = is_null($fullViewType)?$block->getVar("gallery/allowfullscreen"):(($fullViewType!='pop_up')?'true':'false');
+	$productLensZoom = $_optionHelper->getConfig('general_section/product_view/product_lens_zoom');
+?>
+<script type="text/javascript">
+	<?php $requireJs = ($fullViewType == 'popup')?"'jquery','Magento_Catalog/js/cdzZoom','Magento_Ui/js/modal/modal','js/jquery.nicescroll.min'":"'jquery','Magento_Catalog/js/cdzZoom','Magento_Ui/js/modal/modal'"; ?>
+	
+	require([<?php echo $requireJs ?>],function ($) {
+		var imgModal = false, $imgBox = false;
+		var widthImage = <?php /* @escapeNotVerified */ echo $width; ?>;
+		$("[data-gallery-role=gallery-placeholder-q]").on("gallery:loaded",function () {
+			<?php if($fullViewType == 'pop_up'): ?>
+			if( $('#cdz-img-box').length == 0 ){
+				var $this = $(this);
+				var $wrap = $('.fotorama__wrap',$this);
+				var $viewFullBtn = $('<a class="full-view" href="javascript:void(0)">Full</a>');
+				$imgBox = $('<div class="cdz-img-box" id="cdz-img-box"><div class="img-box-inner"><img class="full-img" src="" /></div></div>');
+				$viewFullBtn.appendTo($('.fotorama__stage',$wrap));
+				$imgBox.hide().appendTo('body');
+				imgModal = $imgBox.modal({
+					wrapperClass: 'product-image-box',
+					buttons: [],
+					innerScroll: true,
+					modalVisibleClass: '_show',
+					opened: function(){
+						$('#cdz-img-box').parents('.modal-content').first().niceScroll({cursorcolor:'#999999', cursorborder:'#747070'});
+					}
+				});
+				$viewFullBtn.on('click',function(e){
+					e.preventDefault();
+					$('.full-img',$imgBox).attr('src',$('.fotorama__active').attr('href'));
+					imgModal.modal('openModal');
+				});
+			}
+			<?php endif ?>
+		});
+		<?php if($productLensZoom == '1'): ?>
+        $("[data-gallery-role=gallery-placeholder-q]").on('fotorama:ready', function (e, fotorama) {
+          console.log(e.type, fotorama.activeIndex);
+        });
+		$("[data-gallery-role=gallery-placeholder-q]").on("fotorama:showend fotorama:load",function () {
+			var $this = $(this);
+			var $stage = $('.fotorama__stage',$this);
+			$('.fotorama__stage__frame',$stage).each(function(i,e){
+				var $frame = $(this);
+				$frame.cdzZoom();
+				if(imgModal){
+					$('.magnify',$this).on('click',function(e){
+						e.preventDefault();
+						$('.full-img',$imgBox).attr('src',$('.fotorama__active').attr('href'));
+						imgModal.modal('openModal');
+					});
+				}
+			});
+		});
+		<?php endif ?>
+	})
+</script>
+<div class="gallery-placeholder-q _block-content-loading" data-gallery-role="gallery-placeholder-q">
+    <div data-role="loader" class="loading-mask">
+        <div class="loader">
+            <img src="<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/loader-1.gif'); ?>"
+                 alt="<?php /* @escapeNotVerified */ echo __('Loading...') ?>">
+        </div>
+    </div>
+</div>
+<!--Fix for jumping content. Loader must be the same size as gallery.-->
+<script>
+    var config = {
+            "width": <?php /* @escapeNotVerified */ echo $width; ?>,
+            "thumbheight": <?php /* @escapeNotVerified */ echo $thumbHeight ?: $thumbWidth; ?>,
+            "navtype": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/navtype"); ?>",
+            "height": <?php /* @escapeNotVerified */ echo $height; ?>
+        },
+        thumbBarHeight = 0,
+        loader = document.querySelectorAll('[data-gallery-role="gallery-placeholder-q"] [data-role="loader"]')[0];
+
+    if (config.navtype === 'horizontal') {
+        thumbBarHeight = config.thumbheight;
+    }    
+	
+    loader.style.paddingBottom = ( config.height / config.width * 100) + "%";
+</script>
+<script type="text/x-magento-init">
+    {
+        "[data-gallery-role=gallery-placeholder-q]": {
+            "mage/gallery/gallery": {
+                "mixins":["magnifier/magnify"],
+                "magnifierOpts": <?php /* @escapeNotVerified */ echo $block->getMagnifier(); ?>,
+                "data": <?php /* @escapeNotVerified */ echo $block->getGalleryImagesJson(); ?>,
+                "options": {
+                    <?php if(count(json_decode($block->getGalleryImagesJson(),true)) > 1): ?>
+                    	"nav": "<?php /* @escapeNotVerified */ echo $block->getVar("gallery/nav"); ?>",
+                    <?php else: ?>
+                        "nav": false,
+                    <?php endif; ?>
+                    <?php if (($block->getVar("gallery/loop"))): ?>
+                        "loop": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/loop"); ?>,
+                    <?php endif; ?>
+                    <?php if (($block->getVar("gallery/keyboard"))): ?>
+                        "keyboard": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/keyboard"); ?>,
+                    <?php endif; ?>
+                    <?php if (($block->getVar("gallery/arrows"))): ?>
+                        "arrows": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/arrows"); ?>,
+                    <?php endif; ?>
+                    "allowfullscreen": <?php echo $allowFullScreen ?>,
+                    <?php if (($block->getVar("gallery/caption"))): ?>
+                        "showCaption": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/caption"); ?>,
+                    <?php endif; ?>
+                    "width": <?php /* @escapeNotVerified */ echo $width; ?>,
+                    "thumbwidth": <?php /* @escapeNotVerified */ echo $thumbWidth; ?>,
+                    "thumbheight": <?php /* @escapeNotVerified */ echo $thumbHeight
+                        ?: $thumbWidth; ?>,
+                    "height": <?php /* @escapeNotVerified */ echo $height
+                        ?: $width ?>,
+                    <?php if ($block->getVar("gallery/transition/duration")): ?>
+                        "transitionduration": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/transition/duration"); ?>,
+                    <?php endif; ?>
+                    "transition": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/transition/effect"); ?>",
+                    <?php if (($block->getVar("gallery/navarrows"))): ?>
+                        "navarrows": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/navarrows"); ?>,
+                    <?php endif; ?>
+                    "navtype": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/navtype"); ?>",
+                    "navdir": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/navdir"); ?>",
+                    "direction": "<?php /* @escapeNotVerified */  echo $_optionHelper->getConfig("general_section/layout/enable_rtl") ? 'rtl' : 'ltr'; ?>"
+                },
+                "fullscreen": {
+                    "nav": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/nav"); ?>",
+                    <?php if ($block->getVar("gallery/fullscreen/loop")): ?>
+                        "loop": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/loop"); ?>,
+                    <?php endif; ?>
+                    "navdir": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/navdir"); ?>",
+                    <?php if ($block->getVar("gallery/transition/navarrows")): ?>
+                        "navarrows": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/navarrows"); ?>,
+                    <?php endif; ?>
+                    "navtype": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/navtype"); ?>",
+                    <?php if ($block->getVar("gallery/fullscreen/arrows")): ?>
+                        "arrows": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/arrows"); ?>,
+                    <?php endif; ?>
+                    <?php if ($block->getVar("gallery/fullscreen/caption")): ?>
+                        "showCaption": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/caption"); ?>,
+                    <?php endif; ?>
+                    <?php if ($block->getVar("gallery/fullscreen/transition/duration")): ?>
+                        "transitionduration": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/transition/duration"); ?>,
+                    <?php endif; ?>
+                    "transition": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/transition/effect"); ?>"
+                },
+                "breakpoints": <?php /* @escapeNotVerified */ echo $block->getBreakpoints(); ?>
+            }
+        }
+    }
+</script>
+

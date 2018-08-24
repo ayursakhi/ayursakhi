@@ -1,0 +1,30 @@
+<?php
+$_product = \Magento\Framework\App\ObjectManager::getInstance()->create('Magento\Catalog\Model\Product')->load($block->getProduct()->getId());
+$images = $_product->getMediaGalleryImages();
+$width = $block->getImageWidth();
+$height = $block->getImageHeight();
+$smallWidth = 80;
+$smallHeight = $height*$smallWidth/$width;
+$_helper = $this->helper('Magento\Catalog\Helper\Image');
+$widget = [];
+if ($images) {
+    $images = $images->getItems();
+    $widget = [];
+    $count = 0;
+    foreach($images as $img){
+        $widget['Codazon_ProductFilter/js/product-gallery']['width'] = $width;
+        $widget['Codazon_ProductFilter/js/product-gallery']['height'] = $height;
+        $widget['Codazon_ProductFilter/js/product-gallery']['images'][] = [
+            'large' => $_helper->init($_product,'large_image',['aspect_ratio' => false])->setImageFile($img->getFile())->resize($width,$height)->getUrl(),
+            'small' => $_helper->init($_product,'small_image',['aspect_ratio' => false])->setImageFile($img->getFile())->resize($smallWidth,$smallHeight)->getUrl()
+        ];
+        $count++;
+        if($count == 5) {
+            break;
+        }
+    }
+}
+?>
+<?php if ($widget) : ?>
+<div class="img-gallery" data-mage-init='<?php echo json_encode($widget); ?>'></div>
+<?php endif ?>

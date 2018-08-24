@@ -1,0 +1,232 @@
+title,identifier,content
+"Fastest - Ellyana - Three Banners",fastest-ellyana-threebanner,"<div class=""cdz-three-banner hidden-xs"">
+<div class=""row"">
+<div class=""col-sm-8"">
+<div class=""groupbanner-text hover-scale ""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/fastest_ellyana/home/img01.jpg'}}"" alt=""Banner 01"" /></a>
+<div class=""group-info"">
+<div class=""groupinfo-inner"">
+<div class=""groupinfo-desc text-center"">
+<p class=""grifo-title text-uppercase""><a href=""#"">crop-top &amp; Bodysuits</a></p>
+<p class=""grifo-desc"">a look in neutral tones, the aesthetics</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class=""col-sm-8"">
+<div class=""groupbanner-text hover-scale""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/fastest_ellyana/home/img02.jpg'}}"" alt=""Banner 03"" /></a>
+<div class=""group-info"">
+<div class=""groupinfo-inner"">
+<div class=""groupinfo-desc text-center"">
+<p class=""grifo-title text-uppercase""><a href=""#"">Hats &amp; Accessories</a></p>
+<p class=""grifo-desc"">with a fresh-made feel, make a comeback</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class=""col-sm-8"">
+<div class=""groupbanner-text hover-scale""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/fastest_ellyana/home/img03.jpg'}}"" alt=""Banner 03"" /></a>
+<div class=""group-info"">
+<div class=""groupinfo-inner"">
+<div class=""groupinfo-desc text-center"">
+<p class=""grifo-title text-uppercase""><a href=""#"">Overhemden &amp; blouses</a></p>
+<p class=""grifo-desc"">Sunny lookbook with summer clothes</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Ellyana - Footer Links",fastest-ellyana-footer-links,"<div class=""row"">
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5 hidden-xs"">About us</p>
+<div>
+<p class=""hidden-xs"">Fastest Magento 2 store has seen some remarkable accomplishments over the past 30 years. With a goal to become an $8 billion company by 2017</p>
+<div class=""footer-social"">
+<p class=""h5 visible-xs"">Follow us</p>
+<p class=""social""><a href=""#""><span class=""fa fa-facebook"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-twitter"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-pinterest-p"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-google-plus"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-tumblr"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-vimeo"">&nbsp;</span></a></p>
+</div>
+</div>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-2"">You Link</p>
+<ul id=""footer-content-2"" class=""footer-link showhide"">
+<li><a href=""#"">Side Navigation</a></li>
+<li><a href=""{{store url=""""}}about-us"">About Us</a></li>
+<li><a href=""{{store url=""""}}contact"">Contact Us</a></li>
+<li><a href=""#"">Forum Support</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode"">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-3"">Infomation</p>
+<ul id=""footer-content-3"" class=""footer-link showhide"">
+<li><a href=""#"">Side Navigation</a></li>
+<li><a href=""{{store url=""""}}about-us"">About Us</a></li>
+<li><a href=""{{store url=""""}}contact"">Contact Us</a></li>
+<li><a href=""#"">Forum Support</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode"">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-4"">Item Tags</p>
+<ul id=""footer-content-4"" class=""item_tag showhide"">
+<li><a href=""#"">awesome</a></li>
+<li><a href=""#"">beautiful</a></li>
+<li><a href=""#"">flat design</a></li>
+<li><a href=""#"">ios</a></li>
+<li><a href=""#"">mass</a></li>
+<li><a href=""#"">awesome</a></li>
+<li><a href=""#"">beautiful</a></li>
+<li><a href=""#"">flat design</a></li>
+</ul>
+</div>
+</div>
+</div>"
+"Fastest - Ellyana - Footer Bottom Payment",fastest-ellyana-footer-bottom-payment,"<div class=""pull-right footer-payment-logo"">
+<div class=""cdz-footer-bottom-payment""><img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/fastest_ellyana/home/cdz-footer-payment.png""}}"" alt=""Accept Payment"" /></div>
+</div>"
+"Fastest - Ellyana - Main Area - Best Seller",fastest-ellyana-main-area-best-seller,"<div class=""cdz-best-seller-wrap product-style01"">
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""cdz-block-title"">
+<p class=""b-title h1""><span>Best Sellers</span></p>
+</div>
+</div>
+</div>
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""tabs-list bestseller-product"" data-mage-init=""{&quot;tabs&quot;:{&quot;openedState&quot;:&quot;active&quot;}}"">
+<ul class=""nav nav-tabs hidden-xs abs-dropdown"" data-mage-init=""{&quot;Codazon_ProductFilter/js/productfilter&quot;:{&quot;codazon.mobiledropdown&quot;:{}}}"">
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#product-tab-1"" data-toggle=""switch"">Dress</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#product-tab-2"" data-toggle=""switch"">Tops</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#product-tab-3"" data-toggle=""switch"">Skirts</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#product-tab-4"" data-toggle=""switch"">Set Collection</a></li>
+</ul>
+<div class=""tab-content product data items"">
+<div id=""product-tab-1"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""bestseller_products"" products_count=""7"" order_by=""name ASC"" show=""thumb,name,price,addtocart,addto"" thumb_width=""240"" thumb_height=""295"" filter_template=""custom"" custom_template=""product/widget/content/grid_isotope.phtml"" show_slider=""0"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`124`^]^]""}}</div>
+<div id=""product-tab-2"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""7"" order_by=""name ASC"" show=""thumb,name,price,addtocart,addto"" thumb_width=""240"" thumb_height=""295"" filter_template=""custom"" custom_template=""product/widget/content/grid_isotope.phtml"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`124`^]^]""}}</div>
+<div id=""product-tab-3"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""7"" order_by=""name ASC"" show=""thumb,name,price,addtocart,addto"" thumb_width=""240"" thumb_height=""295"" filter_template=""custom"" custom_template=""product/widget/content/grid_isotope.phtml"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`124`^]^]""}}</div>
+<div id=""product-tab-4"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""7"" order_by=""name ASC"" show=""thumb,name,price,addtocart,addto"" thumb_width=""240"" thumb_height=""295"" filter_template=""custom"" custom_template=""product/widget/content/grid_isotope.phtml"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`124`^]^]""}}</div>
+</div>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Ellyana - Main Area - New Trend Fashion",fastest-ellyana-main-area-new-trend-fashion,"<div class=""cdz-new-trend-wrap product_style12"">
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>New released</span></p>
+<p class=""title-desc""><span>New trending Product</span></p>
+</div>
+</div>
+</div>
+<div class=""row"">
+<div class=""col-sm-24 cdz-new-trend product-style01"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""8"" order_by=""name ASC"" show=""thumb,name,sku,description,review,price,addtocart,addto"" thumb_width=""300"" thumb_height=""385"" filter_template=""custom"" custom_template=""infinitescroll_grid.phtml"" show_slider=""0"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`124`^]^]""}}</div>
+</div>
+</div>"
+"Fastest - Ellyana - Main Area - New Blog Posts List",fastest-ellyana-main-area-new-blog-post-list,"<div class=""cdz_wapper-blog01 text-center space-lg"">{{widget type=""Magefan\Blog\Block\Widget\PostList"" title=""Latest Blog Posts"" categories=""1"" order_by=""publish_time"" order=""desc"" post_count=""6"" show_in_front=""thumb,name,description,published_date,author"" desc_length=""150"" thumb_width=""380"" thumb_height=""280"" show_slider=""1"" post_template=""post/widget/grid.phtml""}}</div>"
+"Fastest - Ellyana - Main Area - Home Brands Slider",fastest-ellyana-main-area-home-brands-slider,"<div class=""cdz-brand-slider-wrap hidden-xs"">
+<div class=""cdz-brand-slider"">{{widget type=""Codazon\Shopbybrandpro\Block\Widget\BrandSlider"" list_style=""widget/brand_slider.phtml"" alphabet_table=""a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"" items_per_column=""1"" order_by=""brand_label"" order_way=""asc"" thumb_width=""180"" thumb_height=""180"" slider_dots=""0"" slider_nav=""1"" slider_loop=""0"" slider_margin=""20"" items_1900=""8"" items_1600=""7"" items_1420=""7"" items_1280=""7"" items_980=""6"" items_768=""5"" items_480=""4"" items_320=""3"" items_0=""2""}}</div>
+</div>"
+"Fastest - Ellyana - Main Menu",fastest-ellyana-main-menu,"<div class=""cdz-main-menu"">{{widget type=""Codazon\MegaMenu\Block\Widget\Megamenu"" menu=""fastest-ellyana-main-menu""}}</div>"
+"Fastest - Ellyana - Footer Top - Newsletter",fastest-ellyana-footer-top-newsletter,"<div class=""footer-top-ads text-center"">
+<p class=""ftop-ads-title"">Join us missguided's squad for 20% off</p>
+<p class=""ftop-ads-desc"">and get all the latest news, trends and offs and offers straight to your inbox. Or get 15% off using code SQUAD15</p>
+<div class=""ftop-newsletter"">{{block class=""Magento\Newsletter\Block\Subscribe"" name=""cdz.newsletter.style05"" template=""subscribe.phtml""}}</div>
+<p class=""ftop-ads-small"">1 UK only; 2. Offar expiras 23:59(GMT) 10/02/16; 3. T&amp;C's apply</p>
+</div>"
+"Fastest - Block Popup Content",fastest-ellyana-block-popup-content,"<div class=""cdz-popup-newsletter"">
+<div class=""cdz-popup-newsletter-left"">
+<div class=""popup-banner"">
+<div class=""banner""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/fastest_ellyana/home/banner-newsletter.jpg'}}"" alt=""Banner 01"" /></a></div>
+</div>
+</div>
+<div class=""cdz-popup-newsletter-right"">
+<div class=""popup-title"">
+<h3 class=""text-uppercase""><span>Sign up Newsletter</span></h3>
+</div>
+<div class=""popup-content"">
+<div class=""popup-content-ads"">
+<p class=""popup-content-title h3"">Join YourStore's squad for 20% off</p>
+<p class=""popup-content-desc"">and get all the latest news, trends and offs and offers straight to your inbox. Or get 15% off using code SQUAD15</p>
+<div class=""popup-content-newsletter"">{{block class=""Magento\Newsletter\Block\Subscribe"" name=""cdz.newsletter.style05"" template=""popup_subscribe.phtml""}}</div>
+<p class=""popup-content-small"">1 UK only; 2. Offar expiras 23:59(GMT) 10/02/16; 3.</p>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Ellyana - Product Static Block - SizeChart",fastest-ellyana-product-static-block-sizechart,"<div class=""size-chart-fashion"">
+<div class=""size-chart-link""><a class=""sizechart-trigger"" title=""Size Chart"" href=""#"" data-dlg-options=""{&quot;width&quot;:800,&quot;height&quot;:800}"">Size Chart</a></div>
+<div class=""size-chart-content modal"" style=""display: none;"">
+<div class=""content""><!-- Dynamically Insert Content Here --> <img src=""{{media url=""wysiwyg/codazon/size_chart_all.jpg""}}"" alt="""" /> <button class=""close""></button></div>
+<div class=""overlay""> </div>
+</div>
+</div>"
+"Fastest - Ellyana - Home Slideshow",fastest-ellyana-home-slideshow,"<div class=""slideshow-container"">{{widget type=""Codazon\Slideshow\Block\Widget\Slideshow"" slideshow_id=""fastest-ellyana-home-slideshow""}}</div>"
+"Fastest - Ellyana - Main Area - New Blog Posts List",fastest-ellyana-main-area-new-blog-posts-list,"<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>Our recent work</span></p>
+<p class=""title-desc""><span>our blog post</span></p>
+</div>
+<p>{{widget type=""Magefan\Blog\Block\Widget\PostList"" title=""Our recent work"" categories=""16"" order_by=""publish_time"" order=""desc"" post_count=""6"" show_in_front=""thumb,name,description,published_date,author"" desc_length=""150"" thumb_width=""380"" thumb_height=""380"" show_slider=""1"" post_template=""custom"" custom_template=""post/widget/blog_slider.phtml""}}</p>"
+"Fastest - Ellyana - Main Advertisement",fastest-ellyana-main-advertisement,"<div class=""wrapper-ads07 hidden-xs space-lg text-center"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>What's the plan?</span></p>
+<p class=""title-desc""><span>Sold in our shop</span></p>
+</div>
+<div class=""cdz-block-content"">
+<ul class=""items row"">
+<li class=""col-sm-4"">
+<p class=""banner""><a href=""#""> <img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/fastest_ellyana/home/cate-img01.png'}}"" alt=""Banner 01"" /> </a></p>
+<a class=""title"" href=""#"">Dress wedding</a></li>
+<li class=""col-sm-4"">
+<p class=""banner""><a href=""#""> <img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/fastest_ellyana/home/cate-img02.png'}}"" alt=""Banner 02"" /> </a></p>
+<a class=""title"" href=""#"">Accesories</a></li>
+<li class=""col-sm-4"">
+<p class=""banner""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/fastest_ellyana/home/cate-img03.png'}}"" alt=""Banner 03"" /></a></p>
+<a class=""title"" href=""#"">Footswear</a></li>
+<li class=""col-sm-4"">
+<p class=""banner""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/fastest_ellyana/home/cate-img04.png'}}"" alt=""Banner 04"" /></a></p>
+<a class=""title"" href=""#"">Sport tops</a></li>
+<li class=""col-sm-4"">
+<p class=""banner""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/fastest_ellyana/home/cate-img05.png'}}"" alt=""Banner 05"" /></a></p>
+<a class=""title"" href=""#"">Jackets</a></li>
+<li class=""col-sm-4 last"">
+<p class=""banner""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/fastest_ellyana/home/cate-img06.png'}}"" alt=""Banner 06"" /></a></p>
+<a class=""title"" href=""#"">Bags</a></li>
+</ul>
+</div>
+</div>"
+"Fastest - Ellyana - Main Area - Two Product Blocks",fastest-ellyana-main-area-two-product-blocks,"<div class=""space-lg product-style09"">
+<div class=""row"">
+<div class=""col-sm-12"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>Most popular</span></p>
+</div>
+<div class=""cdz-block-content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""3"" order_by=""name ASC"" show=""thumb,name,description,review,price,addtocart,addto"" thumb_width=""120"" thumb_height=""154"" filter_template=""custom"" custom_template=""list-style.phtml"" show_slider=""0"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`124`^]^]""}}</div>
+</div>
+<div class=""col-sm-12"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>Our pick</span></p>
+</div>
+<div class=""cdz-block-content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""3"" order_by=""price ASC"" show=""thumb,name,description,review,price,addtocart,addto"" thumb_width=""120"" thumb_height=""154"" filter_template=""custom"" custom_template=""list-style.phtml"" show_slider=""0"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`124`^]^]""}}</div>
+</div>
+</div>
+</div>"
+"Fastest - Ellyana - Main Area - Instagram",fastest-ellyana-main-area-instagram,"<div class=""main-instagram text-center space-lg"">
+<div class=""cdz-block-title special-title"">
+<p class=""b-title h1""><span>#ELLYANA Style Trending</span></p>
+<p class=""title-desc""><span>Follow us on instagram</span></p>
+</div>
+<div class=""main-instagram-content"">{{widget type=""Codazon\ThemeOptions\Block\Instagramphotos"" access_token=""5765035552.1677ed0.596cfa817f524117aac6feb95d9fdcaa""}}</div>
+</div>"

@@ -1,0 +1,30 @@
+<div class="lookbook-builder" data-role="lookbook-builder">
+    
+    <input type="hidden" data-bind="
+        attr: {
+            name: inputName,
+            id: uid
+        },
+        value: value
+    "/>
+    
+    <div class="lookbook-inner">
+        <div class="lb-guide">
+            <h3 translate="'Tutorial'"></h3>
+            <p translate="'1. Click on \'Insert/Change image\' button to insert a lookbook image.'"></p>
+            <p translate="'2. Click on \'Insert product point\' button to insert a new product point. Drag the point to a wanted position on lookbook image. You can add more than one product point.'"></p>
+            <p translate="'3. With each product point, click on (+) button to assign a product to the point and click on (x) button to remove the point.'"></p>
+        </div>
+        <div class="lb-toolbar">
+            <button class="lb-add-image btn" data-role="lb-add-image" type="button"><span translate="'Insert/Change image'"></span></button>
+            <button class="lb-add-product btn" data-role="lb-add-product" type="button"><span translate="'Insert product point'"></span></button>
+            <button class="lb-reset btn" data-role="lb-reset" type="button"><span translate="'Reset All'"></span></button>
+        </div>
+        <div class="lb-canvas">
+            <div class="lb-canvas-inner" data-role="canvas">
+                <div class="lb-image-wrap" data-role="image-wrap"></div>
+                <div class="lb-data-points" data-role="data-points"></div>
+            </div>
+        </div>
+    </div>
+</div>

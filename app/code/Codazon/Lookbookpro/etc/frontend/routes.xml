@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright © 2018 Codazon. All rights reserved.
+* See COPYING.txt for license details.
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="lookbook">
+        <route id="lookbook" frontName="lookbook">
+            <module name="Codazon_Lookbookpro" />
+        </route>
+    </router>
+    <router id="standard">
+        <route id="lookbooks" frontName="lookbooks">
+            <module name="Codazon_Lookbookpro" />
+        </route>
+    </router>
+</config>

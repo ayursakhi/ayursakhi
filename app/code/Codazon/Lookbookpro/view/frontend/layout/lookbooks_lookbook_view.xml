@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Codazon_Lookbookpro::css/lookbook.css" />
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Codazon\Lookbookpro\Block\Lookbook\View" name="lookbook" template="Codazon_Lookbookpro::lookbook/view.phtml">
+                <block class="Codazon\Lookbookpro\Block\Lookbook\View" name="lookbook.info" template="Codazon_Lookbookpro::lookbook/information.phtml">
+                    <block class="Codazon\Lookbookpro\Block\Lookbook\View" name="lookbook.social" template="Codazon_Lookbookpro::lookbook/social_buttons.phtml" />
+                </block>
+                <block class="Codazon\Lookbookpro\Block\Item\ListItem" name="lookbooks.item.list" template="Codazon_Lookbookpro::item/list.phtml">
+                    <block class="Codazon\Lookbookpro\Block\Lookbook\ItemListToolbar" name="item_list_toolbar" template="Codazon_Lookbookpro::lookbook/item_list_toolbar.phtml">
+                        <block class="Magento\Theme\Block\Html\Pager" name="item_list_toolbar_pager" />
+                    </block>
+                    <action method="setToolbarBlockName">
+                        <argument name="name" xsi:type="string">item_list_toolbar</argument>
+                    </action>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

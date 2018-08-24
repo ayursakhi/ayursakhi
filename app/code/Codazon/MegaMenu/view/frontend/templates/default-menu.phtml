@@ -1,0 +1,13 @@
+<?php
+$_objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
+$_config = $_objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface');
+$_disableDefaultMenu = $_config->getValue('codazon_megamenu/general/disable_default_menu');
+?>
+<?php if($_disableDefaultMenu): ?>
+	<?php $_usedMegamenu = $_config->getValue('codazon_megamenu/general/used_megamenu'); ?>
+	<nav class="cdz-navigation" data-action="navigation">
+	<?php echo $_objectManager->get('Codazon\MegaMenu\Block\Widget\Megamenu')->setMenu($_usedMegamenu)->toHtml(); ?>
+	</nav>
+<?php else: ?>
+	<?php echo $_objectManager->get('Magento\Theme\Block\Html\Topmenu')->setTemplate('Magento_Theme::html/topmenu.phtml')->toHtml(); ?>
+<?php endif ?>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Codazon_Lookbookpro::css/lookbook.css" />
+    </head>
+    <body>
+        <referenceContainer name="sidebar.main">
+            <block class="Codazon\Lookbookpro\Block\Category\CategoryList" name="lookbook_category_menu" template="Codazon_Lookbookpro::category/category_menu.phtml" />
+            <!-- <referenceBlock name="catalog.compare.sidebar" remove="true" /> -->
+            <!-- <referenceBlock name="wishlist_sidebar" remove="true" /> -->
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Codazon\Lookbookpro\Block\Category\View" name="category.lookbooks" template="Codazon_Lookbookpro::category/view.phtml">
+                <block class="Codazon\Lookbookpro\Block\Category\View" name="category.info" template="Codazon_Lookbookpro::category/information.phtml">
+                    <block class="Codazon\Lookbookpro\Block\Category\View" name="category.social" template="Codazon_Lookbookpro::lookbook/social_buttons.phtml" />
+                </block>
+                <block class="Codazon\Lookbookpro\Block\Lookbook\ListLookbook" name="category.lookbooks.list" template="Codazon_Lookbookpro::lookbook/list.phtml">
+                    <block class="Codazon\Lookbookpro\Block\Category\LookbookListToolbar" name="lookbook_list_toolbar" template="Codazon_Lookbookpro::category/lookbook_list_toolbar.phtml">
+                        <block class="Magento\Theme\Block\Html\Pager" name="lookbook_list_toolbar_pager" />
+                    </block>
+                    <action method="setToolbarBlockName">
+                        <argument name="name" xsi:type="string">lookbook_list_toolbar</argument>
+                    </action>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

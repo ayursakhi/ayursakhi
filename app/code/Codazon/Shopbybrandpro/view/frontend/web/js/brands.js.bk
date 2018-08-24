@@ -1,0 +1,60 @@
+	define(['jquery','light_slider','domReady'], function($, owlCarousel, domReady) {
+		$.widget('codazon.shopbybrand', {
+			options: {
+				loop: false,
+				margin: 10,
+				responsiveClass: true,
+				nav: true,
+				pager: false,
+				autoplay: false,
+				responsive: {
+					0: { items:1},
+					320: { items:3},
+					480: { items:4},
+					768: { items:5},
+					980: { items:7},
+					1280: { items:7}
+				}
+			},
+			_create: function() {
+				var self = this;
+				var element = this.element;
+				var config = this.options;
+				element.lightSlider({
+					item: 7,
+					loop: config.loop,
+					pager: config.pager,
+					adaptiveHeight: false,
+					slideMove: 1,
+					slideMargin: config.margin,
+					responsive : [
+						{
+							breakpoint: 0,
+							settings: {	item: 1 }
+						},
+						{
+							breakpoint: 320,
+							settings: {	item: 3 }
+						},
+						{
+							breakpoint: 480,
+							settings: {	item: 4 }
+						},
+						{
+							breakpoint: 768,
+							settings: {	item: 5 }
+						},
+						{
+							breakpoint: 980,
+							settings: {	item: 7 }
+						},
+						{
+							breakpoint: 1280,
+							settings: {	item: 7 }
+						},
+					]
+				});
+			}
+		});
+		return $.codazon.shopbybrand;
+	});

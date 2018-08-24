@@ -1,0 +1,32 @@
+<?php
+/**
+ * Copyright © Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+$_optionHelper = $this->helper('Codazon\ThemeOptions\Helper\Data');
+$allCatText = __('All Categories');
+$widget = ['Codazon_ThemeOptions/js/category-search' => [
+    'allCatText' => $allCatText,
+    'currentCat' => $this->getRequest()->getParam('cat')?:false
+]];
+?>
+<?php if ($_optionHelper->getConfig('general_section/header/search_category_enable')) : ?>
+<div class="cdz-cat-search" data-mage-init='<?php echo json_encode($widget); ?>'>
+    <div class="inner">
+        <a href="javascript:;" class="current-cat" data-role="trigger"><span><?= $allCatText; ?></span></a>
+        <div class="category-chooser dropdown" data-role="dropdown">
+            <div class="dropdown-inner">
+                <ul class="category-list" data-role="category-list">
+                    <li><a class="all-cat"><?php echo $allCatText; ?></a></li>
+                    <?php echo $block->getChildBlock('category.search.list')->toHtml() ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+document.getElementById('search_mini_form').classList.add('has-cat');
+</script>
+<?php endif ?>

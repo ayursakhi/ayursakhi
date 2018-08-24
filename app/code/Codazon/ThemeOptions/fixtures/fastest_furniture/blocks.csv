@@ -1,0 +1,165 @@
+title,identifier,content
+"Fastest - Furniture - Main Menu",fastest-furniture-main-menu,"<div class=""cdz-main-menu"">{{widget type=""Codazon\MegaMenu\Block\Widget\Megamenu"" menu=""fastest-fashion-main-menu""}}</div>"
+"Fastest - Furniture - Home Slideshow",fastest-furniture-home-slideshow,"<div class=""slideshow-container"">{{widget type=""Codazon\Slideshow\Block\Widget\Slideshow"" slideshow_id=""fastest-furniture-home-slideshow""}}</div>"
+"Fastest - Furniture - Main Area - New Product",fastest-furniture-main-area-new-product,"<div class=""cdz-new-trend-wrap"">
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>New Released Products</span></p>
+<div class=""title-desc"">Duis eget malesuada metus. Donec fringilla suscipit efficitur.</div>
+<div class=""title-button""><a class=""viewall"" href=""#"">view all</a></div>
+</div>
+</div>
+</div>
+<div class=""row"">
+<div class=""col-sm-24 cdz-new-trend product-style13"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""8"" order_by=""name DESC"" show=""thumb,name,sku,description,review,price,addtocart,addto"" thumb_width=""280"" thumb_height=""280"" filter_template=""custom"" custom_template=""grid_slider.phtml"" show_slider=""1"" slider_item=""4"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`125`^]^]""}}</div>
+</div>
+</div>"
+"Fastest - Furniture - Main Area - Advertisement",fastest-furniture-main-area-advertisement,"<div class=""main-advertisement hidden-xs"">
+<div class=""row"">
+<div class=""col-sm-12 col-xs-12"">
+<div class=""adver-content"">
+<p class=""adver-title"">Nothing to hide here</p>
+<div class=""adver-desc"">
+<p>A bling pair of sandals is the corner stone of any girls outfit this season. Though high, the chunky platform and adjustable strap ensure a steady stride. Complement yours with darker tones.</p>
+<p><a class=""view-more"" href=""#"">view more</a></p>
+</div>
+</div>
+</div>
+<div class=""col-sm-12  col-xs-12""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/furniture/home/img01.jpg'}}"" alt=""Banner 01"" /></a></div>
+</div>
+</div>"
+"Fastest - Furniture- Main Area - Tab Products",fastest-furniture-main-area-tab-products,"<div class=""cdz-best-seller-wrap product-style14"">
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""cdz-block-title"">
+<p class=""b-title h1""><span>Best Seller</span></p>
+<div class=""title-desc"">Duis eget malesuada metus. Donec fringilla suscipit efficitur.</div>
+</div>
+</div>
+</div>
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""tabs-list bestseller-product"" data-mage-init=""{&quot;tabs&quot;:{&quot;openedState&quot;:&quot;active&quot;}}"">
+<ul class=""nav nav-tabs hidden-xs abs-dropdown"" data-mage-init=""{&quot;Codazon_ProductFilter/js/productfilter&quot;:{&quot;codazon.mobiledropdown&quot;:{}}}"">
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-1"" data-toggle=""switch"">Tables &amp; Chairs</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-2"" data-toggle=""switch"">Home Accessories</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-3"" data-toggle=""switch"">Kichen</a></li>
+</ul>
+<div class=""tab-content product data items"">
+<div id=""best-seller-tab-1"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""7"" order_by=""name ASC"" show=""thumb,name,price,addtocart,addto"" thumb_width=""600"" thumb_height=""600"" filter_template=""custom"" custom_template=""custom_grid.phtml"" show_slider=""0"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`125`^]^]""}}</div>
+<div id=""best-seller-tab-2"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""7"" order_by=""name DESC"" show=""thumb,name,price,addtocart,addto"" thumb_width=""600"" thumb_height=""600"" filter_template=""custom"" custom_template=""custom_grid.phtml"" show_slider=""0"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`125`^]^]""}}</div>
+<div id=""best-seller-tab-3"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""7"" order_by=""price DESC"" show=""thumb,name,price,addtocart,addto"" thumb_width=""600"" thumb_height=""600"" filter_template=""custom"" custom_template=""custom_grid.phtml"" show_slider=""0"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`125`^]^]""}}</div>
+</div>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Furniture - Main Area - Advertisement 2",fastest-furniture-main-area-advertisement2,"<div class=""main-advertisement"">
+<div class=""row"">
+<div class=""col-sm-12"">
+<div class=""row"">
+<div class=""col-sm-12  col-xs-12 col-first "">
+<div class=""banner space-base""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/furniture/home/banner01.jpg'}}"" alt=""Banner 01"" /></a></div>
+<div class=""banner""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/furniture/home/banner02.jpg'}}"" alt=""Banner 02"" /></a></div>
+</div>
+<div class=""col-sm-12  col-xs-12 col-second"">
+<div class=""banner space-base""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/furniture/home/banner03.jpg'}}"" alt=""Banner 03"" /></a></div>
+<div class=""banner""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/furniture/home/banner04.jpg'}}"" alt=""Banner 04"" /></a></div>
+</div>
+</div>
+</div>
+<div class=""col-sm-12"">
+<div class=""row"">
+<div class=""col-sm-12 col-xs-12 col-third"">
+<div class=""banner space-base""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/furniture/home/banner05.jpg'}}"" alt=""Banner 05"" /></a></div>
+<div class=""banner""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/furniture/home/banner06.jpg'}}"" alt=""Banner 06"" /></a></div>
+</div>
+<div class=""col-sm-12  col-xs-12 col-fourth"">
+<div class=""adver-content space-base"">
+<p class=""adver-title"">Empire Deco High Level</p>
+<div class=""adver-desc"">
+<p>Discover the beautifully crafted Silverdale Empire Art Deco High Level Toilet online. Ideal for traditional settings</p>
+<p>Now available at Victorian Plumbing.</p>
+<p><a class=""view-more"" href=""#"">view more</a></p>
+</div>
+</div>
+<div class=""banner""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/furniture/home/banner07.jpg'}}"" alt=""Banner 07"" /></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Furniture - Main Area - New Blog Posts List",fastest-furniture-main-area-new-blog-posts-list,"<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>All Articles, Our Blog</span></p>
+<p class=""title-desc""><span>Design news and Living style</span></p>
+</div>
+<p>{{widget type=""Magefan\Blog\Block\Widget\PostList"" categories=""17"" order_by=""publish_time"" order=""desc"" post_count=""6"" show_in_front=""thumb,name,description,published_date,author"" desc_length=""150"" show_slider=""1"" thumb_width=""380"" thumb_height=""380"" post_template=""custom"" custom_template=""post/widget/blog_slider.phtml""}}</p>"
+"Fastest - Furniture - Main Area - Instagram",fastest-furniture-main-area-instagram,"<div class=""main-instagram text-center space-lg"">
+<div class=""cdz-block-title special-title"">
+<p class=""b-title h1""><span>#LivingSA Instagram</span></p>
+<p class=""title-desc""><span>Follow us on instagram</span></p>
+</div>
+<div class=""main-instagram-content"">{{widget type=""Codazon\ThemeOptions\Block\Instagramphotos"" access_token=""5765035552.1677ed0.596cfa817f524117aac6feb95d9fdcaa""}}</div>
+</div>"
+"Fastest - Furniture - Footer Top - Newsletter",fastest-furniture-footer-top-newsletter,"<div class=""footer-top-ads text-center cls-style02"">
+<p class=""ftop-ads-title"">Newsletter</p>
+<p class=""ftop-ads-desc"">Be the first to know about the latest deals, style updates &amp; more!</p>
+<div class=""ftop-newsletter"">{{block class=""Magento\Newsletter\Block\Subscribe"" name=""cdz.newsletter.style05"" template=""subscribe.phtml""}}</div>
+</div>"
+"Fastest - Furniture - Footer Links",fastest-furniture-footer-links,"<div class=""row"">
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5 hidden-xs"">About us</p>
+<div>
+<p class=""hidden-xs"">Fastest Magento 2 store has seen some remarkable accomplishments over the past 30 years. With a goal to become an $8 billion company by 2017</p>
+<div class=""footer-social"">
+<p class=""h5 visible-xs"">Follow us</p>
+<p class=""social""><a href=""#""><span class=""fa fa-facebook""> </span></a> <a href=""#""><span class=""fa fa-twitter""> </span></a> <a href=""#""><span class=""fa fa-pinterest-p""> </span></a> <a href=""#""><span class=""fa fa-google-plus""> </span></a> <a href=""#""><span class=""fa fa-tumblr""> </span></a> <a href=""#""><span class=""fa fa-vimeo""> </span></a></p>
+</div>
+</div>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-2"">You Link</p>
+<ul id=""footer-content-2"" class=""footer-link showhide"">
+<li><a href=""#"">Side Navigation</a></li>
+<li><a href=""{{store url=""""}}about-us"">About Us</a></li>
+<li><a href=""{{store url=""""}}contact"">Contact Us</a></li>
+<li><a href=""#"">Forum Support</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode"">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-3"">Infomation</p>
+<ul id=""footer-content-3"" class=""footer-link showhide"">
+<li><a href=""#"">Side Navigation</a></li>
+<li><a href=""{{store url=""""}}about-us"">About Us</a></li>
+<li><a href=""{{store url=""""}}contact"">Contact Us</a></li>
+<li><a href=""#"">Forum Support</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode"">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-4"">Item Tags</p>
+<ul id=""footer-content-4"" class=""item_tag showhide"">
+<li><a href=""#"">awesome</a></li>
+<li><a href=""#"">beautiful</a></li>
+<li><a href=""#"">flat design</a></li>
+<li><a href=""#"">ios</a></li>
+<li><a href=""#"">mass</a></li>
+<li><a href=""#"">awesome</a></li>
+<li><a href=""#"">beautiful</a></li>
+<li><a href=""#"">flat design</a></li>
+</ul>
+</div>
+</div>
+</div>"
+"Fastest - Furniture - Footer Bottom Payment",fastest-furniture-footer-bottom-payment,"<div class=""pull-right footer-payment-logo"">
+<div class=""cdz-footer-bottom-payment""><img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/furniture/home/cdz-footer-payment.png""}}"" alt=""Accept Payment"" /></div>
+</div>"

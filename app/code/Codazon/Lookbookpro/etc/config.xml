@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 Codazon. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <codazon_lookbook>
+            <general>
+                <root_category>2</root_category>
+            </general>
+            <images>
+                <category>
+                    <cover_width>1400</cover_width>
+                    <thumbnail_width>350</thumbnail_width>
+                    <thumbnail_height>350</thumbnail_height>
+                </category>
+                <lookbook>
+                    <cover_width>1400</cover_width>
+                    <thumbnail_width>350</thumbnail_width>
+                    <thumbnail_height>350</thumbnail_height>
+                </lookbook>
+                <lookbook_item>
+                    <small_width>350</small_width>
+                    <small_height>447</small_height>
+                    <large_width>1000</large_width>
+                </lookbook_item>
+                <product>
+                    <width>350</width>
+                    <height>447</height>
+                </product>
+            </images>
+            <all_lookbooks_page>
+                <name>All Lookbooks</name>
+                <description><![CDATA[<p>Need some fash-spiration? Let our <a href="#">#codazon-shop</a> show you the way! Check out our campaign lookbooks and <a href="#">#codazon-shop</a> edits full of the latest trends &amp; style tips.</p>]]></description>
+                <meta_title>All Lookbooks</meta_title>
+                <meta_keywords>lookbooks,fahion,lookbook,all</meta_keywords>
+                <meta_description><![CDATA[Need some fash-spiration? Let our #codazon-shop show you the way! Check out our campaign lookbooks and #codazon-shop edits full of the latest trends & style tips.]]></meta_description>
+            </all_lookbooks_page>
+            <lookbook_category_list>
+                <enable>1</enable>
+                <display_type>1</display_type>
+                <display_created_date>1</display_created_date>
+                <date_format>Y M d</date_format>
+            </lookbook_category_list>
+        </codazon_lookbook>
+    </default>
+</config>

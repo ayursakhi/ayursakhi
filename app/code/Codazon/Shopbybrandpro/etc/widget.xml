@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2016 Codazon. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+	<widget id="shopbybrandpro_brandslider" class="Codazon\Shopbybrandpro\Block\Widget\BrandSlider" is_email_compatible="true" placeholder_image="Codazon_Shopbybrandpro::images/shopbybrandpro_brandslider.png" ttl="86400">
+		<label translate="true">Codazon Brand List</label>
+		<description translate="true">Show slider with brand thumbnail image</description>
+		<parameters>
+            <parameter name="list_style" xsi:type="select" required="true" visible="true" sort_order="1">
+                <label translate="true">List Style</label>
+                <options>
+                    <option name="brand_slider" value="widget/brand_slider.phtml" selected="true">
+                        <label translate="true">Slider</label>
+                    </option>
+                    <option name="alphabet_list" value="widget/alphabet_list.phtml">
+                        <label translate="true">Alphabet List</label>
+                    </option>
+                    <option name="static_list" value="widget/static_list.phtml">
+                        <label translate="true">Static List</label>
+                    </option>
+                </options>
+            </parameter>
+			<parameter name="custom_template" xsi:type="text" required="false" visible="true" sort_order="4">
+				<label translate="true">Custom Template</label>
+				<description translate="true">Leave empty to use default template (Slider/Alphabet List/Static List)</description>
+			</parameter>
+            <parameter name="limit" xsi:type="text" required="false" visible="true" sort_order="5">
+				<label translate="true">Limit</label>
+				<description translate="true">Leave empty to get all brand</description>
+			</parameter>
+            <parameter name="collection" xsi:type="select" required="true" visible="true" sort_order="6">
+                <label translate="true">Collection</label>
+                <options>
+                    <option name="all_brands" value="all_brands" selected="true">
+                        <label translate="true">All brands</label>
+                    </option>
+                    <option name="featured_brands" value="featured_brands">
+                        <label translate="true">Featured brands</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="alphabet_table" xsi:type="text" required="false" visible="true" sort_order="7">
+				<label translate="true">Your Alphabet Table</label>
+                <description translate="true"><![CDATA[Eg: a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]]></description>
+                <value>a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z</value>
+			</parameter>
+            <parameter name="items_per_column" xsi:type="text" required="false" visible="true" sort_order="10">
+				<label translate="true">Items per column</label>
+			</parameter>
+            <parameter name="order_by" xsi:type="select" required="true" visible="true" sort_order="11">
+                <label translate="true">Order by</label>
+                <options>
+                    <option name="brand_label" value="brand_label" selected="true">
+                        <label translate="true">Brand Label</label>
+                    </option>
+                    <option name="sort_order" value="sort_order">
+                        <label translate="true">Brand Position (Attribute Option Position)</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="order_way" xsi:type="select" required="true" visible="true" sort_order="11">
+                <label translate="true">Order Way</label>
+                <options>
+                    <option name="asc" value="asc" selected="true">
+                        <label translate="true">ASC</label>
+                    </option>
+                    <option name="desc" value="desc">
+                        <label translate="true">DESC</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="thumb_width" xsi:type="text" required="true" visible="true" sort_order="15">
+                <label translate="true">Thumbnail Width</label>
+                <value>200</value>
+            </parameter>
+            <parameter name="thumb_height" xsi:type="text" required="true" visible="true" sort_order="16">
+                <label translate="true">Thumbnail Height</label>
+                <value>200</value>
+            </parameter>
+            <parameter name="slider_dots" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno" sort_order="20">
+                <label translate="true">Show Slider Dots</label>
+            </parameter>
+            <parameter name="slider_nav" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno" sort_order="30">
+                <label translate="true">Show Slider Arrows</label>
+            </parameter>
+            <parameter name="slider_loop" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno" sort_order="40">
+                <label translate="true">Loop</label>
+            </parameter>
+            <parameter name="slider_margin" xsi:type="text" visible="true" sort_order="50">
+            	<label translate="true">Slide Margin</label>
+                <value>20</value>
+            </parameter>
+            <parameter name="stage_padding" xsi:type="text" visible="true" sort_order="60">
+            	<label translate="true">Stage Padding</label>
+            </parameter>
+            <parameter name="items_1900" xsi:type="text" visible="true" sort_order="100">
+            	<label translate="true">Desktop 1900 view</label>
+                <description translate="true"><![CDATA[Window width ≥ 1900. Default: 8.]]></description>
+                <value>8</value>
+            </parameter>
+            <parameter name="items_1600" xsi:type="text" visible="true" sort_order="110">
+            	<label translate="true">Desktop 1600 view</label>
+                <description translate="true"><![CDATA[1600 ≤ Window width < 1900. Default: 7.]]></description>
+                <value>7</value>
+            </parameter>
+            <parameter name="items_1420" xsi:type="text" visible="true" sort_order="120">
+            	<label translate="true">Desktop 1420 view</label>
+                <description translate="true"><![CDATA[1420 ≤ Window width < 1600. Default: 7.]]></description>
+                <value>7</value>
+            </parameter>
+            <parameter name="items_1280" xsi:type="text" visible="true" sort_order="130">
+            	<label translate="true">Desktop 1280 view</label>
+                <description translate="true"><![CDATA[1280 ≤  Window width < 1420. Default: 7.]]></description>
+                <value>7</value>
+            </parameter>
+            <parameter name="items_980" xsi:type="text" visible="true" sort_order="140">
+            	<label translate="true">Desktop Small View</label>
+                <description translate="true"><![CDATA[980 ≤  Window width < 1280. Default: 3.]]></description>
+                <value>4</value>
+            </parameter>
+            <parameter name="items_768" xsi:type="text" visible="true" sort_order="150">
+            	<label translate="true">Tablet Lanscape View</label>
+                <description translate="true"><![CDATA[768 ≤ Window width < 980. Default: 3.]]></description>
+                <value>3</value>
+            </parameter>
+            <parameter name="items_480" xsi:type="text" visible="true" sort_order="160">
+            	<label translate="true">Tablet Portrait View</label>
+                <description translate="true"><![CDATA[480 ≤ Window width < 768. Default: 3.]]></description>
+                <value>3</value>
+            </parameter>
+            <parameter name="items_320" xsi:type="text" visible="true" sort_order="170">
+            	<label translate="true">Mobile Lanscape View</label>
+                <description translate="true"><![CDATA[320 ≤ Window width < 480. Default: 2.]]></description>
+                <value>2</value>
+            </parameter>
+            <parameter name="items_0" xsi:type="text" visible="true" sort_order="180">
+            	<label translate="true">Mobile Portrait View</label>
+                <description translate="true"><![CDATA[Window width < 320. Default: 2.]]></description>
+                <value>2</value>
+            </parameter>
+		</parameters>
+	</widget>
+</widgets>

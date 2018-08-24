@@ -1,0 +1,21 @@
+<?php
+$address = $block->getData('address');
+$address = $address?$address:"6505 boulevard Henri-Bourassa, Montréal, Quebec, H1G2V5";
+$configLat = $block->getData('latitude');
+$configLng = $block->getData('longtitude');
+if( ($configLat != '') && ($configLng != '') ){
+	$lat = $configLat; $lng = $configLng;
+}else{
+	$mapObject = $block->getGeocodeByAddress($address);
+	$lat = $mapObject->results[0]->geometry->location->lat;
+	$lng = $mapObject->results[0]->geometry->location->lng;
+}
+$mapWidth = $block->getData('map_width')?$block->getData('map_width'):'100%';
+$mapHeight = $block->getData('map_height')?$block->getData('map_height'):'300px';
+$markerTitle = $this->getData('marker_title')?$this->getData('marker_title'):$address;
+$marketImage = $block->getData('market_image')?$block->getData('market_image'):$block->getImageUrl('gmap_icon.png');
+$zoom = $block->getData('zoom')?$block->getData('zoom'):10;
+$uniqid = uniqid('cdz-map-');
+?>
+<div class="cdz-google-map" id="<?php echo $uniqid ?>" data-mage-init='{"cdz_googlemap":{"jsSource":"<?php echo $block->getGoogleMapJavascriptUrl() ?>","mapLat":<?php echo $lat ?>,"mapLong":<?php echo $lng ?>,"mapZoom": <?php echo $zoom ?>, "mapAddress": "<?php echo $address ?>", "markerTitle":"<?php echo $markerTitle ?>","markerImage":"<?php echo $marketImage ?>" }}' 
+style="width: <?php echo $mapWidth ?>; height: <?php echo $mapHeight ?>"></div>

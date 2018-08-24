@@ -1,0 +1,63 @@
+<?php
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+/**
+ * Brand Slider template
+ *
+ * @var $block Codazon\Shopbybrandpro\Block\Brand\BrandSlider
+ */ ?>
+<?php
+$orderBy = $block->getConfigValue('codazon_shopbybrand/featured_brands/sort_by');
+$sortOrder = $block->getConfigValue('codazon_shopbybrand/featured_brands/sort_order');
+$brands = $block->getBrandObject($orderBy, $sortOrder, true);
+$count = count($brands);
+$i = 0;
+$row = 3;
+$widget = ['Codazon_Shopbybrandpro/js/brands' => [
+    'codazon.brandslider' => ['sliderConfig' => [
+        'margin'    => 20,
+        'nav'       => true,
+        'dots'      => false,
+        'responsive' => [
+            '1200'  => ['items' => 2, 'nav' => true],
+            '768'   => ['items' => 1, 'nav' => false],
+            '560'   => ['items' => 4],
+            '480'   => ['items' => 3],
+            '0'     => ['items' => 3]
+        ]
+    ]]
+]];
+?>
+<?php if ($count > 0): ?>
+<div class="block block-brands">
+	<div class="block-title"><strong id="block-brands-heading"><?php echo $block->getConfigValue('codazon_shopbybrand/featured_brands/title') ?></strong></div>
+    <div class="block-content">
+        <div class="brand-slider-wrapper featured-brands no-loaded" data-role="slider-wrapper">
+            <div class="brand-loader double-bounce-spinner" data-role="slider-loader">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+            <div class="brand-slider items owl-carousel" data-mage-init='<?= json_encode($widget) ?>'>
+                <?php foreach( $brands as $brand ): ?>
+                <?php if ($i%$row == 0): ?>
+                <div class="slide-item">
+                <?php endif ?>
+                        <div class="brand-item">
+                            <a class="brank-link abs-img" style="padding-bottom: 100%" title="<?= strip_tags($brand->getBrandLabel()) ?>" href="<?php echo $brand->getUrl() ?>">
+                                <img class="img-responsive zoom-eff" alt="<?php echo strip_tags($brand->getBrandLabel()) ?>" src="<?php echo $block->getThumbnailImage($brand, ['width' => 150, 'height' => 150]) ?>" />
+                            </a>
+                        </div>
+                <?php if (($i%$row == ($row-1)) || ($i == $count - 1)): ?>
+                </div>
+                <?php endif; $i++; ?>
+                <?php endforeach ?>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif ?>

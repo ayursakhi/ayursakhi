@@ -1,0 +1,26 @@
+<?php if($items = $this->getMenuTree()): ?>
+<?php
+$menu = $this->getMenuObject();
+$type = $menu->getData('type');
+$styles = json_decode($menu->getData('style'));
+$block->setTemplate('menu-item.phtml');
+$dropdownStyle = (isset($styles->dropdown_style)&&($styles->dropdown_style=='full_width'))?'dropdown-fullwidth':'';
+$uniqId = uniqid("menu-{$menu->getId()}-");
+$dataMenu = json_encode(
+	['megamenu' => [
+		'dropdownEffect' => $styles->dropdown_animation,
+		'type' => $type
+	]]
+);
+$this->setData('need_filter',false);
+?>
+<div class="cdz-menu <?php echo ($type == 1)?'cdz-vertical-menu':'cdz-horizontal-menu' ?> <?php echo $dropdownStyle ?> <?php echo $styles->css_class ?> <?php echo 'cdz-'.$styles->dropdown_animation ?>" id="<?php echo $uniqId ?>" data-mage-init='<?php echo $dataMenu ?>'>
+	<ul class="groupmenu">
+	<?php echo $this->getMenuHtml($items); ?>
+	</ul>
+</div>
+<?php endif ?>
+<nav class="navigation" data-action="navigation">
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+    </ul>
+</nav>

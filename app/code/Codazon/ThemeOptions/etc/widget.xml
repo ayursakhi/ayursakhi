@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2016 Codazon. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+	<widget id="codazon_instagramphotos" class="Codazon\ThemeOptions\Block\Instagramphotos" is_email_compatible="true" placeholder_image="Codazon_ThemeOptions::images/codazon_instagramphotos.png" ttl="86400">
+		<label translate="true">Codazon Instagram Recent Photos</label>
+		<description translate="true">Get Photos List From Your Instagram</description>
+		<parameters>
+			<parameter name="access_token" xsi:type="text" required="true" visible="true">
+			 	<label translate="true">Access Token</label>
+				<description translate="true"><![CDATA[Please login to your Instagram account. Then go to <a target="_blank" href='http://instagram.pixelunion.net'>http://instagram.pixelunion.net</a> to get access token.]]></description>
+			</parameter>
+			<parameter name="custom_template" xsi:type="text" required="false" visible="true">
+				<label translate="true">Template</label>
+				<description translate="true"><![CDATA[Leave blank to use default template.]]></description>
+			</parameter>
+		</parameters>
+	</widget>
+</widgets>

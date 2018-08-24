@@ -1,0 +1,167 @@
+@mixin adminIconInline($font_code, $margin_right:10px) {
+    content: $font_code;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Admin Icons';
+    margin-right: $margin_right;
+}
+.lookbook-builder {
+    border: 1px solid #eee;
+    padding: 10px 10px;
+    .lookbook-inner{
+        
+    }
+    .lb-toolbar{
+        width: 100%;
+        display: inline-block;
+        padding: 10px 10px;
+        background-color: #f8f8f8;
+        .btn {
+            background-color: #03A9F4;
+            color: #fff;
+            border: none;
+            margin-right: 10px;
+        }
+        .lb-reset{
+            background-color: #eb5202;
+            &:before{
+                @include adminIconInline('\E630');
+            }
+        }
+        .lb-add-image{
+            &:before{
+                @include adminIconInline('\E63C');
+            }
+        }
+        .lb-add-product{
+            background-color: #8BC34A;
+            &:before{
+                @include adminIconInline('\E636');
+            }
+        }
+    }
+    .lb-canvas{
+        min-height: 200px;
+        text-align: center;
+        padding: 30px 10px;
+        border: 1px solid #eee;
+        border-top: 0;
+        .lb-canvas-inner {
+            width: 400px;
+            display: inline-block;
+            position: relative;
+            border: 10px solid #ffffff;
+            box-sizing: content-box;
+            box-shadow: 3px 3px 10px #c8c8c8;
+            min-height: 100px;
+            background-color: rgba(235, 82, 2, 0.13);
+            .lb-image-wrap{
+                width: 100%;
+                line-height: 0;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .lb-data-points {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+            .pd-point{
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                border-radius: 50%;
+                background-color: #FF9800;
+                cursor: move;
+                border: 2px solid #fff;
+                box-sizing: border-box;
+                &.active {
+                    border-color: #eb5202;
+                }
+                .pd-point-inner {
+                    position: relative;
+                    width: 100%;
+                    .pd-point-rm, .pd-add-product{
+                        cursor: pointer;
+                        &:before {
+                            position: absolute;
+                            content: '\E632';
+                            -webkit-font-smoothing: antialiased;
+                            font-family: 'Admin Icons';
+                            top: -15px;
+                            right: -15px;
+                            color: #F44336;
+                        }
+                    }
+                    .pd-add-product{
+                        &:before {
+                            left: -15px;
+                            right: auto;
+                            content: '\E61D';
+                            color: #4CAF50;
+                        }
+                    }
+                    .product-name {
+                        display: none;
+                        position: absolute;
+                        background: #FFF;
+                        top: 30px;
+                        padding: 7px;
+                        text-align: left;
+                        width: 100px;
+                        left: -42px;
+                        border-radius: 5px;
+                        font-size: 10px;
+                        opacity: 0.7;
+                        &:before {
+                            display: block;
+                            width: 10px;
+                            height: 10px;
+                            border: 5px solid transparent;
+                            position: absolute;
+                            top: -10px;
+                            border-bottom-color: #FFF;
+                            content: '';
+                            left: 45px;
+                        }
+                    }
+                }
+                box-shadow: 0px 0px 0px #FFEB3B;
+                transition: box-shadow 300ms ease;
+                &:hover{
+                    box-shadow: 0px 0px 40px #FFEB3B;
+                    transition: box-shadow 300ms ease; 
+                    .product-name {
+                        display: block;
+                    }
+                }
+            }
+            .lb-data-points:hover{
+                .pd-point{
+                    .pd-point-inner{
+                        .pd-point-rm, .pd-add-product{
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .lb-guide {
+        padding: 10px 10px;
+        border: 1px solid #eee;
+        border-bottom: none;
+        h3 {
+            margin-bottom: 7px;
+            color: #eb5202;
+            font-size: 15px;
+        }
+        p {
+            font-size: 11px;
+            margin-bottom: 3px;
+        }
+    }
+}

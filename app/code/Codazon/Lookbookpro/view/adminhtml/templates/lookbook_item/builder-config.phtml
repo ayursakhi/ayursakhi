@@ -1,0 +1,19 @@
+<?php
+/**
+* Copyright © 2018 Codazon. All rights reserved.
+* See COPYING.txt for license details.
+*/
+?>
+
+<script>
+var codazon = <?php echo json_encode($this->getConfig()); ?>
+</script>
+
+<?php
+// echo $this->getLayout()->createBlock('Magento\Catalog\Block\Adminhtml\Product\Widget\Chooser')
+    // ->addData([
+        // 'button' => [
+            // 'open' => __('Select Product...')
+        // ]
+    // ])->toHtml();
+?>

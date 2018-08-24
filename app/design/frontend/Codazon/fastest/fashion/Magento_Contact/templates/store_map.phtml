@@ -1,0 +1,56 @@
+<?php
+/**
+ * Copyright © 2015 Codazon. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+	$_optionHelper = $this->helper('Codazon\ThemeOptions\Helper\Data');
+	$showMap = $_optionHelper->getConfig('general_section/contact_us/show_google_map');
+	$address = $_optionHelper->getConfig('general_section/contact_us/address');
+	$configLat = $_optionHelper->getConfig('general_section/contact_us/latitude');
+	$configLng = $_optionHelper->getConfig('general_section/contact_us/longitude');
+	
+	if( ($configLat != '') && ($configLng != '') ){
+		$lat = $configLat; $lng = $configLng;
+	}else{
+		$mapJson = file_get_contents('http://maps.google.com/maps/api/geocode/json?address='.urlencode($address).'&sensor=false');
+		$mapObject = json_decode($mapJson);
+		$lat = $mapObject->results[0]->geometry->location->lat;
+		$lng = $mapObject->results[0]->geometry->location->lng; 
+	}
+	
+	$zoom = $_optionHelper->getConfig('general_section/contact_us/zoom');
+?>
+<?php if($showMap): ?>
+<div id="map_canvas" style="width:750px; height:450px; border: 2px solid #3872ac;"></div>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.17&signed_in=true&key=AIzaSyByF5Th99QzkJtIhod9awRaDK2CGSNB43o"></script>
+<script type="text/javascript">
+function initialize() {
+	var myLatlng = new google.maps.LatLng(<?php echo $lat?>, <?php echo $lng ?>);
+	var mapOptions = {
+		zoom: <?php echo $zoom ?>,
+		center: myLatlng
+	};
+	var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+	var contentString = '<?php echo strip_tags($address) ?>';
+	var infowindow = new google.maps.InfoWindow({
+		content: contentString
+	});
+	var image = 'http://maps.google.com/mapfiles/ms/icons/blue.png';
+	var marker = new google.maps.Marker({
+		position: myLatlng,
+		map: map,
+		icon: image,
+		title: '<?php echo strip_tags($address) ?>'
+	});
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.open(map, marker);
+	});
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<?php endif ?>

@@ -1,0 +1,498 @@
+<?php
+    $cat = $this->getCurrentCategory();
+    $data = $this->getAttributes();
+?>
+<script type="text/javascript">
+var jsonFilter = <?php echo json_encode($data) ?>;
+var catparam = 'catid=<?php echo $cat->getId() ?>';
+var uriShow = '';
+var baseUrl = '<?php echo $this->getBaseUrl() ?>';
+var toolOptions = '';
+var toolbars = document.getElementsByClassName('toolbar-products');
+var toolbar = toolbars[0];
+if(toolbar){
+    var productListToolbarForm = JSON.parse(toolbar.getAttribute('data-mage-init'));
+    var toolOptions = productListToolbarForm.productListToolbarForm;
+}
+require([
+    'jquery',
+    "Codazon_AjaxLayeredNav/js/nouislider.min",
+    'domReady!'
+], function($,noUiSlider){
+    
+});
+
+require(["jquery","catalogAddToCart","Codazon_AjaxLayeredNav/js/nouislider.min"], function ($, catalogAddToCart, noUiSlider) {
+    //price slider
+    $(document).delegate('.ui-page', 'touchmove', false);
+    function setParam(data, name, value){
+        var tmp = '';
+        var flag = false;
+        var result = '';
+        if(data){
+            tmp = data.split('&');
+        }
+        if(tmp.length > 0){
+            for(var i = 0; i < tmp.length; i++){
+                var tmp2 = tmp[i].split('=');
+                if(tmp2.length > 1 && tmp2[0] == name)
+                {
+                    tmp2[1] = value;
+                    flag = true;
+                }
+                if(tmp2.length > 1){
+                    result += ('&' + tmp2[0] + '=' + tmp2[1]);
+                }
+            }
+        }
+        if(!flag){
+            result += ('&' + name + '=' + value);
+        }
+        return result;
+    }
+    
+    
+
+    function setSliderHandle(i, value) {
+        var r = [null,null];
+        r[i] = value;
+        var keypressSlider = document.getElementById('price-slider');
+        keypressSlider.noUiSlider.set(r);
+    }
+
+    function initPriceSlider(){
+        var keypressSlider = document.getElementById('price-slider');
+        var input0 = document.getElementById('price-from');
+        var input1 = document.getElementById('price-to');
+        var inputs = [input0, input1];
+        if (typeof priceRange === "undefined" || ! keypressSlider){
+            return;
+        }
+        noUiSlider.create(keypressSlider, {
+            start: [priceRange.min, priceRange.max],
+            connect: true,
+            tooltips: false,
+            range: {
+                'min': priceRange.min,
+                'max': priceRange.max
+            }
+        },true);
+
+        keypressSlider.noUiSlider.on('update', function( values, handle ) {
+            if(inputs[handle]){
+                inputs[handle].value = values[handle];
+            }
+        });
+
+        // Listen to keydown events on the input field.
+        inputs.forEach(function(input, handle) {
+
+            input.addEventListener('change', function(){
+                setSliderHandle(handle, this.value);
+            });
+
+            input.addEventListener('keydown', function( e ) {
+
+                var values = keypressSlider.noUiSlider.get();
+                var value = Number(values[handle]);
+
+                // [[handle0_down, handle0_up], [handle1_down, handle1_up]]
+                var steps = keypressSlider.noUiSlider.steps();
+
+                // [down, up]
+                var step = steps[handle];
+
+                var position;
+
+                // 13 is enter,
+                // 38 is key up,
+                // 40 is key down.
+                switch ( e.which ) {
+
+                    case 13:
+                        setSliderHandle(handle, this.value);
+                        break;
+
+                    case 38:
+
+                        // Get step to go increase slider value (up)
+                        position = step[1];
+
+                        // false = no step is set
+                        if ( position === false ) {
+                            position = 1;
+                        }
+
+                        // null = edge of slider
+                        if ( position !== null ) {
+                            setSliderHandle(handle, value + position);
+                        }
+
+                        break;
+
+                    case 40:
+
+                        position = step[0];
+
+                        if ( position === false ) {
+                            position = 1;
+                        }
+
+                        if ( position !== null ) {
+                            setSliderHandle(handle, value - position);
+                        }
+
+                        break;
+                }
+            });
+        });
+
+        $("#apply-price").click(function(){
+            var val = $("#price-from").val() + "-" + $("#price-to").val();
+            var param = changeUrl('price', val);
+            request(param);
+            //getHref();
+            //$('#price-fake').click();
+        });
+    }
+    //==== end price slider ====
+
+    var url = "<?php echo $this->getUrl('ajaxlayerednav/load/data') ?>";
+    function initAjaxLayer(){
+        var href = window.location.href;
+        var params = href.split('#');
+        if(params[1]){
+            request(params[1]);
+        }else{
+            //disable all click of toolbar
+            initPriceSlider();
+            initClickAjax();
+            modeControl();
+            orderControl();
+            directionControl();
+            limitControl();
+        }
+        return false;
+    };
+    initAjaxLayer();
+    
+    function displayOverlay(text) {
+        $("<div id='overlay'><div class='rectangle-bounce'><div class='rect1'></div><div class='rect2'></div><div class='rect3'></div><div class='rect4'></div><div class='rect5'></div></div></div>").css({
+            "position": "fixed",
+            "top": "0px",
+            "left": "0px",
+            "width": "100%",
+            "height": "100%",
+            "background-color": "rgba(0,0,0,.5)",
+            "z-index": "10000",
+            "vertical-align": "middle",
+            "text-align": "center",
+            "color": "#fff",
+            "font-size": "40px",
+            "font-weight": "bold",
+            "cursor": "wait"
+            //“background-image" : "url(<?php echo $block->getViewFileUrl('Codazon_AjaxLayeredNav::images/ajax_nav_loading.gif'); ?>)",
+            //“background-repeat" : "no-repeat",
+            //“background-position" : "center"
+        }).appendTo("body");
+    }
+
+    function removeOverlay() {
+        $("#overlay").remove();
+    }
+    
+    function modeControl(){
+        $('[data-role="mode-switcher"]').each(function(){
+            $(this).unbind();
+            $(this).click(function(){
+                var val = $(this).attr('data-value');
+                var param = changeUrl('product_list_mode', val, toolOptions.modeDefault);
+                request(param);
+                return false;
+            });
+        });
+        $('[data-role="mode-switcher"]').attr('data-role','');
+    }
+    
+    function setParam(data, name, value){
+        var tmp = '';
+        var flag = false;
+        var result = '';
+        if(data){
+            tmp = data.split('&');
+        }
+        if(tmp.length > 0){
+            for(var i = 0; i < tmp.length; i++){
+                var tmp2 = tmp[i].split('=');
+                if(tmp2.length > 1 && tmp2[0] == name)
+                {
+                    tmp2[1] = value;
+                    flag = true;
+                }
+                if(tmp2.length > 1){
+                    result += ('&' + tmp2[0] + '=' + tmp2[1]);
+                }
+            }
+        }
+        if(!flag){
+            result += ('&' + name + '=' + value);
+        }
+        return result;
+    }
+    
+    function convertIdToCode(data)
+    {
+        var tmp = '';
+        var result = '';
+        if(data){
+            tmp = data.split('&');
+        }
+        if(tmp.length > 0){
+            for(var i = 0; i < tmp.length; i++){
+                var attr = tmp[i].split('=');
+                if(attr.length > 1)
+                {
+                    var code = attr[0];
+                    var value = attr[1];
+                    if(jsonFilter.hasOwnProperty(code) && code != 'price'){
+                        value = jsonFilter[code][value];
+                    }
+                    if(code != 'catid'){
+                        result += (code + '=' + value + '&');
+                    }
+                }
+            }
+        }
+        result = result.substring(0, result.length-1);
+        return result;
+    }
+    
+    function convertCodeToId(data)
+    {
+        var tmp = '';
+        var result = '';
+        if(data){
+            tmp = data.split('&');
+        }
+        if(tmp.length > 0){
+            for(var i = 0; i < tmp.length; i++){
+                var attr = tmp[i].split('=');
+                if(attr.length > 1)
+                {
+                    var code = attr[0];
+                    var value = attr[1];
+
+                    if(jsonFilter.hasOwnProperty(code) && code != 'price'){
+                        //value = jsonFilter[code][value];
+                        for(var j in jsonFilter[code]){
+                            if(jsonFilter[code][j] == value){
+                                value = j;
+                                break;
+                            }
+                        }
+                    }
+                    result += (code + '=' + value + '&');
+                }
+            }
+        }
+        result = result.substring(0, result.length-1);
+        return result;
+    }
+
+    function changeUrl(paramName, paramValue, defaultValue) {
+        var decode = window.decodeURIComponent,
+            urlPaths = window.location.href.split('#'),
+            urlParams = urlPaths[1] ? urlPaths[1].split('&') : [],
+            paramData = {},
+            parameters, i;
+        for (i = 0; i < urlParams.length; i++) {
+            parameters = urlParams[i].split('=');
+            paramData[decode(parameters[0])] = parameters[1] !== undefined ?
+                decode(parameters[1].replace(/\+/g, '%20')) :
+                '';
+        }
+        paramData[paramName] = paramValue;
+
+        if (paramValue == defaultValue) { //eslint-disable-line eqeqeq
+            delete paramData[paramName];
+        }
+        paramData = $.param(paramData);
+        
+        var param = (paramData.length ? paramData : '');
+        if(paramData.length){
+            window.location.href = urlPaths[0] + "#" + param;
+        }else{
+            window.location.hash = '';
+        }
+        return param;
+    }
+    
+    function directionControl(){
+        $('[data-role="direction-switcher"]').each(function(){
+            $(this).unbind();
+            $(this).click(function(){
+                var val = $(this).attr('data-value');
+                var param = changeUrl('product_list_dir', val, toolOptions.directionDefault);
+                request(param);
+                return false;
+            });
+        });
+        $('[data-role="direction-switcher"]').attr('data-role','');
+    }
+    
+    function orderControl(){
+        $('[data-role="sorter"]').each(function(){
+            $(this).unbind();
+            $(this).change(function(){
+                var val = $(this).val();
+                var param = changeUrl('product_list_order', val, toolOptions.orderDefault);
+                request(param);
+                return false;
+            });
+        });
+        $('[data-role="sorter"]').attr('data-role','');
+    }
+    
+    function limitControl(){
+        $('[data-role="limiter"]').each(function(){
+            $(this).unbind();
+            $(this).change(function(){
+                var val = $(this).val();
+                var param = changeUrl('product_list_limit', val, toolOptions.limitDefault);
+                request(param);
+                return false;
+            });
+        });
+        $('[data-role="limiter"]').attr('data-role','');
+    }
+    
+    function initClickAjax(){
+        $('#layered-filter-block a, .pages a').each(function(){
+            $(this).click(function(){
+                var href = $(this).attr('href');
+                var params = href.split('?');
+                var param = params[1];
+                request(param);
+                var uriShow = convertIdToCode(param);
+                window.location.href = '#' + uriShow;
+                return false;
+            });
+        });
+    }
+    function initQuickshop(){
+        var configs = {
+            "baseUrl": baseUrl,
+            "qsLabel": "Quick Shop",
+            "itemClass": ".product-item",
+            "target": ".product-item-info",
+            "autoAddButtons":true           
+        };
+        requirejs(['Codazon_QuickShop/js/quickshop'],function(quickshop){
+            quickshop(configs,$('body'));
+        }); 
+    }
+    
+    function initAddToCart(){
+        catalogAddToCart({},$('[data-role=tocart-form], .form.map.checkout'));
+    }
+
+    function _checkVisible($el)
+    {
+        return $el.get(0).offsetWidth && $el.get(0).offsetHeight && $el.is(':visible');
+    }
+
+    function sameHeightItems()
+    {
+        var self = this;
+        if($('.same-height').length > 0){
+            $('.same-height').each(function() {
+                var $ul = $(this);
+                var makeSameHeight = function() {
+                    var maxHeight = 0;
+                    $ul.find('.product-item-details').css('height', '');
+                    n = $ul.find('.product-item-details').length - 1;
+                    $ul.find('.product-item-details').each(function(i, el) {                                                                             
+                        if($(this).height() > maxHeight) {
+                            maxHeight = $(this).height();
+                        }
+                        if(i == n) {
+                            $ul.find('.product-item-details').height(maxHeight);
+                        }
+                    });
+                }
+                var interval = false;
+                if(_checkVisible($ul)){
+                    makeSameHeight();
+                }else{
+                    interval = setInterval(function() {
+                        if (self._checkVisible($ul)) {
+                            clearInterval(interval);
+                            makeSameHeight();
+                        }
+                    }, 500);
+                }
+            });
+        }
+    }
+
+    function initBtnMobileFilter(){
+        $(".block-title.filter-title strong").click(function(){
+            $(document.body).toggleClass("filter-active");
+            $(".block.filter").toggleClass("active");
+        });
+    }
+    
+    function request(param){
+        var headerHeight = $('.page-header:first').height();
+        $(window).scrollTop(headerHeight);
+        displayOverlay('Loading...');
+        param = convertCodeToId(param);
+        $.ajax({
+            url: url + '?' + catparam + '&' + param,
+            //context: $('#page-title-heading'),
+            cache:true
+        }).success(function(json) {
+            var data = jQuery.parseJSON(json);
+            var data = jQuery.parseJSON(json);
+            var $productListing = $('<div>');
+            $productListing.html(data.products);
+            $('#layered-filter-block').replaceWith(data.layer);
+            if ($('.column.main .products.wrapper').length) {
+                $('.column.main .toolbar-products:first').replaceWith($productListing.find('.toolbar-products').first());
+                $('.column.main .toolbar-products:last').replaceWith($productListing.find('.toolbar-products').last());
+                $('.column.main .products.wrapper').replaceWith($productListing.find('.products.wrapper'));
+            } else {
+                var $productContent = $productListing.children();
+                $('.column.main').append($productContent);
+            }
+            if ($productListing.find('.message.info.empty').length) {
+                $('.column.main').prepend($productListing.find('.message.info.empty'));
+            }
+            $productListing.find('script').clone().appendTo('body');
+            $productListing.find('style').clone().appendTo('body');
+            $productListing.remove();
+            //initAddToCart();
+            $('.column.main').trigger("contentUpdated");
+            //$('[data-role=tocart-form]').catalogAddToCart();
+            initPriceSlider();
+            initClickAjax();
+            modeControl();
+            orderControl();
+            directionControl();
+            limitControl();
+            initQuickshop();
+            initBtnMobileFilter();
+            
+            var configs = {"openedState": "active", "collapsible": true, "active": false, "collateral": { "openedState": "filter-active", "element": "body" } };
+            $("#layered-filter-block").collapsible(configs);
+            configs = {"openedState": "active", "collapsible": true, "active": false };
+            $(".filter-current").collapsible(configs);
+            configs = {"openedState": "active", "collapsible": true, "active": false, "multipleCollapsible": false};
+            $("#narrow-by-list").accordion(configs);
+
+            removeOverlay();
+            setTimeout(sameHeightItems,500);
+        });
+    }
+});
+</script>

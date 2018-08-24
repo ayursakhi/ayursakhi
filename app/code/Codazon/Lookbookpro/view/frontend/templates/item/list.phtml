@@ -1,0 +1,141 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */ 
+?>
+
+<?php
+$collection = $block->getItemLoadedCollection();
+$helper = $this->helper('Codazon\Lookbookpro\Helper\Data');
+$width = $helper->getConfig('codazon_lookbook/images/lookbook_item/small_width') ? : 300;
+$height = $helper->getConfig('codazon_lookbook/images/lookbook_item/small_height') ? : 300;
+$largeWidth = $helper->getConfig('codazon_lookbook/images/lookbook_item/large_width') ? : 1000;
+
+$paddingBottom = 100 * $height/$width;
+$productWidth = $helper->getConfig('codazon_lookbook/images/product/width') ? : 350;
+$productHeight = $helper->getConfig('codazon_lookbook/images/product/height') ? : 447;
+$productCollection = $helper->getProductCollectionByItemCollection($collection, $productWidth, $productHeight);
+$productPadding = 100*$productHeight/$productWidth;
+$widget = [
+    'Codazon_Lookbookpro/js/lookbook' => [
+        
+    ]
+]
+?>
+
+<?php if ($collection->count()) : ?>
+
+<div class="products lookbook-items wrapper" data-role="lookbook-items" data-mage-init='<?= json_encode($widget) ?>'>
+    <div class="loobook-item-list row">
+        <?php foreach($collection as $item) : ?>
+        <?php
+            $name = $this->stripTags($item->getName());
+            $description = $this->stripTags($item->getDescription());
+            $img = $helper->getItemImageUrl($item, $width, null);
+            $largeImage = $helper->getItemImageUrl($item, $largeWidth, null);
+            $itemData = json_decode($item->getData('item_data'), true);
+            $points = $helper->getItemPoints($item);
+            if ($itemData['width']) {
+                $imgHeight = 100*$itemData['height']/$itemData['width'];
+            } else {
+                $imgHeight = 100;
+            }
+            
+        ?>
+        <div class="item col-sm-8 col-md-6 col-xs-12" data-role="item">
+            <div class="lookbook-inner">
+                <div class="auto-pos-wrap item-img-wrap" style="padding-bottom: <?= $paddingBottom ?>%">
+                    <div class="a-img">
+                        <div class="img-center" style="height: <?= $imgHeight ?>%">
+                            <div class="canvas">
+                                <img class="small-image" alt="<?= $name; ?>" src="<?= $img; ?>" />
+                                <?php if ($points) : ?>
+                                <div class="item-points" data-role="small-item-points">
+                                    <?php $i = 1; ?>
+                                    <?php foreach ($points as $point) : ?>
+                                    <?php if (!empty($point['productId'])) : ?>
+                                    <a class="item-point" data-productid="<?= $point['productId']; ?>" style="left: <?= $point['left'] ?>%; top: <?= $point['top']; ?>%"><?= $i; ?></a>
+                                    <?php endif ?>
+                                    <?php $i++; endforeach ?>
+                                </div>
+                                <?php endif ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item-modal lb-no-loaded" style="display: none" data-role="item-modal">
+                <div class="item-modal-inner row">
+                    <div class="col-sm-12 col-xs-14 col-left media-section">
+                        <div class="item-media">
+                            <div class="auto-pos-wrap item-img-wrap" style="padding-bottom: <?= $paddingBottom ?>%">
+                                <div class="a-img">
+                                    <div class="img-center" style="height: <?= $imgHeight ?>%">
+                                        <div class="canvas">
+                                            <img alt="<?= $name; ?>" data-src="<?= $largeImage ?>" class="owl-lazy large-image" />
+                                            <?php if ($points) : ?>
+                                            <div class="item-points" data-role="large-item-points"></div>
+                                            <?php endif ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php if ($points) : ?>
+                    <div class="col-sm-12 col-xs-10 col-right product-section">
+                        <div class="item-title"><?= __('Shop the look'); ?></div>
+                        <div class="item-products" data-role="product-slider" data-productid="<?= implode(',', array_column($points, 'productId')); ?>"></div>
+                        <?php /* <?php if ($desc = $item->getData('description')) : ?>
+                        <div class="item-desc"><?= $desc; ?></div>
+                        <?php endif ?> */ ?>
+                    </div>
+                    <?php endif ?>
+                </div>
+            </div>
+        </div>
+        <?php endforeach ?>
+    </div>
+    <div class="product-data" style="display: none;" data-role="product-html-data">
+        <?php if ($productCollection) : ?>
+        <?php foreach ($productCollection as $_product) : ?>
+        <?php
+        $productUrl = $_product->getProductUrl();
+        $productName = $_product->getName();
+        ?>
+        <div class="product-item" data-productid="<?= $_product->getId(); ?>" data-href="<?= $productUrl ?>">
+            <div class="product-top">
+                <div class="product-image abs-img" style="padding-bottom: <?= $productPadding; ?>%">
+                    <img class="owl-lazy" data-src="<?= $_product->getData('small_image_url'); ?>" />
+                    <div class="product-number" data-role="product-number"></div>
+                </div>
+            </div>
+            <div class="product-bottom">
+                <div class="actions">
+                    <?= $_product->getData('price_html'); ?>
+                </div>
+                <a class="product-name" title="<?= $productName; ?>" href="<?= $productUrl; ?>"><?= $_product->getName(); ?></a>
+				<a class="button-buy" href="<?= $productUrl ?>"><span><?= __('Buy') ?></span></a>
+            </div>
+        </div>
+        <?php endforeach ?>
+        <?php endif ?>
+    </div>
+    <div class="lb-modal-container _hide first-load" data-role="modal-container">
+        <div class="lb-modal-outer">
+            <div class="lb-backface" data-role="close-modal"></div>
+            <div class="lb-modal-inner" data-role="modal-inner">
+                <div class="lb-modal-header">
+                    <button class="lb-close" data-role="close-modal"><span><?= __('Close'); ?></span></button>
+                </div>
+                <div class="lb-modal-content" data-role="modal-content">
+                    <div class="lookbook-slider" data-role="modal-slider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?= $block->getToolbarHtml() ?>
+<?php endif ?>
+

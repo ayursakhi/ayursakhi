@@ -1,0 +1,72 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Template for filter items block
+ *
+ * @var $block \Magento\LayeredNavigation\Block\Navigation\FilterRenderer
+ */
+?>
+<?php
+
+
+?>
+<?php if($filter instanceof Magento\CatalogSearch\Model\Layer\Filter\Price ):?>
+<?php $range =  $this->getPriceRange($filter);?>
+<?php $url = $this->getFilterUrl($filter);?>
+<?php
+    $symbol = $this->getStore()->getCurrentCurrency()->getCurrencySymbol();
+?>
+<style type="text/css">
+.filter-options-content a{-webkit-transition:none !important;}
+.ui-slider-handle {-ms-touch-action: none; touch-action: none;}
+</style>
+<script>
+var priceRange = {"min":<?php echo $range['min'] ?>, "max":<?php echo $range['max'] ?>};
+</script>
+<?php 
+?>      
+<div class=“price-control-wrapper” style="margin-bottom:45px;">
+	<div id="price-slider"></div>
+	<div class=“price-form” style="float:left"><?php echo $this->helper('Magento\Framework\Pricing\Helper\Data')->currency($range['min']) ?></div>
+	<div class=“price-to” style="float:right"><?php echo $this->helper('Magento\Framework\Pricing\Helper\Data')->currency($range['max']) ?></div>
+</div>
+
+<div class="price-control">
+    <label><?php echo $symbol ?></label><input type="text" id="price-from" style="width:40px"/>
+    <span> ~ </span>
+    <label><?php echo $symbol ?></label><input type="text" id="price-to" style="width:40px"/>
+    <button class="button" id="apply-price" style="float:right"><span><span><?php echo __("Go") ?></span></span></button>
+</div>
+
+<a href="#" id="price-fake" style="display:none"></a>
+<?php else:?>
+<ol class="items">
+    <?php foreach ($filterItems as $filterItem): ?>
+        <li class="my item">
+            <?php if ($filterItem->getCount() > 0): ?>
+                <a href="<?php echo $block->escapeUrl($filterItem->getUrl()) ?>">
+                    <?php /* @escapeNotVerified */ echo $filterItem->getLabel() ?>
+                    <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+                        <span class="count"><?php /* @escapeNotVerified */ echo $filterItem->getCount()?><span class="filter-count-label">
+                            <?php if ($filterItem->getCount() == 1):?> <?php /* @escapeNotVerified */ echo __('item')?><?php else:?> <?php /* @escapeNotVerified */ echo __('items') ?><?php endif;?></span></span>
+                    <?php endif; ?>
+                </a>
+            <?php else:?>
+                <?php /* @escapeNotVerified */ echo $filterItem->getLabel() ?>
+                <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+                    <span class="count"><?php /* @escapeNotVerified */ echo $filterItem->getCount()?><span class="filter-count-label">
+                        <?php if ($filterItem->getCount() == 1):?><?php /* @escapeNotVerified */ echo __('item')?><?php else:?><?php /* @escapeNotVerified */ echo __('items') ?><?php endif;?></span></span>
+                <?php endif; ?>
+            <?php endif; ?>
+        </li>
+    <?php endforeach ?>
+</ol>
+<?php endif;?>

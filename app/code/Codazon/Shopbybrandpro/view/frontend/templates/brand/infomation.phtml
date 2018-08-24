@@ -1,0 +1,77 @@
+<?php
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+/**
+ * Product list template
+ *
+ * @var $block Codazon\Shopbybrandpro\Block\Brand\BrandInformation
+ */ ?>
+ 
+<?php
+$brand = $this->getBrand();
+$displayCover = $this->getConfig('codazon_shopbybrand/brand_page/display_cover') && $brand->getBrandCover();
+$displayThumbnail = $this->getConfig('codazon_shopbybrand/brand_page/display_thumbnail') && $brand->getBrandThumbnail();
+$displayDescription = $this->getConfig('codazon_shopbybrand/brand_page/display_description') && $brand->getBrandDescription();
+$brand->setThumbnail($this->getThumbnailImage($brand, ['width' => 250]));
+?>
+<?php if ($displayCover || $displayThumbnail || $displayDescription) : ?>
+<div class="brand-container" itemscope itemtype="http://schema.org/brand">
+    <div class="block-content">
+        <?php if (!($displayCover || $displayThumbnail)) : ?>
+            <div class="row thumb-desc-section">
+                <div class="col-sm-24">
+                    <div class="brand-desc" itemprop="description"><?php echo $brand->getBrandDescription() ?></div>
+                </div>
+            </div>
+        <?php elseif ($displayThumbnail && !$displayCover) : ?>
+        <div class="row thumb-desc-section">
+        	<div class="col-xs-5">
+            	<div class="brand-img-wrap">
+                    <img class="brand-image" itemprop="image" src="<?php echo $brand->getThumbnail(); ?>" />
+                </div>
+            </div>
+            <div class="col-xs-19">
+            	<div class="brand-desc" itemprop="description"><?php echo $brand->getBrandDescription() ?></div>
+            </div>
+        </div>
+		<?php elseif ($displayCover) : ?>
+        <?php
+            $socialButtonsHtml = $this->getLayout()->createBlock('Magento\Framework\View\Element\Template', 'brand_page_share')
+                ->setBrand($brand)
+                ->setTemplate('Codazon_Shopbybrandpro::brand/social_buttons.phtml')
+                ->toHtml();
+        ?>
+        <div class="cover-section">
+			<div class="cover-wrap">
+				<img class="brand-cover" src="<?php echo $this->getCoverImage($brand, ['width' => 1200]); ?>" />
+			</div>
+            <div class="after-cover">
+                <div class="row">
+                    <?php if ($displayThumbnail) : ?>
+                    <div class="col-xs-5 thumb-section">
+                        <div class="brand-img-wrap">
+                            <img class="brand-image" itemprop="image" src="<?php echo $brand->getThumbnail(); ?>" />
+                        </div>
+                    </div>
+                    <?php endif ?>
+                    <div class="social-section <?= $displayThumbnail?'col-xs-19':'col-xs-24' ?>">
+                        <strong class="title hidden-xs"><?= $brand->getBrandLabel(); ?></strong>
+                        <?php echo $socialButtonsHtml ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row desc-section">
+			<div class="col-sm-24">
+            	<div class="brand-desc" itemprop="description"><?php echo $brand->getBrandDescription() ?></div>
+            </div>
+        </div>
+		<?php endif ?>
+    </div>
+</div>
+<?php endif ?>

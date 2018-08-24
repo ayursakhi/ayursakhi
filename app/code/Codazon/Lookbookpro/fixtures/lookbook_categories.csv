@@ -1,0 +1,14 @@
+cover,description,is_active,is_anchor,meta_description,meta_keywords,meta_title,name,thumbnail,url_key,url_path,entity_id,created_at,updated_at,parent_id,path,position,level,children_count
+,,1,,,,,"Root Category",,,,1,"2018-04-07 14:04:50","2018-05-14 10:09:43",0,1,0,0,13
+/c/o/cover_02.jpg,"<p>Need some fash-spiration? Let our <a href=""#"">#codazon-shop</a> show you the way! Check out our campaign lookbooks and <a href=""#"">#codazon-shop</a> edits full of the latest trends &amp; style tips.</p>",1,1,"Need some fash-spiration? Let our #codazon-shop show you the way! Check out our campaign lookbooks and #codazon-shop edits full of the latest trends & style tips.",,,"All lookbooks",/i/t/item_07.jpg,all-lookbooks,all-lookbooks.html,2,"2018-04-08 12:18:06","2018-05-16 08:23:23",1,1/2,1,1,13
+/c/o/cover_02.jpg,,1,1,,,,Fashion,/i/t/item_06.jpg,fashion,fashion-1.html,3,"2018-04-20 18:29:39","2018-05-16 02:21:07",2,1/2/3,1,2,4
+,,1,1,,,,Furniture,,furniture,furniture.html,4,"2018-04-20 18:30:11","2018-05-14 08:59:28",2,1/2/4,4,2,2
+,,1,1,,,,Sport,,sport,sport.html,5,"2018-04-20 18:31:41","2018-05-14 08:59:28",2,1/2/5,4,2,0
+,,1,1,,,,Office,,office,furniture/office.html,6,"2018-04-20 19:43:29","2018-05-14 04:06:39",4,1/2/4/6,1,3,0
+,,1,1,,,,Art,,art,art-1.html,7,"2018-04-20 19:46:45","2018-05-14 10:09:43",2,1/2/7,5,2,0
+,,1,1,,,,"For Men",,for-men,fashion/for-men.html,8,"2018-04-21 02:22:33","2018-05-14 05:15:39",3,1/2/3/8,1,3,0
+,,1,1,,,,"For Women",,for-women,fashion/for-women.html,9,"2018-04-21 02:26:48","2018-05-14 04:02:29",3,1/2/3/9,4,3,0
+,,1,1,,,,Winter,,winter,fashion/winter.html,10,"2018-04-21 02:32:03","2018-05-14 04:03:07",3,1/2/3/10,7,3,0
+,,1,1,,,,Festival,,festival,festival.html,11,"2018-04-21 03:02:51","2018-05-14 08:59:28",2,1/2/11,2,2,0
+,,1,1,,,,"Dining Room",,dining-room,furniture/dining-room.html,12,"2018-04-21 03:05:40","2018-05-14 04:06:45",4,1/2/4/12,2,3,0
+,,1,1,,,,Autumn,,autumn,fashion/autumn.html,15,"2018-04-21 03:14:42","2018-05-14 04:02:49",3,1/2/3/15,5,3,0

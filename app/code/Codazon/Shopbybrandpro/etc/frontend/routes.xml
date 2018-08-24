@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="brand">
+        <route id="brand" frontName="brand">
+            <module name="Codazon_Shopbybrandpro" />
+        </route>
+    </router>
+    <router id="standard">
+        <route id="brands" frontName="brands">
+            <module name="Codazon_Shopbybrandpro" />
+        </route>
+    </router>
+</config>

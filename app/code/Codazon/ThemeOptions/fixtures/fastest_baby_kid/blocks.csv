@@ -1,0 +1,178 @@
+title,identifier,content
+"Fastest - Baby & Kids - Main Menu",fastest-baby-kid-main-menu,"<div class=""cdz-main-menu"">{{widget type=""Codazon\MegaMenu\Block\Widget\Megamenu"" menu=""fastest-baby-kids-main-menu""}}</div>"
+"Fastest - Baby & Kids - Home Slideshow",fastest-baby-kid-home-slideshow,"<div class=""slideshow-container"">{{widget type=""Codazon\Slideshow\Block\Widget\Slideshow"" slideshow_id=""fastest-baby-kid-home-slideshow""}}
+<div class=""down-arrow"" data-role=""scroll_next""><a id=""arrow"" class=""arrow"" href=""javascript:void(0)"">arrow</a></div>
+</div>"
+"Fastest - Baby & Kids - Footer Top - Newsletter",fastest-baby-kid-footer-top-newsletter,"<div class=""footer-top-ads text-center cls-style02"">
+<p class=""ftop-ads-title"">Newsletter</p>
+<p class=""ftop-ads-desc"">Be the first to know about the latest deals, style updates & more!</p>
+<div class=""ftop-newsletter"">{{block class=""Magento\Newsletter\Block\Subscribe"" name=""cdz.newsletter.style05"" template=""subscribe.phtml""}}</div>
+</div>"
+"Fastest - Baby & Kids - Footer Links",fastest-baby-kid-footer-links,"<div class=""row"">
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5 hidden-xs"">About us</p>
+<div>
+<p class=""hidden-xs"">Fastest Magento 2 store has seen some remarkable accomplishments over the past 30 years. With a goal to become an $8 billion company by 2017</p>
+<div class=""footer-social"">
+<p class=""h5 visible-xs"">Follow us</p>
+<p class=""social""><a href=""#""><span class=""fa fa-facebook"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-twitter"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-pinterest-p"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-google-plus"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-tumblr"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-vimeo"">&nbsp;</span></a></p>
+</div>
+</div>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-2"">You Link</p>
+<ul id=""footer-content-2"" class=""footer-link showhide"">
+<li><a href=""#"">Side Navigation</a></li>
+<li><a href=""{{store url=""""}}about-us"">About Us</a></li>
+<li><a href=""{{store url=""""}}contact"">Contact Us</a></li>
+<li><a href=""#"">Forum Support</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode"">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-3"">Infomation</p>
+<ul id=""footer-content-3"" class=""footer-link showhide"">
+<li><a href=""#"">Side Navigation</a></li>
+<li><a href=""{{store url=""""}}about-us"">About Us</a></li>
+<li><a href=""{{store url=""""}}contact"">Contact Us</a></li>
+<li><a href=""#"">Forum Support</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode"">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-4"">Item Tags</p>
+<ul id=""footer-content-4"" class=""item_tag showhide"">
+<li><a href=""#"">awesome</a></li>
+<li><a href=""#"">beautiful</a></li>
+<li><a href=""#"">flat design</a></li>
+<li><a href=""#"">ios</a></li>
+<li><a href=""#"">mass</a></li>
+<li><a href=""#"">awesome</a></li>
+<li><a href=""#"">beautiful</a></li>
+<li><a href=""#"">flat design</a></li>
+</ul>
+</div>
+</div>
+</div>"
+"Fastest - Baby & Kids - Main Area - Featured Products",fastest-baby-kid-main-area-featured-products,"<div class=""product-style11 padding-left-50"">
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""cdz-block-title04 no-space"">
+<p class=""b-title h2""><span>Your Collections</span></p>
+</div>
+</div>
+</div>
+<div class=""row"" data-mage-init=""{&quot;tabs&quot;:{&quot;openedState&quot;:&quot;active&quot;}}"">
+<div class=""col-sm-24 tabs-list-sty05 bestseller-product"">
+<ul class=""nav nav-tabs hidden-xs abs-dropdown"" data-mage-init=""{&quot;Codazon_ProductFilter/js/productfilter&quot;:{&quot;codazon.mobiledropdown&quot;:{}}}"">
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-1"" data-toggle=""switch"">Featured</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-2"" data-toggle=""switch"">Baby</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-3"" data-toggle=""switch"">Toys</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-1"" data-toggle=""switch"">Kids</a></li>
+</ul>
+<div class=""tab-content product data items"">
+<div id=""best-seller-tab-1"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""14"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""220"" thumb_height=""220"" filter_template=""custom"" custom_template=""grid_slider.phtml"" show_slider=""1"" slider_item=""6"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`121, 122`^]^]""}}</div>
+<div id=""best-seller-tab-2"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""14"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""220"" thumb_height=""220"" filter_template=""custom"" custom_template=""grid_slider.phtml"" show_slider=""1"" slider_item=""6"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`59`^]^]""}}</div>
+<div id=""best-seller-tab-3"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""14"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""220"" thumb_height=""220"" filter_template=""custom"" custom_template=""grid_slider.phtml"" show_slider=""1"" slider_item=""6"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`120, 123`^]^]""}}</div>
+<div id=""best-seller-tab-1"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""14"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""220"" thumb_height=""220"" filter_template=""custom"" custom_template=""grid_slider.phtml"" show_slider=""1"" slider_item=""6"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`60`^]^]""}}</div>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Baby & Kids - Footer Bottom Payment",fastest-baby-kid-footer-bottom-payment,"<div class=""pull-right footer-payment-logo"">
+<div class=""cdz-footer-bottom-payment""><img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/baby_kid/home/cdz-footer-payment.png""}}"" alt=""Accept Payment"" /></div>
+</div>"
+"Fastest - Baby & Kids - Main Area - Mother Love",fastest-baby-kid-main-area-mother-love,"<div class=""middle-ads""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/baby_kid/home/img01.jpg'}}"" alt=""Fastest - Baby &amp; Kids - Main Area - Mother Love"" /></a></div>"
+"Fastest - Baby & Kids - Main Area - New Products",fastest-baby-kid-main-area-new-products,"<div class=""product-style11 padding-left-50"">
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""cdz-block-title04"">
+<p class=""b-title h2""><span>Show new in Kids &amp; Babys</span></p>
+</div>
+</div>
+</div>
+<div class=""row"">
+<div class=""col-sm-24 text-center"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""14"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""220"" thumb_height=""220"" filter_template=""custom"" custom_template=""grid_slider.phtml"" show_slider=""1"" slider_item=""6"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`120, 123`^]^]""}}</div>
+</div>
+</div>"
+"Fastest - Baby & Kids - Main Area - Hot Brands",fastest-baby-kid-main-area-hot-brands,"<div class=""cdz-brand-slider-wrap hidden-xs padding-left-50"">
+<div class=""cdz-brand-title""><span>Hot Brands</span></div>
+<div class=""cdz-brand-slider"">{{widget type=""Codazon\Shopbybrandpro\Block\Widget\BrandSlider"" list_style=""widget/brand_slider.phtml"" alphabet_table=""a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"" items_per_column=""1"" order_by=""brand_label"" order_way=""asc"" thumb_width=""180"" thumb_height=""180"" slider_dots=""0"" slider_nav=""1"" slider_loop=""0"" slider_margin=""0"" items_1900=""9"" items_1600=""8"" items_1420=""8"" items_1280=""8"" items_980=""6"" items_768=""5"" items_480=""4"" items_320=""3"" items_0=""2""}}</div>
+</div>"
+"Fastest - Baby & Kids - Main Area - Toplists",fastest-baby-kid-main-area-toplists,"<div class=""padding-left-50 padding-right-50 row"">
+<div class=""cdz-products col-sm-6 product-list-style02 space-xs"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>Toplist Toys</span></p>
+</div>
+<div class=""cdz-products-list"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""4"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""70"" thumb_height=""70"" filter_template=""custom"" custom_template=""custom_list.phtml"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`120`^]^]""}}</div>
+</div>
+<div class=""cdz-products col-sm-6 product-list-style02 space-xs"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>Toplist Children Wear</span></p>
+</div>
+<div class=""cdz-products-list"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""4"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""70"" thumb_height=""70"" filter_template=""custom"" custom_template=""custom_list.phtml"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`121`^]^]""}}</div>
+</div>
+<div class=""cdz-products col-sm-6 product-list-style02 space-xs"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>Toplist Baby Gear</span></p>
+</div>
+<div class=""cdz-products-list"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""4"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""70"" thumb_height=""70"" filter_template=""custom"" custom_template=""custom_list.phtml"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`122`^]^]""}}</div>
+</div>
+<div class=""cdz-products col-sm-6 product-list-style02 space-xs"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>Toplist Strollers</span></p>
+</div>
+<div class=""cdz-products-list"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""4"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""70"" thumb_height=""70"" filter_template=""custom"" custom_template=""custom_list.phtml"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`123`^]^]""}}</div>
+</div>
+</div>"
+"Fastest - Baby & Kids - Main Area - Lookbook",fastest-baby-kid-main-area-lookbook,"<div class=""cdz_wapper-blog06 text-center space-lg"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>COMPLETE YOUR LOOK</span></p>
+<div class=""title-desc"">Finish off with our hats, watches, bags and accessories</div>
+</div>
+<div class=""main-blog-content padding-left-50"">{{widget type=""Magefan\Blog\Block\Widget\PostList"" categories=""15"" order_by=""publish_time"" order=""desc"" post_count=""6"" show_in_front=""thumb,name,description,published_date,author"" desc_length=""150"" show_slider=""1"" thumb_width=""380"" thumb_height=""380"" post_template=""custom"" custom_template=""latest_blog_slider.phtml""}}</div>
+</div>"
+"Fastest - Baby & Kids - Main Area - Instagram",fastest-baby-kid-main-area-instagram,"<div class=""main-instagram text-center"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>#LoveBabyKids</span></p>
+<div class=""title-desc"">Follow us on instagram</div>
+</div>
+<div class=""main-instagram-content"">{{widget type=""Codazon\ThemeOptions\Block\Instagramphotos"" access_token=""5562961169.1677ed0.5e22babafa064156b402362cab6d4b62""}}</div>
+</div>"
+"Fastest - Baby & Kids - Header Top Ads",fastest-baby-kid-header-top-ads,"<div class=""row header-top-ads"">
+<div class=""col-sm-24"">
+<ul class=""items text-uppercase"">
+<li class=""item contact-us""><span class=""hidden-xs"">Contact us: </span>+44 (0) 20 7074 8974</li>
+<li class=""item email""><span class=""hidden-xs"">Email us: </span>hello@fasteskids.com</li>
+<li class=""item hidden-xs"">Worldwide delivery</li>
+<li class=""item hidden-xs"">Free UK Delivery on orders over $100</li>
+</ul>
+</div>
+</div>"
+"Fastest - Baby & Kids - Block Popup Content",fastest-baby-kid-block-popup-content,"<div class=""cdz-popup-newsletter"">
+<div class=""cdz-popup-newsletter-left"">
+<div class=""popup-banner"">
+<div class=""banner""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/baby_kid/home/banner-newsletter.jpg'}}"" alt=""Banner 01"" /></a></div>
+</div>
+</div>
+<div class=""cdz-popup-newsletter-right"">
+<div class=""popup-title"">
+<h3 class=""text-uppercase""><span>Sign up Newsletter</span></h3>
+</div>
+<div class=""popup-content"">
+<div class=""popup-content-ads"">
+<p class=""popup-content-title h3"">Join YourStore's squad for 20% off</p>
+<p class=""popup-content-desc"">and get all the latest news, trends and offs and offers straight to your inbox. Or get 15% off using code SQUAD15</p>
+<div class=""popup-content-newsletter"">{{block class=""Magento\Newsletter\Block\Subscribe"" name=""cdz.newsletter.style05"" template=""popup_subscribe.phtml""}}</div>
+<p class=""popup-content-small"">1 UK only; 2. Offar expiras 23:59(GMT) 10/02/16; 3.</p>
+</div>
+</div>
+</div>
+</div>"

@@ -1,0 +1,37 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+?>
+
+<div class="mobile-search-wrapper">
+	<div class="mobile-search-content block block-search" id="mobile-search-content">
+		<div class="mobile-search-form-container" id="mobile-search-form-container"></div>
+	</div>
+</div>
+<script type="text/javascript">
+require(['jquery'],function($){
+    var $searchform = $('#search_mini_form'), $mbwrap = $('#mobile-search-form-container'), $pcwrap = $('#search-content .search-form-container').first();
+    var winwidth = window.innerWidth, adapt = 768;
+    function searchPosition(winwidth){
+        if (winwidth < adapt) {
+            $searchform.appendTo($mbwrap);
+            $('[data-action="advanced-search"]',$searchform).css('display','none');
+        }else{
+            $searchform.appendTo($pcwrap);
+            $('[data-action="advanced-search"]',$searchform).css('display','');
+        }
+    }
+    searchPosition(winwidth);
+    $(window).resize(function(){
+        var newwidth = window.innerWidth;
+        if( (winwidth < adapt && newwidth >= adapt) || (winwidth >= adapt && newwidth < adapt) ){
+            searchPosition(newwidth);
+            winwidth = newwidth;
+        }
+    });
+});
+</script>

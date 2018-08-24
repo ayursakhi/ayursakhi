@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Codazon\Shopbybrandpro\Block\Brand\AllBrands" name="all_brands" template="Codazon_Shopbybrandpro::brand/all_brands.phtml">
+                <block class="Codazon\Shopbybrandpro\Block\Widget\BrandSearch" name="brand_search" template="Codazon_Shopbybrandpro::brand/brand_search.phtml" />
+                <block class="Codazon\Shopbybrandpro\Block\Widget\BrandSlider" name="featured_brands" template="Codazon_Shopbybrandpro::brand/featured_brands.phtml" />
+                <block class="Codazon\Shopbybrandpro\Block\Widget\BrandSlider" name="brand_alphabet_list" template="Codazon_Shopbybrandpro::widget/alphabet_list.phtml"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

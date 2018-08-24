@@ -1,0 +1,65 @@
+<?php
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$pageInfo = $block->getPageInfo();
+$searchWidget = [
+    'Codazon_Shopbybrandpro/js/brands' => [
+        'codazon.searchBrands' => [
+            'brandUrl'  => $block->getUrl('brands/index/searchBrands'),
+            'noResults' => __('No brand matches your input'),
+            'resultsS'   => __('There is %1 result.'),
+            'resultsP'   => __('There are %1 results.')
+        ]
+    ]
+];
+$displayFeaturedBrands = (bool)$pageInfo->getData('display_featured_brands');
+$displayBrandSearch = (bool)$pageInfo->getData('display_brand_search');
+?>
+
+<div class="brand-container">
+    <div class="brand-top">
+        <?php if ($displayFeaturedBrands) : ?>
+        <div class="block featured-brands-block">
+            <div class="block-title">
+                <strong class="label"><?= $pageInfo->getData('featured_brand_title')?:__('Featured Brands') ?></strong>
+                <?php if ($displayBrandSearch) : ?>
+                <div class="brand-search-wrap" data-mage-init='<?= json_encode($searchWidget) ?>'>
+                    <div class="brand-form" data-role="brand-form">
+                        <label class="search-label"></label>
+                        <input data-role="brand_name" placeholder="<?= __('Search brand here') ?>" type="text" class="input-text search-input" />
+                        <div data-role="list-wrap" class="list-wrap"></div>
+                    </div>
+                </div>
+                <?php endif ?>
+            </div>
+            <div class="block-content">
+                <?= $block->getBlockHtml('featured_brands'); ?>
+            </div>
+        </div>
+        <?php endif ?>
+        <div class="page-desc"><?= $pageInfo->getData('description') ?></div>
+    </div>
+    
+    <div class="brand-main">
+        <div class="block">
+            <div class="block-title">
+                <strong class="label"><?= __('All brands') ?></strong>
+                <?php if ((!$displayFeaturedBrands) && $displayBrandSearch) : ?>
+                <div class="brand-search-wrap" data-mage-init='<?= json_encode($searchWidget) ?>'>
+                    <div class="brand-form" data-role="brand-form">
+                        <label class="search-label"></label>
+                        <input data-role="brand_name" placeholder="<?= __('Search brand here') ?>" type="text" class="input-text search-input" />
+                        <div data-role="list-wrap" class="list-wrap"></div>
+                    </div>
+                </div>
+                <?php endif ?>
+            </div>
+            <div class="block-content"><?= $block->getBlockHtml('brand_alphabet_list'); ?></div>
+        </div>
+    </div>
+</div>

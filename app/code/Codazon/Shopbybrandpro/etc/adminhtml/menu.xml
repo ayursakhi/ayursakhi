@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Codazon_Shopbybrandpro::shopbybrandpro" title="Shop by brand" module="Codazon_Shopbybrandpro" sortOrder="11" resource="Codazon_Shopbybrandpro::shopbybrandpro" parent="Codazon_Options::Codazon_Options" />
+		<add id="Codazon_Shopbybrandpro::manage_brands" title="Manage Brands" module="Codazon_Shopbybrandpro" sortOrder="0" parent="Codazon_Shopbybrandpro::shopbybrandpro" action="shopbybrandpro/index" resource="Codazon_Shopbybrandpro::index" />
+		<add id="Codazon_Shopbybrandpro::settings" title="Brand Settings" module="Codazon_Shopbybrandpro" sortOrder="20" parent="Codazon_Shopbybrandpro::shopbybrandpro" action="adminhtml/system_config/edit/section/codazon_shopbybrand" resource="Codazon_Shopbybrandpro::settings" />
+	</menu>
+</config>
