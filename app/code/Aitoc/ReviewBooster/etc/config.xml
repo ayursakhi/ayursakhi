@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Store/etc/config.xsd">
+    <default>
+        <review_booster>
+            <general_settings>
+                <review_reminder_email_sender>general</review_reminder_email_sender>
+                <template>review_booster_general_settings_template</template>
+                <send_emails_automatically>0</send_emails_automatically>
+                <delay_period>1</delay_period>
+                <rating_names>Terrible,Poor,Average,Very good,Excellent</rating_names>
+            </general_settings>
+            <discount_settings>
+                <generate_discounts>0</generate_discounts>
+                <discount_percent>5</discount_percent>
+                <discount_period>3</discount_period>
+            </discount_settings>
+        </review_booster>
+    </default>
+</config>

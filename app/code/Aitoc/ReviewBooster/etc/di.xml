@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Review\Model\Review">
+        <plugin name="loadExtendedFields" type="Aitoc\ReviewBooster\Model\Plugin\Review" sortOrder="1"/>
+    </type>
+    <type name="Magento\Review\Model\ResourceModel\Review">
+        <plugin name="saveExtendedFields" type="Aitoc\ReviewBooster\Model\Plugin\ResourceModel\Review" sortOrder="1"/>
+    </type>
+    <type name="Magento\Review\Controller\Product\Post">
+        <plugin name="allowAnonymousReview" type="Aitoc\ReviewBooster\Model\Plugin\Controller\ReviewPost" sortOrder="100" />
+    </type>
+</config>

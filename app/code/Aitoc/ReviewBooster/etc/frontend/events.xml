@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/Event/etc/events.xsd">
+    <event name="review_review_collection_load_before">
+        <observer name="aitoc_reviewbooster_add_fields_to_review_select" instance="Aitoc\ReviewBooster\Model\Observer\AddFieldsToReviewSelect"/>
+        <observer name="aitoc_reviewbooster_add_rating_filter" instance="Aitoc\ReviewBooster\Model\Observer\AddRatingFilter"/>
+        <observer name="aitoc_reviewbooster_add_custom_sorting" instance="Aitoc\ReviewBooster\Model\Observer\AddCustomSorting"/>
+    </event>
+</config>

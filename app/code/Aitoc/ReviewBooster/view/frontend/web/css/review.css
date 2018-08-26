@@ -1,0 +1,193 @@
+.review-field-rating{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+
+.review-field-rating .rating-name{
+    display: block;
+    left: 230px;
+    position: absolute;
+    bottom: 22px;
+}
+
+.rating-summary .rating-mark{
+    left: 100px;
+    position: absolute;
+    top: 2px;
+}
+
+.rating-stat{
+    margin-top: 3px;
+}
+
+.rating-results{
+    overflow: hidden;
+    clear: both;
+    margin-bottom: 15px;
+}
+
+.rating-mark-box{
+    overflow: hidden;
+    width: 340px;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.review-button .rb-title{
+    font-weight: bold;
+    padding: 5px 0 7px 0;
+}
+
+.rating-bar-label{
+    float: left;
+    width: 50px;
+    margin: 10px 5px 0 0;
+}
+
+.rating-bar-wrapper{
+    float: left; margin-top: 10px;
+}
+
+.rating-bar{
+    width: 200px;
+    border: 1px solid #ccc;
+    height: 25px;
+}
+
+.rating-bar-filling{
+    height: 100%;
+    background-color: #ffcc00
+}
+
+.rating-percents{
+    float: left;
+    margin: 10px 0 0 5px;
+}
+
+.rate-wrapper{
+    clear: both;
+}
+
+.review-list .rating-summary{
+    margin: 15px 0 15px 0;
+    position: relative;
+}
+
+.review-item .review-title{
+    margin-bottom: 0px;
+}
+
+.review-item .review-content{
+    margin-left: 0;
+    overflow: hidden;
+    clear: both;
+}
+
+.review-item .review-details{
+    overflow: hidden;
+    float: left;
+}
+
+.review-item .rating-summary .rating-label{
+    padding-right: 15px;
+}
+
+.review-item .review-details-ratings-box{
+    overflow: hidden;
+    clear: both;
+    line-height: 40px;
+}
+
+.review-item .review-details-ratings-box .review-ratings{
+    margin-left: 15px;
+    float: left;
+}
+
+.review-item .review-details-ratings-box .rating-label{
+    padding-top: 0;
+    padding-right: 7px;
+}
+
+.review-item .review-details-ratings-box .rating-result{
+    top: -2px;
+}
+
+.review-item .review-details-verified{
+    margin-right: 15px;
+    color: #3e7505;
+    position: relative;
+    padding-left: 20px;
+}
+
+.review-item .review-details-verified svg{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    fill: #3e7505;
+}
+
+.review-item .review-short{
+    overflow: hidden;
+    clear: both;
+    margin: 20px 0;
+}
+
+.review-item .review-short div span{
+    line-height: 24px;
+}
+
+.review-item .review-short .good-exp{
+    color: #3e7505;
+    position: relative;
+    padding-left: 25px;
+    padding-bottom: 5px;
+}
+
+.review-item .review-short .good-exp span svg{
+    position: absolute;
+    top: 4px;
+    left: 0;
+    fill: #3e7505;
+}
+
+.review-item .review-short .bad-exp{
+    color: #d0021b;
+    position: relative;
+    padding-left: 25px;
+}
+
+.review-item .review-short .bad-exp span svg{
+    position: absolute;
+    top: 4px;
+    left: 0;
+    fill: #d0021b;
+}
+
+.review-item .actions-toolbar .primary a{
+    line-height: 30px;
+    margin-left: 5px;
+}
+
+.review-item .review-form-actions .actions-primary{
+    line-height: 30px;
+    padding-right: 10px;
+}
+
+.review-item .actions-toolbar .submit{
+    padding: 3px 10px 4px 10px;
+    margin: 0 0 0 10px;
+}
+
+.review-item .actions-toolbar .submit span{
+    font-size: 1.2rem
+}
+
+.review-item .actions-primary p{
+    display: inline;
+    margin: 0;
+}
+
+.aitoc_review_image {
+    max-width: 100%;
+}

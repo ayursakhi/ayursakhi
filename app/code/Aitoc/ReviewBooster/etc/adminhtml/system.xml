@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Config/etc/system_file.xsd">
+    <system>
+        <tab id="aitoc_extensions" translate="label" sortOrder="1000000">
+            <label>Aitoc Extensions</label>
+        </tab>
+        <section id="review_booster" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Review Booster</label>
+            <tab>aitoc_extensions</tab>
+            <resource>Magento_Backend::review_booster</resource>
+            <group id="general_settings" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>General Settings</label>
+                <field id="email_sender" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                    <comment>Review reminders will appear as coming from this sender.</comment>
+                </field>
+                <field id="template" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Email Template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="ignore_group" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ignored Customer Groups</label>
+                    <source_model>Magento\Customer\Model\Config\Source\Group</source_model>
+                </field>
+                <field id="send_emails_automatically" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Send Emails Automatically</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If this is set to "No", review reminders will be generated, but won't be sent automatically via cron.</comment>
+                </field>
+                <field id="delay_period" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Delay Period (days)</label>
+                    <comment>Specify a delay period after which review reminders should be sent.</comment>
+                    <validate>validate-number</validate>
+                </field>
+            </group>
+            <group id="discount_settings" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Discount Settings</label>
+                <field id="generate_discounts" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Add Discounts to Alerts</label>
+                    <comment>If you choose 'No' option, alerts are sent without discounts</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="discount_percent" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Discount Percent</label>
+                    <validate>required-entry validate-digits validate-digits-range digits-range-1-100</validate>
+                    <depends>
+                        <field id="generate_discounts">1</field>
+                    </depends>
+                </field>
+                <field id="discount_period" translate="label" type="text"  sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Discount Period(days)</label>
+                    <comment>Specify a discount period(days), during which a discount is active for recipients</comment>
+                    <validate>required-entry validate-number</validate>
+                    <depends>
+                        <field id="generate_discounts">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="notification_settings" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Admin Notification Settings</label>
+                <field id="enable_notification" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enable Notifications</label>
+                    <comment>If you choose 'Yes' option, you’ll receive a notification every time a review is created.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="email_recipient" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Email recipient</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                    <comment>Review reminders will be sent to this email.</comment>
+                    <depends>
+                        <field id="enable_notification">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="review_settings" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Review Settings</label>
+                <field id="upload_image" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Allow Image Upload</label>
+                    <comment>Allow image upload on product page.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

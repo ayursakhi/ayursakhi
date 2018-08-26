@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Aitoc. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Aitoc_ReviewBooster::alerts"
+             toolTip="Aitoc Extension"
+             title="Review Booster"
+             module="Aitoc_ReviewBooster"
+             parent="Magento_Integration::system_extensions"
+             action="reviewbooster/alerts"
+             resource="Aitoc_ReviewBooster::alerts"/>
+    </menu>
+</config>

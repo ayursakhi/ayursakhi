@@ -1,0 +1,10 @@
+<!--@subject New Review @-->
+<!--@vars {
+"var product_name":"Product Name"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<p>{{trans "New review for the '%product_name' has been submitted." product_name=$product_name}}</p>
+
+{{template config_path="design/email/footer_template"}}

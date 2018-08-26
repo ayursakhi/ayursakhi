@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Review\Block\Form">
+        <plugin name="setTemplate" type="Aitoc\ReviewBooster\Block\Plugin\Review\Form" sortOrder="1"/>
+    </type>
+    <type name="Magento\Review\Block\Product\View\ListView">
+        <plugin name="setTemplate" type="Aitoc\ReviewBooster\Block\Plugin\Review\Product\View\ListView" sortOrder="1"/>
+    </type>
+    <type name="Magento\Review\Block\Product\Review">
+        <plugin name="modifyProductReviewUrl" type="Aitoc\ReviewBooster\Block\Plugin\Review\Product\Review" sortOrder="1"/>
+    </type>
+    <type name="Aitoc\ReviewBooster\Controller\Review">
+        <arguments>
+            <argument name="context" xsi:type="object">\Magento\Framework\App\Action\Context</argument>
+            <argument name="review" xsi:type="object">\Magento\Review\Model\Review</argument>
+            <argument name="reviewModel" xsi:type="object">\Aitoc\ReviewBooster\Model\Review</argument>
+            <argument name="reviewFactory" xsi:type="object">\Magento\Review\Model\ReviewFactory</argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+        
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Cron/etc/crontab.xsd">
+    <group id="default">
+        <job name="aitoc_review_booster_generate_reminders" instance="Aitoc\ReviewBooster\Model\Cron" method="generateReminders">
+            <schedule>*/5 * * * *</schedule>
+        </job>
+        <job name="aitoc_review_booster_send_reminders" instance="Aitoc\ReviewBooster\Model\Cron" method="processReminders">
+            <schedule>*/5 * * * *</schedule>
+        </job>
+    </group>
+</config>

@@ -1,0 +1,80 @@
+<?php
+$rating = $_helper->getRatingSummary($_product);
+$voteCount = 0;
+foreach ($_items as $ratingItem) {
+    $voteCount += $ratingItem->getVoteCount();
+}
+?>
+<?php if ($rating): ?>
+    <div class="rating-summary">
+        <div class="rating-result" title="<?php echo $reviewRatingNames[$_helper->convertRatingToPoints($rating, true)] ?>">
+            <span style="width:<?php echo $rating; ?>%"><span><?php echo __('%1 out of 5 stars', $reviewRatingNames[$_helper->convertRatingToPoints($rating)]) ?></span></span>
+        </div>
+        <div class="rating-mark">
+            <span><?php echo $reviewRatingNames[$_helper->convertRatingToPoints($rating, true)] ?></span>
+        </div>
+        <div class="rating-stat">
+            <span><?php echo __('%1 out of 5 stars, based on %2 votes', $_helper->convertRatingToPoints($rating), $voteCount) ?></span>
+        </div>
+    </div>
+    <div class="rating-results">
+        <div class="rating-mark-box">
+            <?php $detailedRating = $_helper->getDetailedRating($_reviewsCollection); ?>
+            <?php foreach ($detailedRating as $star => $singleRating): ?>
+                <?php $percent = $_helper->calculateSingleRating(array_sum($detailedRating), $singleRating); ?>
+                <div class="rate-wrapper">
+                    <div class="rating-bar-label">
+                        <?php if($star > 1): ?>
+                            <?php echo __('%1 stars', $star) ?>
+                        <?php else: ?>
+                            <?php echo __('%1 star', $star) ?>
+                        <?php endif; ?>
+                    </div>
+                    <div class="rating-bar-wrapper">
+                        <?php if($percent > 0): ?>
+                        <a href="?rating=<?php echo $star ?>#reviews">
+                            <?php endif; ?>
+                            <div class="rating-bar">
+                                <div style="width: <?php echo $percent ?>%;" class="rating-bar-filling"></div>
+                            </div>
+                            <?php if($percent > 0): ?>
+                        </a>
+                    <?php endif; ?>
+                    </div>
+                    <div class="rating-percents">
+                        <?php echo $percent ?>%
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <div class="review-button">
+            <div class="rb-title"><?php echo __('Share your thoughts with others') ?></div>
+            <div class="actions-toolbar review-form-actions">
+                <div class="primary actions-primary">
+                    <button type="submit" class="action submit primary write-action"><span><?php echo __('Write Review') ?></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+
+<script>
+    require([
+        'jquery'
+    ], function ($) {
+        $(function () {
+            $('.review-list .review-form-actions button.write-action').click(function (event) {
+                event.preventDefault();
+                var acnchor = 'review-form';
+                $(".product.data.items [data-role='content']").each(function(index){
+                    if (this.id == 'reviews') {
+                        $('.product.data.items').tabs('activate', index);
+                        $('html, body').animate({
+                            scrollTop: $('#' + acnchor).offset().top - 50
+                        }, 300);
+                    }
+                });
+            });
+        });
+    });
+</script>
