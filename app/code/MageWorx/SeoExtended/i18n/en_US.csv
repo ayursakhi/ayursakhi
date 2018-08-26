@@ -1,0 +1,76 @@
+"Continue Edit","Continue Edit"
+"SEO Category Filter Info","SEO Category Filter Info"
+Attribute,Attribute
+"Store View","Store View"
+"Save SEO Category Filter","Save SEO Category Filter"
+"Category Name","Category Name"
+"Store View Name","Store View Name"
+"Meta Title","Meta Title"
+"Meta Description","Meta Description"
+"Meta Keywords","Meta Keywords"
+Description,Description
+"Dynamic variables and randomizer are available.","Dynamic variables and randomizer are available."
+"See the description on the SEO XTemplates Category Filter Edit Page","See the description on the SEO XTemplates Category Filter Edit Page"
+Marketing,Marketing
+"MageWorx SEO Templates","MageWorx SEO Templates"
+"Category Filter Templates","Category Filter Templates"
+"Category Filter","Category Filter"
+"Create Category Filter","Create Category Filter"
+"The Category Filter has been deleted.","The Category Filter has been deleted."
+"Category Filter not found.","Category Filter not found."
+"Edit Category Filter","Edit Category Filter"
+"SEO Category Filters","SEO Category Filters"
+"SEO Extended","SEO Extended"
+Extended,Extended
+"Category Filters","Category Filters"
+"Please correct the data sent.","Please correct the data sent."
+"Something went wrong while saving the page.","Something went wrong while saving the page."
+"The Category Filter has been saved.","The Category Filter has been saved."
+"The Category Filters has been saved.","The Category Filters has been saved."
+"Something went wrong while saving the category filter.","Something went wrong while saving the category filter."
+"Could not save the category filter: %1","Could not save the category filter: %1"
+"Requested category filter entity doesn't exist","Requested category filter entity doesn't exist"
+"Unable to remove category filter entity %1","Unable to remove category filter entity %1"
+Page,Page
+"At the Beginning","At the Beginning"
+"At the End","At the End"
+No,No
+Edit,Edit
+Delete,Delete
+"Delete ""${ $.$data.name }""","Delete ""${ $.$data.name }"""
+"Are you sure you want to delete the SEO Category Filter ""${ $.$data.name }"" ?","Are you sure you want to delete the SEO Category Filter ""${ $.$data.name }"" ?"
+SEO,SEO
+"Meta Settings:","Meta Settings:"
+"Add Pager Number to Meta Title","Add Pager Number to Meta Title"
+"E.g. 'Apparel <b>| Page 3</b>'","E.g. 'Apparel <b>| Page 3</b>'"
+"Add Pager Number to Meta Description","Add Pager Number to Meta Description"
+"E.g. 'Description of apparel<b> | Page 2</b>'","E.g. 'Description of apparel<b> | Page 2</b>'"
+"Remove Default Title Prefix/Suffix","Remove Default Title Prefix/Suffix"
+Pages,Pages
+"Magento Default Title & Suffix will be cropped for these pages.<br>                                    
+                                &nbsp;&nbsp;&nbsp;&nbsp;For category: 'catalog_category_view'<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;For product:  'catalog_product_view'<br>
+                                Use <i>""Tools for SEO Suite extension"" -> ""Show Action Name of Page""</i>
+                                to find the values for other pages.","Magento Default Title & Suffix will be cropped for these pages.<br>                                    
+                                &nbsp;&nbsp;&nbsp;&nbsp;For category: 'catalog_category_view'<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;For product:  'catalog_product_view'<br>
+                                Use <i>""Tools for SEO Suite extension"" -> ""Show Action Name of Page""</i>
+                                to find the values for other pages."
+"Enable Extended Meta Title On Category Layered Navigation Pages","Enable Extended Meta Title On Category Layered Navigation Pages"
+"E.g. 'Phones | <b>Price:$300.00 and above, Color:Silver</b>'</i>","E.g. 'Phones | <b>Price:$300.00 and above, Color:Silver</b>'</i>"
+"Page Number Format For Landing Pages","Page Number Format For Landing Pages"
+"Add Pager Number to Landing Page Meta Title","Add Pager Number to Landing Page Meta Title"
+"Add Pager Number to Landing Page Meta Description","Add Pager Number to Landing Page Meta Description"
+"Enable Extended Meta Title On Landing Pages Layered Navigation Pages","Enable Extended Meta Title On Landing Pages Layered Navigation Pages"
+"Enable Extended Meta Description On Landing Pages Layered Navigation Pages","Enable Extended Meta Description On Landing Pages Layered Navigation Pages"
+"Category Filters:","Category Filters:"
+"Enable SEO for Category Filters Functionality ▾","Enable SEO for Category Filters Functionality ▾"
+"This setting enables the extended functionality for the category LN filters available in Marketing - MageWorx SEO Extended - SEO Category Filters.","This setting enables the extended functionality for the category LN filters available in Marketing - MageWorx SEO Extended - SEO Category Filters."
+"&nbsp;&nbsp;&nbsp;&nbsp;Use SEO-ed data for a single filter","&nbsp;&nbsp;&nbsp;&nbsp;Use SEO-ed data for a single filter"
+"When multiple filters with SEO-ed data applied, we will prioritise filters by their position in LN","When multiple filters with SEO-ed data applied, we will prioritise filters by their position in LN"
+"Add New SEO for Category Filter","Add New SEO for Category Filter"
+"Delete items","Delete items"
+"Are you sure you wan't to delete selected items?","Are you sure you wan't to delete selected items?"
+ID,ID
+"Attribute Name","Attribute Name"
+"Category ID (Name)","Category ID (Name)"

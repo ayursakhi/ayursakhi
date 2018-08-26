@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mageworx" sortOrder="2001">
+            <label>MageWorx</label>
+        </tab>
+        <section id="mageworx_seo" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>SEO</label>
+            <tab>mageworx</tab>
+            <resource>MageWorx_SeoBase::config_seobase</resource>
+            <group id="base" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>SEO Base</label>
+                <group id="hreflangs" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hreflang URLs Settings:</label>
+                    <comment><![CDATA[Used for the multistore]]></comment>
+                    <field id="scope" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label><![CDATA[Hreflang URLs Scope]]></label>
+                        <source_model>MageWorx\SeoBase\Model\Source\Scope</source_model>
+                        <comment>
+                            <![CDATA[If set to "Website", the Hreflang URLs work within one website only.<br>If set to "Global", the Hreflang URLs work between websites.]]>
+                        </comment>                                    
+                    </field>
+                    <field id="enabled" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Enable Hreflang URLs ▾]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="enabled_category" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Enabled for Category]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <depends>
+                            <field id="enabled">1</field>
+                        </depends>
+                    </field>
+                    <field id="enabled_product" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Enabled for Product]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <depends>
+                            <field id="enabled">1</field>
+                        </depends>
+                    </field>
+                    <field id="enabled_cms" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Enabled for CMS pages]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <depends>
+                            <field id="enabled">1</field>
+                        </depends>
+                    </field>
+                    <field id="enabled_landingpage" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <if_module_enabled>MageWorx_LandingPagesPro</if_module_enabled>
+                        <label><![CDATA[Enabled for Landing Pages]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <depends>
+                            <field id="enabled">1</field>
+                        </depends>
+                    </field>
+                    <field id="use_magento_lang_code" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Use Language Code from Default Locale ▾]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <depends>
+                            <field id="enabled">1</field>
+                        </depends>
+                    </field>
+                    <field id="lang_code" translate="label comment" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Select Language Code]]></label>
+                        <source_model>MageWorx\SeoBase\Model\Source\Locale</source_model>
+                        <depends>
+                            <field id="enabled">1</field>
+                            <field id="use_magento_lang_code">0</field>
+                        </depends>
+                    </field>
+                    <field id="country_code_enabled" translate="label comment" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Add Country Code ▾]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <depends>
+                            <field id="enabled">1</field>
+                        </depends>
+                    </field>
+                    <field id="use_magento_country_code" translate="label comment" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Use Country Code from Magento Settings ▾]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <depends>
+                            <field id="enabled">1</field>
+                            <field id="country_code_enabled">1</field>
+                        </depends>
+                    </field>
+                    <field id="country_code" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Select Country Code]]></label>
+                        <source_model>MageWorx\SeoBase\Model\Source\Country</source_model>
+                        <depends>
+                            <field id="enabled">1</field>
+                            <field id="country_code_enabled">1</field>
+                            <field id="use_magento_country_code">0</field>
+                        </depends>
+                    </field>
+                    <field id="x_default_website" translate="label comment" type="multiselect" sortOrder="110" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label><![CDATA[X-default]]></label>
+                        <source_model>MageWorx\SeoBase\Model\Source\XDefault\WebsiteScope</source_model>
+                        <can_be_empty>1</can_be_empty>
+                        <comment><![CDATA[Please, choose not more than 1 store per each website.]]></comment>
+                        <depends>
+                            <field id="enabled">1</field>
+                            <field id="scope">1</field>
+                        </depends>
+                    </field>
+                    <field id="x_default_global" translate="label comment" type="select" sortOrder="120" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label><![CDATA[X-default]]></label>
+                        <source_model>MageWorx\SeoBase\Model\Source\XDefault\GlobalScope</source_model>
+                        <depends>
+                            <field id="enabled">1</field>
+                            <field id="scope">0</field>
+                        </depends>
+                    </field>
+                    <field id="cms_relation_way" translate="label comment" type="select" sortOrder="130" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label><![CDATA[Multi-stores CMS pages relation]]></label>
+                        <source_model>MageWorx\SeoBase\Model\Source\CmsRelationWay</source_model>
+                        <comment><![CDATA[How to identify the same CMS page for different views.<br>
+                                "By Hreflang Key" option should be manually specified for each CMS page (except for the home page).]]>
+                        </comment>
+                    </field>
+                    <field id="selftest" translate="label comment" type="select" sortOrder="140" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label><![CDATA[Overview of Alternate Hreflang Settings]]></label>
+                        <frontend_model>MageWorx\SeoBase\Block\Adminhtml\FrontendModel\Selftest</frontend_model>
+                        <comment><![CDATA[Save the changed configuration to refresh the table.]]></comment>
+                    </field>
+                    
+                </group>
+                <group id="canonical" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Canonical URLs Settings:</label>
+                    <comment><![CDATA[First, disable the standard magento canonical in <i>Configuration->Catalog->Catalog->Search Engine Optimization</i>]]></comment>
+                    <field id="use_canonical" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Add Canonical URL Meta Header</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="disable_by_robots" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Disable Canonical URL for Pages with NOINDEX robots]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="canonical_ignore_pages" translate="label comment" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Canonical URL won't be added for these pages]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <comment>
+                            <![CDATA[Canonical URL Meta Header will not be added for these pages.<br>
+                             Please use page action name to disable canonical tag adding to corresponding page types. Do not use page URL.<br>
+                             To disable Canonical URL on the category: 'catalog_category_view'<br>To disable Canonical URL on the product:  'catalog_product_view']]>
+                        </comment>
+                        <depends>
+                            <field id="use_canonical">1</field>
+                        </depends>
+                    </field>
+                    <field id="cross_domain_store"  translate="label" type="select" sortOrder="24" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Cross Domain Canonical - Store URL]]></label>
+                        <source_model>MageWorx\SeoBase\Model\Source\CrossDomainStore</source_model>
+                        <depends>
+                            <field id="use_canonical">1</field>
+                        </depends>
+                    </field>
+                    <field id="cross_domain_url" translate="label" type="text" sortOrder="26" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Cross Domain Canonical - Custom URL]]></label>
+                        <validate>validate-url</validate>
+                        <depends>
+                            <field id="use_canonical">1</field>
+                        </depends>
+                    </field>
+                    <field id="associated_types" translate="label" type="multiselect" sortOrder="28" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Canonical Tag For Associated Product]]></label>
+                        <source_model>MageWorx\SeoBase\Model\Source\AssociatedTypes</source_model>
+                        <can_be_empty>1</can_be_empty>
+                        <depends>
+                            <field id="use_canonical">1</field>
+                        </depends>
+                    </field>
+                    <field id="trailing_slash_home_page" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Trailing Slash For Home Page Canonical URL]]></label>
+                        <source_model>MageWorx\SeoBase\Model\Source\AddCrop</source_model>
+                        <comment><![CDATA[Note: the trailing slash can be added to the pages without suffix .html or .htm]]></comment>
+                        <depends>
+                            <field id="use_canonical">1</field>
+                        </depends>
+                    </field>
+                    <field id="trailing_slash" translate="label comment" type="select" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Trailing Slash For Canonical URLs]]></label>
+                        <source_model>MageWorx\SeoBase\Model\Source\AddCrop</source_model>
+                        <comment><![CDATA[Note: the trailing slash can be added to the pages without suffix .html or .htm]]></comment>
+                        <depends>
+                            <field id="use_canonical">1</field>
+                        </depends>
+                    </field>
+                    <field id="use_pager_in_canonical" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Use Pager For Category Canonical URL]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <depends>
+                            <field id="use_canonical">1</field>
+                        </depends>
+                    </field>
+                    <field id="canonical_for_ln" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Canonical Tag for Category Layered Navigation]]></label>
+                        <source_model>MageWorx\SeoBase\Model\Source\CanonicalLn</source_model>
+                        <comment>
+                            <![CDATA[Please note that you can overwrite this setting for each product attribute separately. That can be via using <i>'Canonical Tag for Pages Filtered by Layered Navigation Leads to'</i> setting (<i>Stores->Attributes->Product->Attribute->Frontend properties</i>).]]>
+                        </comment>
+                        <depends>
+                            <field id="use_canonical">1</field>
+                        </depends>
+                    </field>
+                    <field id="canonical_for_ln_multiple" translate="label comment" type="select" sortOrder="105" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Canonical Tag if any LN Filter Use Multiple Selection]]></label>
+                        <source_model>MageWorx\SeoBase\Model\Source\CanonicalLnMultiple</source_model>
+                        <comment>
+                            <![CDATA[This setting works with <a href="https://www.mageworx.com/magento-2-layered-navigation.html" target="_blank">MageWorx LayeredNavigation extension</a>]]>
+                        </comment>
+                        <depends>
+                            <field id="use_canonical">1</field>
+                            <field id="canonical_for_ln">1</field>
+                        </depends>
+                    </field>
+                </group>
+                <group id="robots" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Meta Robots Settings:</label>
+                    <field id="https_robots" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Robots Meta Header for HTTPS]]></label>
+                        <source_model>MageWorx\SeoBase\Model\Source\MetaRobots</source_model>
+                        <can_be_empty>1</can_be_empty>
+                    </field>
+                    <field id="noindex_follow_pages" translate="label" type="multiselect" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[NOINDEX, FOLLOW Robots Meta Header<br>for Pages Without Content]]></label>
+                        <source_model>MageWorx\SeoBase\Model\Source\RobotPages</source_model>
+                        <can_be_empty>1</can_be_empty>
+                    </field>
+                    <field id="noindex_follow_user_pages" translate="label" type="textarea" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[NOINDEX, FOLLOW Robots Meta Header<br>for Additional Pages]]></label>
+                        <comment><![CDATA[Can be either a full action name or a request path. Wildcard allowed<br/><b>Examples</b>:<br/>sitemap_*<br>sitemap/*<br>rss_*<br>rss/*<br>The values for other pages can be found with the help of "Tools for SEO Suite extension" -><br>"Show Action Name of Page".]]></comment>
+                    </field>
+                    <field id="noindex_nofollow_user_pages" translate="label" type="textarea" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[NOINDEX, NOFOLLOW Robots Meta Header<br>for Additional Pages]]></label>
+                    </field>
+                    <field id="category_filter_to_noindex" translate="label" type="select" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Set NOINDEX, FOLLOW for Category LN Pages]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="count_filters_for_noindex" translate="label" type="text" sortOrder="155" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Count of filters for set NOINDEX, FOLLOW for LN]]></label>
+                        <depends>
+                            <field id="category_filter_to_noindex">0</field>
+                        </depends>
+                        <validate>validate-zero-or-greater integer</validate>
+                    </field>
+                    <field id="attribute_settings" translate="label" type="textarea" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Robots for Attributes Combinations]]></label>
+                        <comment>
+                            <![CDATA[Meta Robots settings for attribute or attributes combinations in layered navigation. All existing meta robots values are available.
+                                    <br/><b>Examples</b>:
+                                    <br/>index,follow:color - it sets the INDEX,FOLLOW meta robot tag when ‘color’ attribute is selected;
+                                    <br/>index,follow: color,brand - it sets the INDEX,FOLLOW meta robot tag when ‘color’ or ‘brand’ attributes are selected;
+                                    <br/>noindex,follow:color+brand - it sets the NOINDEX,FOLLOW meta robot tag when both ‘color’ and ‘brand’ attributes are selected at the same time.]]>
+                        </comment>
+                    </field>
+                    <field id="robots_for_ln_multiple" translate="label comment" type="select" sortOrder="165" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Set NOINDEX, FOLLOW for LN Filters with Multiple Selection]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <comment>
+                            <![CDATA[This setting works with <a href="https://www.mageworx.com/magento-2-layered-navigation.html" target="_blank">MageWorx LayeredNavigation extension</a>]]>
+                        </comment>
+                    </field>
+                </group>
+                <field id="use_next_prev" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Add Link Rel="next/prev" on the Category Page]]></label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

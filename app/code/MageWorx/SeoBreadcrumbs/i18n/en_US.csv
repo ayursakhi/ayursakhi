@@ -1,0 +1,20 @@
+"Breadcrumbs Priority for Categories","Breadcrumbs Priority for Categories"
+"Please correct the sent data.","Please correct the sent data."
+"Something went wrong while saving the category.","Something went wrong while saving the category."
+Default,Default
+"Use Shortest","Use Shortest"
+"Use Longest","Use Longest"
+SEO,SEO
+"SEO Breadcrumbs","SEO Breadcrumbs"
+"Enable SEO Breadcrumbs ▾","Enable SEO Breadcrumbs ▾"
+"If enabled, the functionality of Advanced Breadcrumbs will be activated overwriting Magento breadcrumbs","If enabled, the functionality of Advanced Breadcrumbs will be activated overwriting Magento breadcrumbs"
+Type,Type
+"Use Category Priority","Use Category Priority"
+"If enabled, the system will use the priority of the categories to select the breadcrumbs","If enabled, the system will use the priority of the categories to select the breadcrumbs"
+"Breadcrumbs Priority","Breadcrumbs Priority"
+Edit,Edit
+ID,ID
+Path,Path
+Level,Level
+"Category Name","Category Name"
+Status,Status

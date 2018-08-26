@@ -1,0 +1,85 @@
+Home,Home
+"Go to Home Page","Go to Home Page"
+"-- Please Select --","-- Please Select --"
+lb,lb
+kg,kg
+SEO,SEO
+"SEO Markup","SEO Markup"
+Product,Product
+"Enable In Rich Snippets","Enable In Rich Snippets"
+"Enable In Open Graph","Enable In Open Graph"
+"Enable In Twitter Cards","Enable In Twitter Cards"
+"To enable the feature, make sure you enter Twitter Username in the Common section.","To enable the feature, make sure you enter Twitter Username in the Common section."
+"Enable for Google Assistant","Enable for Google Assistant"
+"CSS Selectors","CSS Selectors"
+"You can specify a few values separated by commas.","You can specify a few values separated by commas."
+"Best Rating","Best Rating"
+"Description Attribute Code","Description Attribute Code"
+"Add SKU","Add SKU"
+"SKU Attribute Code","SKU Attribute Code"
+"Add Category","Add Category"
+"Use Deepest Category","Use Deepest Category"
+"Set 'Yes', if products are assigned to multiple categories and sub-categories in the same chain.","Set 'Yes', if products are assigned to multiple categories and sub-categories in the same chain."
+"Add Color","Add Color"
+"Color Attribute Code","Color Attribute Code"
+"Add Manufacturer","Add Manufacturer"
+"Manufacturer Attribute Code","Manufacturer Attribute Code"
+"Add Brand","Add Brand"
+"Brand Attribute Code","Brand Attribute Code"
+"Add Model","Add Model"
+"Model Attribute Code","Model Attribute Code"
+"Add Gtin","Add Gtin"
+"Gtin Attribute Code","Gtin Attribute Code"
+"The GTIN is a globally unique 14-digit number used to identify trade items, products, or services.
+                            Please use only digits when you specify GTIN for your products otherwise it will not be shown in the microdata.","The GTIN is a globally unique 14-digit number used to identify trade items, products, or services.
+                            Please use only digits when you specify GTIN for your products otherwise it will not be shown in the microdata."
+"Add Weight","Add Weight"
+"Add Condition","Add Condition"
+"Condition Attribute Code","Condition Attribute Code"
+"Condition Value For New","Condition Value For New"
+"Condition Value For Used","Condition Value For Used"
+"Condition Value For Damaged","Condition Value For Damaged"
+"Default Value For Condition","Default Value For Condition"
+"Add Custom Properties","Add Custom Properties"
+"Custom Properties","Custom Properties"
+"A comma-delimited list of <a href=""http://schema.org/Product"">schema.org</a> property name and attribute codes.<br /><b>Example:</b><br />
+                                mpn,mpn_code <br />
+                                For JSON-LD will be converted to: <br> { ... ""mpn"":""12343"" ... }<br />","A comma-delimited list of <a href=""http://schema.org/Product"">schema.org</a> property name and attribute codes.<br /><b>Example:</b><br />
+                                mpn,mpn_code <br />
+                                For JSON-LD will be converted to: <br> { ... ""mpn"":""12343"" ... }<br />"
+"Category (Product List)","Category (Product List)"
+"Show Product Offers","Show Product Offers"
+"Disable for NOINDEX Robots","Disable for NOINDEX Robots"
+"Landing Page","Landing Page"
+Page,Page
+Website,Website
+"Facebook Logo","Facebook Logo"
+"Allowed file types: PNG, GIF, JPG, JPEG.","Allowed file types: PNG, GIF, JPG, JPEG."
+"Facebook App Id","Facebook App Id"
+"Website Name","Website Name"
+"Website About","Website About"
+"Merchant (Seller)","Merchant (Seller)"
+"Type (by Schema.org)","Type (by Schema.org)"
+Name,Name
+Image,Image
+"<b>A value for the 'Image' field is required.</b><br/>  Allowed file types: PNG, GIF, JPG, JPEG.","<b>A value for the 'Image' field is required.</b><br/>  Allowed file types: PNG, GIF, JPG, JPEG."
+Description,Description
+"Social Links","Social Links"
+"The list of social media links <br /><b>Example:</b><br />https://twitter.com/mageworxteam<br />https://www.facebook.com/mageworx","The list of social media links <br /><b>Example:</b><br />https://twitter.com/mageworxteam<br />https://www.facebook.com/mageworx"
+Phone,Phone
+"<b>The 'Phone' field is recommended.</b>","<b>The 'Phone' field is recommended.</b>"
+Fax,Fax
+Email,Email
+Location,Location
+"<b>The 'Address' field is recommended.<br/>Example:</b> Seattle","<b>The 'Address' field is recommended.<br/>Example:</b> Seattle"
+Region,Region
+"<b>Example:</b> WA","<b>Example:</b> WA"
+Street,Street
+"<b>Example:</b><br>20341 Whitworth Institute<br>405 N. Whitworth","<b>Example:</b><br>20341 Whitworth Institute<br>405 N. Whitworth"
+"ZIP Code","ZIP Code"
+"Price Range","Price Range"
+"<b>The 'Price Range' field is recommended.<br/>Example:</b><br />$$$<br />$31-60","<b>The 'Price Range' field is recommended.<br/>Example:</b><br />$$$<br />$31-60"
+Breadcrumbs,Breadcrumbs
+Enable,Enable
+Common,Common
+"Twitter Username","Twitter Username"

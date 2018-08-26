@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="adminhtml_catalog_product_edit_prepare_form">
+        <observer 
+            name="mw_sb_observer_prepare_form_meta_robots"
+            instance="MageWorx\SeoBase\Model\Observer\PrepareForm\Catalog\MetaRobots"
+        />
+        <observer 
+            name="mw_sb_observer_prepare_form_cross_domain_store"
+            instance="MageWorx\SeoBase\Model\Observer\PrepareForm\Catalog\CrossDomainStore"
+        />
+    </event>     
+    <event name="adminhtml_catalog_category_edit_prepare_form">
+        <observer 
+            name="mw_sb_observer_prepare_form_meta_robots"
+            instance="MageWorx\SeoBase\Model\Observer\PrepareForm\Catalog\MetaRobots"
+        />
+    </event>
+    <event name="adminhtml_catalog_product_attribute_edit_frontend_prepare_form">
+        <observer
+            name="mw_sb_observer_attribute_prepare_form_layered_navigation_canonical"
+            instance="MageWorx\SeoBase\Model\Observer\PrepareForm\Attribute\LayeredNavigationCanonical"
+        />        
+    </event>
+    <event name="adminhtml_cms_page_edit_tab_meta_prepare_form">
+        <observer
+            name="mw_sb_observer_prepare_form_meta_robots"
+            instance="MageWorx\SeoBase\Model\Observer\PrepareForm\CmsPage\MetaRobots"
+        />    
+        <observer
+            name="mw_sb_observer_prepare_form_hreflang_identifier"
+            instance="MageWorx\SeoBase\Model\Observer\PrepareForm\CmsPage\HreflangIdentifier"
+        />          
+    </event>           
+</config>

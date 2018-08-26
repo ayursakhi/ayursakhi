@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mageworx" sortOrder="2001">
+            <label>MageWorx</label>
+        </tab>
+        <section id="mageworx_seo" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>SEO</label>
+            <tab>mageworx</tab>
+            <resource>MageWorx_SeoExtended::config_seoextended</resource>
+            <group id="extended" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>SEO Extended</label>
+                <group id="meta" translate="label comment" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Meta Settings:</label>
+                    <field id="pager_in_title" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Add Pager Number to Meta Title]]></label>
+                        <source_model>MageWorx\SeoExtended\Model\Source\AddPageNum</source_model>
+                        <comment><![CDATA[E.g. 'Apparel <b>| Page 3</b>']]></comment>
+                    </field>
+
+                    <field id="pager_in_description" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Add Pager Number to Meta Description]]></label>
+                        <source_model>MageWorx\SeoExtended\Model\Source\AddPageNum</source_model>
+                        <comment><![CDATA[E.g. 'Description of apparel<b> | Page 2</b>']]></comment>
+                    </field>
+
+                    <field id="cut_title_prefix_suffix" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Remove Default Title Prefix/Suffix]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    
+                    <field id="cut_prefix_suffix_pages" translate="label comment" type="textarea" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Pages]]></label>
+                        <comment><![CDATA[Magento Default Title & Suffix will be cropped for these pages.<br>                                    
+                                &nbsp;&nbsp;&nbsp;&nbsp;For category: 'catalog_category_view'<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;For product:  'catalog_product_view'<br>
+                                Use <i>"Tools for SEO Suite extension" -> "Show Action Name of Page"</i>
+                                to find the values for other pages.]]>
+                        </comment>
+                        <depends>
+                            <field id="cut_title_prefix_suffix">1</field>
+                        </depends>
+                    </field>
+
+                    <field id="layered_filters_in_title" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Enable Extended Meta Title On Category Layered Navigation Pages]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <comment><![CDATA[E.g. 'Phones | <b>Price:$300.00 and above, Color:Silver</b>'</i>]]></comment>
+                    </field>
+
+                    <field id="page_num_string" translate="label text" type="text" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <if_module_enabled>MageWorx_LandingPagesPro</if_module_enabled>
+                        <label><![CDATA[Page Number Format For Landing Pages]]></label>
+                        <comment><![CDATA[Use %p as page number variable]]></comment>
+                    </field>
+                    <field id="pager_in_lp_title" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <if_module_enabled>MageWorx_LandingPagesPro</if_module_enabled>
+                        <label><![CDATA[Add Pager Number to Landing Page Meta Title]]></label>
+                        <source_model>MageWorx\SeoExtended\Model\Source\AddPageNum</source_model>
+                        <comment><![CDATA[E.g. 'Apparel <b>| Page 3</b>']]></comment>
+                    </field>
+
+                    <field id="pager_in_lp_description" translate="label comment" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <if_module_enabled>MageWorx_LandingPagesPro</if_module_enabled>
+                        <label><![CDATA[Add Pager Number to Landing Page Meta Description]]></label>
+                        <source_model>MageWorx\SeoExtended\Model\Source\AddPageNum</source_model>
+                        <comment><![CDATA[E.g. 'Description of apparel<b> | Page 2</b>']]></comment>
+                    </field>
+                    <field id="layered_filters_lp_in_title" translate="label comment" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <if_module_enabled>MageWorx_LandingPagesPro</if_module_enabled>
+                        <label><![CDATA[Enable Extended Meta Title On Landing Pages Layered Navigation Pages]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <comment><![CDATA[E.g. 'Phones | <b>Price:$300.00 and above, Color:Silver</b>'</i>]]></comment>
+                    </field>
+
+                    <field id="layered_filters_lp_in_description" translate="label comment" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <if_module_enabled>MageWorx_LandingPagesPro</if_module_enabled>
+                        <label><![CDATA[Enable Extended Meta Description On Landing Pages Layered Navigation Pages]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+                <group id="seo_filters" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Filters:</label>
+                    <field id="use_seo_for_category_filters" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[Enable SEO for Category Filters Functionality ▾]]></label>
+                        <comment><![CDATA[This setting enables the extended functionality for the category LN filters available in Marketing - MageWorx SEO Extended - SEO Category Filters.]]></comment>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="use_on_single_filter" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;Use SEO-ed data for a single filter]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <comment><![CDATA[When multiple filters with SEO-ed data applied, we will prioritise filters by their position in LN]]></comment>
+                        <depends>
+                            <field id="seo_filters">1</field>
+                        </depends>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>
