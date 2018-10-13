@@ -1,0 +1,20 @@
+<?php
+//$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+//$product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');//get current product
+//echo $product->getId();
+//echo $product->getName();
+?>
+<div>
+    <form method="post" id="pincode-frm">
+        <input type="text" name="picode" id="pincode-val" placeholder="Check Pincode Delivery"><input type="button" name="check" value="check" id="pin-chek">
+        <div id="message"></div>
+    </form>
+</div>
+
+<script type="text/x-magento-init">
+    {
+    "body": {
+    "Custom_Pincode/js/pincodevalidation": {}
+    }
+    }
+</script>

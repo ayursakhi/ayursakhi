@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd" layout="1column">
+    <referenceBlock name="content">
+        <container name="pincode.delivery" before="product.info.addtocart">
+        <block class="Custom\Pincode\Block\Pincode" name="custom-pincode" template="check_pincode.phtml" />
+        </container>
+    </referenceBlock>
+</page> 
