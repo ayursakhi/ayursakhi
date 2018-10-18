@@ -17,18 +17,25 @@
         <div class="field qty">
             <label class="label" for="qty"><span><?php /* @escapeNotVerified */ echo __('Qty') ?></span></label>
             <div class="control">
-            	<div class="qty-minus"> <a class="btn-qty minus" href="#">-</a></div>
+            	<!-- <div class="qty-minus"> <a class="btn-qty minus" href="#">-</a></div> -->
 		<div class="qty-input">
-                	<input type="number"
+        <select class="input-text qty" id="qty" name="qty" >
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        </select>
+                	<!--input type="number"
 		               name="qty"
 		               id="qty"
 		               maxlength="12"
 		               value="<?php /* @escapeNotVerified */ echo $block->getProductDefaultQty() * 1 ?>"
-		               title="<?php /* @escapeNotVerified */ echo __('Qty') ?>" class="input-text qty"
+		               title="<?php /* @escapeNotVerified */ echo __('Qty') ?>" class="input-text qty" 
 		               data-validate="<?php echo $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
-		               />
+		               /-->
                        </div>
-		<div class="qty-plus"> <a class="btn-qty plus" href="#">+</a></div>
+		<!-- <div class="qty-plus"> <a class="btn-qty plus" href="#">+</a></div> -->
             </div>
         </div>
         <script type="text/javascript">
